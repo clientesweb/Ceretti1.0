@@ -1,14 +1,17 @@
 export type Discount = {
-  amount: number;
-  percentage: number;
-};
+  amount: number
+  percentage: number
+}
 
 export type Product = {
-  id: number;
-  title: string;
-  srcUrl: string;
-  gallery?: string[];
-  price: number;
-  discount: Discount;
-  rating: number;
-};
+  id: number
+  title: string
+  description?: string
+  srcUrl: string
+  gallery?: string[]
+  price: number
+  discount: Discount
+  rating: number
+  platform: "instagram" | "facebook" | "tiktok" | "youtube" | "spotify" | "twitter"
+}
+
