@@ -3,6 +3,7 @@ import Brands from "@/components/homepage/Brands"
 import DressStyle from "@/components/homepage/DressStyle"
 import Header from "@/components/homepage/Header"
 import Reviews from "@/components/homepage/Reviews"
+import TrustFeatures from "@/components/homepage/TrustFeatures"
 import type { Product } from "@/types/product.types"
 import type { Review } from "@/types/review.types"
 
@@ -210,6 +211,7 @@ export default function Home() {
     <>
       <Header />
       <Brands />
+      <TrustFeatures />
       <main className="my-[50px] sm:my-[72px]">
         <ProductListSec title="NOVEDADES" data={newArrivalsData} viewAllLink="/shop#novedades" />
         <div className="max-w-frame mx-auto px-4 xl:px-0">
