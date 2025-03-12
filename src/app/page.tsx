@@ -6,6 +6,7 @@ import Reviews from "@/components/homepage/Reviews"
 import FollowersSection from "@/components/homepage/FollowersSection"
 import type { Product } from "@/types/product.types"
 import type { Review } from "@/types/review.types"
+import type { FollowersProduct } from "@/types/followers.types"
 
 export const newArrivalsData: Product[] = [
   {
@@ -58,13 +59,19 @@ export const newArrivalsData: Product[] = [
   },
 ]
 
-export const topSellingData = [
+export const topSellingData: FollowersProduct[] = [
   {
     id: 5,
     title: "Seguidores Instagram",
     srcUrl:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-4Af8AiOp6ugrokyImESdpfoNsRJ1UW.jpeg",
     rating: 5.0,
+    // Agregamos estos campos para compatibilidad con la interfaz Product
+    price: 1800,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
     qualityOptions: [
       {
         id: "calidad",
@@ -100,6 +107,12 @@ export const topSellingData = [
     title: "Seguidores Twitter/X",
     srcUrl: "/images/pic6.png",
     rating: 4.0,
+    // Agregamos estos campos para compatibilidad con la interfaz Product
+    price: 1500,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
     qualityOptions: [
       {
         id: "calidad",
@@ -129,6 +142,12 @@ export const topSellingData = [
     srcUrl:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-JGNGrEBEfo0cdBP1gAHkOBk9c1uwAL.jpeg",
     rating: 4.5,
+    // Agregamos estos campos para compatibilidad con la interfaz Product
+    price: 1900,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
     qualityOptions: [
       {
         id: "calidad",
@@ -158,6 +177,12 @@ export const topSellingData = [
     srcUrl:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-XWNWNh4DxwyZRIqrY7RyPHExLZ5L5s.jpeg",
     rating: 4.5,
+    // Agregamos estos campos para compatibilidad con la interfaz Product
+    price: 2000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
     qualityOptions: [
       {
         id: "calidad",
