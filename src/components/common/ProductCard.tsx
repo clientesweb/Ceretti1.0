@@ -2,9 +2,8 @@ import Rating from "../ui/Rating"
 import Image from "next/image"
 import Link from "next/link"
 import type { Product } from "@/types/product.types"
-import { Badge } from "@/components/ui/badge"
 
-type ProductCardProps = {
+interface ProductCardProps {
   data: Product
 }
 
@@ -24,15 +23,19 @@ const ProductCard = ({ data }: ProductCardProps) => {
           priority
         />
         {data.discount.percentage > 0 && (
-          <Badge className="absolute top-3 right-3 bg-red-500">-{data.discount.percentage}%</Badge>
+          <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-medium px-2 py-1 rounded-full">
+            -{data.discount.percentage}%
+          </span>
         )}
       </div>
       <div className="flex flex-col flex-grow w-full">
         <div className="flex items-start justify-between gap-2 mb-2">
           <h3 className="font-bold text-lg leading-tight">{data.title}</h3>
-          <Badge variant="outline" className="shrink-0">
-            {data.platform}
-          </Badge>
+          {data.platform && (
+            <span className="shrink-0 text-xs font-medium px-2 py-1 rounded-full bg-ceretti-blue/10 text-ceretti-blue">
+              {data.platform}
+            </span>
+          )}
         </div>
         {data.description && <p className="text-sm text-black/60 mb-3 line-clamp-2">{data.description}</p>}
         <div className="flex items-center mb-3 mt-auto">
