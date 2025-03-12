@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Rating from "../ui/Rating"
 import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useAppDispatch } from "@/lib/hooks/redux"
 import { addToCart } from "@/lib/features/carts/cartsSlice"
 
@@ -106,18 +105,17 @@ const FollowersProductCard = ({ data }: FollowersProductCardProps) => {
           </div>
 
           <div className="mb-4">
-            <Select defaultValue={selectedFollowers} onValueChange={setSelectedFollowers}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Seleccionar cantidad" />
-              </SelectTrigger>
-              <SelectContent>
-                {currentQualityOption?.followers.map((option) => (
-                  <SelectItem key={option.amount} value={option.amount.toString()}>
-                    {option.amount} seguidores {option.bonuses ? `+ ${option.bonuses}` : ""}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <select
+              value={selectedFollowers}
+              onChange={(e) => setSelectedFollowers(e.target.value)}
+              className="w-full p-2 border border-black/10 rounded-md"
+            >
+              {currentQualityOption?.followers.map((option) => (
+                <option key={option.amount} value={option.amount.toString()}>
+                  {option.amount} seguidores {option.bonuses ? `+ ${option.bonuses}` : ""}
+                </option>
+              ))}
+            </select>
           </div>
 
           {currentFollowersOption && (
