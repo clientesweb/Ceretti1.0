@@ -5,27 +5,10 @@ import Rating from "../ui/Rating"
 import { Button } from "@/components/ui/button"
 import { useAppDispatch } from "@/lib/hooks/redux"
 import { addToCart } from "@/lib/features/carts/cartsSlice"
-
-type FollowersOption = {
-  amount: number
-  price: number
-  bonuses?: string
-}
-
-type QualityOption = {
-  id: string
-  name: string
-  followers: FollowersOption[]
-}
+import type { FollowersProduct } from "@/types/followers.types"
 
 type FollowersProductCardProps = {
-  data: {
-    id: number
-    title: string
-    srcUrl: string
-    rating: number
-    qualityOptions: QualityOption[]
-  }
+  data: FollowersProduct
 }
 
 const FollowersProductCard = ({ data }: FollowersProductCardProps) => {
