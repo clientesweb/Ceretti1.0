@@ -2,10 +2,7 @@
 
 import { useState } from "react"
 import Rating from "../ui/Rating"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useAppDispatch } from "@/lib/hooks/redux"
 import { addToCart } from "@/lib/features/carts/cartsSlice"
@@ -62,13 +59,10 @@ const FollowersProductCard = ({ data }: FollowersProductCardProps) => {
     <div className="flex flex-col border border-black/10 rounded-[20px] p-4 h-full">
       <div className="flex flex-col md:flex-row gap-4 mb-4">
         <div className="bg-[#F0EEED] rounded-[13px] w-full md:w-1/3 aspect-square overflow-hidden">
-          <Image
+          <img
             src={data.srcUrl || "/placeholder.svg"}
-            width={295}
-            height={298}
             className="rounded-md w-full h-full object-contain hover:scale-110 transition-all duration-500"
             alt={data.title}
-            priority
           />
         </div>
 
@@ -91,20 +85,24 @@ const FollowersProductCard = ({ data }: FollowersProductCardProps) => {
           </div>
 
           <div className="mt-2 mb-4">
-            <RadioGroup
-              defaultValue={selectedQuality}
-              onValueChange={setSelectedQuality}
-              className="flex flex-col space-y-2"
-            >
+            <div className="flex flex-col space-y-2">
               {data.qualityOptions.map((option) => (
                 <div key={option.id} className="flex items-center space-x-2">
-                  <RadioGroupItem value={option.id} id={option.id} />
-                  <Label htmlFor={option.id} className="cursor-pointer">
+                  <input
+                    type="radio"
+                    id={option.id}
+                    name="quality"
+                    value={option.id}
+                    checked={selectedQuality === option.id}
+                    onChange={() => setSelectedQuality(option.id)}
+                    className="h-4 w-4"
+                  />
+                  <label htmlFor={option.id} className="cursor-pointer text-sm">
                     {option.name}
-                  </Label>
+                  </label>
                 </div>
               ))}
-            </RadioGroup>
+            </div>
           </div>
 
           <div className="mb-4">
