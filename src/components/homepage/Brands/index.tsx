@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 const brandsData: { id: string; srcUrl: string }[] = [
   {
     id: "instagram",
@@ -36,13 +34,10 @@ const Brands = () => {
         {brandsData.map((brand) => (
           <div key={brand.id} className="relative group cursor-pointer">
             <div className="absolute -inset-2 bg-ceretti-lightBlue/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <Image
-              priority
+            <img
               src={brand.srcUrl || "/placeholder.svg"}
-              height={40}
-              width={40}
-              alt={brand.id}
-              className="h-8 w-8 md:h-10 md:w-10 my-5 md:my-11 object-contain relative"
+              alt={`Logo de ${brand.id}`}
+              className="h-10 w-10 md:h-12 md:w-12 my-5 md:my-11 object-contain relative"
             />
           </div>
         ))}
