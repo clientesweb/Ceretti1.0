@@ -154,50 +154,70 @@ export const relatedProductData: Product[] = [
   {
     id: 12,
     title: "Combo Redes Sociales",
-    srcUrl: "/images/pic12.png",
-    gallery: ["/images/pic12.png", "/images/pic10.png", "/images/pic11.png"],
-    price: 242,
+    description: "Paquete completo para todas tus plataformas sociales.",
+    srcUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
+    gallery: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
+    ],
+    price: 399,
     discount: {
       amount: 0,
       percentage: 20,
     },
-    rating: 4.0,
+    rating: 4.9,
+    platform: "instagram",
   },
   {
     id: 13,
     title: "Paquete Influencer",
-    srcUrl: "/images/pic13.png",
-    gallery: ["/images/pic13.png", "/images/pic10.png", "/images/pic11.png"],
-    price: 145,
+    description: "Todo lo que necesitas para convertirte en influencer.",
+    srcUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
+    gallery: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
+    ],
+    price: 499,
     discount: {
       amount: 0,
-      percentage: 0,
+      percentage: 10,
     },
-    rating: 3.5,
+    rating: 4.8,
+    platform: "tiktok",
   },
   {
     id: 14,
     title: "Servicio de Comentarios",
-    srcUrl: "/images/pic14.png",
-    gallery: ["/images/pic14.png"],
+    description: "Comentarios personalizados para aumentar tu engagement.",
+    srcUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
+    gallery: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
+    ],
     price: 180,
     discount: {
       amount: 0,
       percentage: 0,
     },
     rating: 4.5,
+    platform: "facebook",
   },
   {
     id: 15,
     title: "Paquete Empresarial",
-    srcUrl: "/images/pic15.png",
-    gallery: ["/images/pic15.png"],
-    price: 150,
+    description: "Soluciones completas para empresas y marcas.",
+    srcUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
+    gallery: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
+    ],
+    price: 599,
     discount: {
       amount: 0,
-      percentage: 30,
+      percentage: 15,
     },
     rating: 5.0,
+    platform: "youtube",
   },
 ]
 
