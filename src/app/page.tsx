@@ -1,6 +1,7 @@
 import ProductListSec from "@/components/common/ProductListSec"
 import Brands from "@/components/homepage/Brands"
 import DressStyle from "@/components/homepage/DressStyle"
+import Faqs from "@/components/homepage/Faqs"
 import Header from "@/components/homepage/Header"
 import Reviews from "@/components/homepage/Reviews"
 import TrustFeatures from "@/components/homepage/TrustFeatures"
@@ -223,6 +224,7 @@ export default function Home() {
         <div className="mb-[50px] sm:mb-20">
           <DressStyle />
         </div>
+        <Faqs />
         <Reviews data={reviewsData} />
       </main>
     </>
