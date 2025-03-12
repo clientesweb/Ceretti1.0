@@ -12,6 +12,6 @@ export type Product = {
   price: number
   discount: Discount
   rating: number
-  platform: "instagram" | "facebook" | "tiktok" | "youtube" | "spotify" | "twitter"
+  platform?: string
 }
 
