@@ -1,13 +1,12 @@
-import { cn } from "@/lib/utils";
-import { integralCF } from "@/styles/fonts";
-import React from "react";
-import { PaymentBadge, SocialNetworks } from "./footer.types";
-import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
-import Link from "next/link";
-import LinksSection from "./LinksSection";
-import Image from "next/image";
-import NewsLetterSection from "./NewsLetterSection";
-import LayoutSpacing from "./LayoutSpacing";
+import { cn } from "@/lib/utils"
+import { integralCF } from "@/styles/fonts"
+import type { PaymentBadge, SocialNetworks } from "./footer.types"
+import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa"
+import Link from "next/link"
+import LinksSection from "./LinksSection"
+import Image from "next/image"
+import NewsLetterSection from "./NewsLetterSection"
+import LayoutSpacing from "./LayoutSpacing"
 
 const socialsData: SocialNetworks[] = [
   {
@@ -28,9 +27,9 @@ const socialsData: SocialNetworks[] = [
   {
     id: 4,
     icon: <FaGithub />,
-    url: "https://github.com/mohammadoftadeh",
+    url: "https://github.com",
   },
-];
+]
 
 const paymentBadgesData: PaymentBadge[] = [
   {
@@ -53,7 +52,7 @@ const paymentBadgesData: PaymentBadge[] = [
     id: 5,
     srcUrl: "/icons/googlePay.svg",
   },
-];
+]
 
 const Footer = () => {
   return (
@@ -68,24 +67,20 @@ const Footer = () => {
         <div className="max-w-frame mx-auto">
           <nav className="lg:grid lg:grid-cols-12 mb-8">
             <div className="flex flex-col lg:col-span-3 lg:max-w-[248px]">
-              <h1
-                className={cn([
-                  integralCF.className,
-                  "text-[28px] lg:text-[32px] mb-6",
-                ])}
-              >
-                SHOP.CO
+              <h1 className={cn([integralCF.className, "text-[28px] lg:text-[32px] mb-6 flex items-center"])}>
+                <span className="mr-2">TT</span>
+                <span className="text-sm font-normal">CERETTI MGTM</span>
               </h1>
               <p className="text-black/60 text-sm mb-9">
-                We have clothes that suits your style and which you’re proud to
-                wear. From women to men.
+                Tenemos servicios que se adaptan a tus necesidades y de los que estarás orgulloso. Desde Instagram hasta
+                YouTube.
               </p>
               <div className="flex items-center">
                 {socialsData.map((social) => (
                   <Link
                     href={social.url}
                     key={social.id}
-                    className="bg-white hover:bg-black hover:text-white transition-all mr-3 w-7 h-7 rounded-full border border-black/20 flex items-center justify-center p-1.5"
+                    className="bg-white hover:bg-ceretti-blue hover:text-white transition-all mr-3 w-7 h-7 rounded-full border border-black/20 flex items-center justify-center p-1.5"
                   >
                     {social.icon}
                   </Link>
@@ -103,21 +98,7 @@ const Footer = () => {
           <hr className="h-[1px] border-t-black/10 mb-6" />
           <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-2">
             <p className="text-sm text-center sm:text-left text-black/60 mb-4 sm:mb-0 sm:mr-1">
-              Shop.co © Made by{" "}
-              <Link
-                href="https://github.com/mohammadoftadeh"
-                className="text-black font-medium"
-              >
-                Mohammad Oftadeh
-              </Link>
-              {", "}
-              Designed by{" "}
-              <Link
-                href="https://www.figma.com/@hamzauix"
-                className="text-black font-medium"
-              >
-                Hamza Naeem
-              </Link>
+              CERETTI MGTM © 2023 - Todos los derechos reservados
             </p>
             <div className="flex items-center">
               {paymentBadgesData.map((badge, _, arr) => (
@@ -130,10 +111,10 @@ const Footer = () => {
                 >
                   <Image
                     priority
-                    src={badge.srcUrl}
+                    src={badge.srcUrl || "/placeholder.svg"}
                     width={33}
                     height={100}
-                    alt="user"
+                    alt="método de pago"
                     className="max-h-[15px]"
                   />
                 </span>
@@ -144,7 +125,8 @@ const Footer = () => {
         <LayoutSpacing />
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
+
