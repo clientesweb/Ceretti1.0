@@ -3,10 +3,8 @@ import Brands from "@/components/homepage/Brands"
 import DressStyle from "@/components/homepage/DressStyle"
 import Header from "@/components/homepage/Header"
 import Reviews from "@/components/homepage/Reviews"
-import FollowersSection from "@/components/homepage/FollowersSection"
 import type { Product } from "@/types/product.types"
 import type { Review } from "@/types/review.types"
-import type { FollowersProduct } from "@/types/followers.types"
 
 export const newArrivalsData: Product[] = [
   {
@@ -59,152 +57,54 @@ export const newArrivalsData: Product[] = [
   },
 ]
 
-export const topSellingData: FollowersProduct[] = [
+export const topSellingData: Product[] = [
   {
     id: 5,
-    title: "Seguidores Instagram",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-4Af8AiOp6ugrokyImESdpfoNsRJ1UW.jpeg",
-    rating: 5.0,
-    // Agregamos estos campos para compatibilidad con la interfaz Product
-    price: 1800,
+    title: "Paquete Premium Instagram",
+    srcUrl: "/images/pic5.png",
+    gallery: ["/images/pic5.png", "/images/pic10.png", "/images/pic11.png"],
+    price: 232,
     discount: {
       amount: 0,
-      percentage: 0,
+      percentage: 20,
     },
-    qualityOptions: [
-      {
-        id: "calidad",
-        name: "Calidad",
-        followers: [
-          { amount: 100, price: 1800 },
-          { amount: 250, price: 3500 },
-          { amount: 500, price: 6500 },
-          { amount: 1000, price: 12000, bonuses: "250 Likes" },
-          { amount: 2500, price: 30000, bonuses: "500 Likes" },
-          { amount: 5000, price: 60000, bonuses: "1K Likes + 1K Visitas" },
-          { amount: 10000, price: 120000, bonuses: "2K Likes + 2K Visitas" },
-        ],
-      },
-      {
-        id: "mundial",
-        name: "Mundial",
-        followers: [
-          { amount: 100, price: 900 },
-          { amount: 250, price: 1500 },
-          { amount: 500, price: 2500 },
-          { amount: 1000, price: 4500 },
-          { amount: 2500, price: 9500, bonuses: "250 Likes" },
-          { amount: 5000, price: 18000, bonuses: "500 Likes" },
-          { amount: 8000, price: 23000, bonuses: "1K Likes + 1K Visitas" },
-          { amount: 10000, price: 25000, bonuses: "2K Likes + 2K Visitas" },
-        ],
-      },
-    ],
+    rating: 5.0,
   },
   {
     id: 6,
     title: "Seguidores Twitter/X",
     srcUrl: "/images/pic6.png",
-    rating: 4.0,
-    // Agregamos estos campos para compatibilidad con la interfaz Product
-    price: 1500,
+    gallery: ["/images/pic6.png", "/images/pic10.png", "/images/pic11.png"],
+    price: 145,
     discount: {
       amount: 0,
       percentage: 0,
     },
-    qualityOptions: [
-      {
-        id: "calidad",
-        name: "Calidad",
-        followers: [
-          { amount: 100, price: 1500 },
-          { amount: 250, price: 3000 },
-          { amount: 500, price: 5500 },
-          { amount: 1000, price: 10000, bonuses: "250 Likes" },
-        ],
-      },
-      {
-        id: "mundial",
-        name: "Mundial",
-        followers: [
-          { amount: 100, price: 800 },
-          { amount: 250, price: 1300 },
-          { amount: 500, price: 2200 },
-          { amount: 1000, price: 4000 },
-        ],
-      },
-    ],
+    rating: 4.0,
   },
   {
     id: 7,
-    title: "Seguidores TikTok",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-JGNGrEBEfo0cdBP1gAHkOBk9c1uwAL.jpeg",
-    rating: 4.5,
-    // Agregamos estos campos para compatibilidad con la interfaz Product
-    price: 1900,
+    title: "Reproducciones para Reels",
+    srcUrl: "/images/pic7.png",
+    gallery: ["/images/pic7.png"],
+    price: 80,
     discount: {
       amount: 0,
       percentage: 0,
     },
-    qualityOptions: [
-      {
-        id: "calidad",
-        name: "Calidad",
-        followers: [
-          { amount: 100, price: 1900 },
-          { amount: 250, price: 3700 },
-          { amount: 500, price: 6800 },
-          { amount: 1000, price: 13000, bonuses: "250 Likes" },
-        ],
-      },
-      {
-        id: "mundial",
-        name: "Mundial",
-        followers: [
-          { amount: 100, price: 950 },
-          { amount: 250, price: 1600 },
-          { amount: 500, price: 2700 },
-          { amount: 1000, price: 4800 },
-        ],
-      },
-    ],
+    rating: 3.0,
   },
   {
     id: 8,
-    title: "Seguidores YouTube",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-XWNWNh4DxwyZRIqrY7RyPHExLZ5L5s.jpeg",
-    rating: 4.5,
-    // Agregamos estos campos para compatibilidad con la interfaz Product
-    price: 2000,
+    title: "Likes para TikTok",
+    srcUrl: "/images/pic8.png",
+    gallery: ["/images/pic8.png"],
+    price: 210,
     discount: {
       amount: 0,
       percentage: 0,
     },
-    qualityOptions: [
-      {
-        id: "calidad",
-        name: "Calidad",
-        followers: [
-          { amount: 100, price: 2000 },
-          { amount: 250, price: 4000 },
-          { amount: 500, price: 7500 },
-          { amount: 1000, price: 14000, bonuses: "250 Likes" },
-        ],
-      },
-      {
-        id: "mundial",
-        name: "Mundial",
-        followers: [
-          { amount: 100, price: 1000 },
-          { amount: 250, price: 1800 },
-          { amount: 500, price: 3000 },
-          { amount: 1000, price: 5500 },
-        ],
-      },
-    ],
+    rating: 4.5,
   },
 ]
 
@@ -316,7 +216,7 @@ export default function Home() {
           <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         </div>
         <div className="mb-[50px] sm:mb-20">
-          <FollowersSection title="MÁS VENDIDOS" data={topSellingData} viewAllLink="/shop#mas-vendidos" />
+          <ProductListSec title="MÁS VENDIDOS" data={topSellingData} viewAllLink="/shop#mas-vendidos" />
         </div>
         <div className="mb-[50px] sm:mb-20">
           <DressStyle />
