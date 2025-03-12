@@ -1,15 +1,15 @@
-import ProductListSec from "@/components/common/ProductListSec";
-import Brands from "@/components/homepage/Brands";
-import DressStyle from "@/components/homepage/DressStyle";
-import Header from "@/components/homepage/Header";
-import Reviews from "@/components/homepage/Reviews";
-import { Product } from "@/types/product.types";
-import { Review } from "@/types/review.types";
+import ProductListSec from "@/components/common/ProductListSec"
+import Brands from "@/components/homepage/Brands"
+import DressStyle from "@/components/homepage/DressStyle"
+import Header from "@/components/homepage/Header"
+import Reviews from "@/components/homepage/Reviews"
+import type { Product } from "@/types/product.types"
+import type { Review } from "@/types/review.types"
 
 export const newArrivalsData: Product[] = [
   {
     id: 1,
-    title: "T-shirt with Tape Details",
+    title: "Paquete de Seguidores Instagram",
     srcUrl: "/images/pic1.png",
     gallery: ["/images/pic1.png", "/images/pic10.png", "/images/pic11.png"],
     price: 120,
@@ -21,7 +21,7 @@ export const newArrivalsData: Product[] = [
   },
   {
     id: 2,
-    title: "Skinny Fit Jeans",
+    title: "Likes para Facebook",
     srcUrl: "/images/pic2.png",
     gallery: ["/images/pic2.png"],
     price: 260,
@@ -33,7 +33,7 @@ export const newArrivalsData: Product[] = [
   },
   {
     id: 3,
-    title: "Chechered Shirt",
+    title: "Comentarios para TikTok",
     srcUrl: "/images/pic3.png",
     gallery: ["/images/pic3.png"],
     price: 180,
@@ -45,7 +45,7 @@ export const newArrivalsData: Product[] = [
   },
   {
     id: 4,
-    title: "Sleeve Striped T-shirt",
+    title: "Visualizaciones para YouTube",
     srcUrl: "/images/pic4.png",
     gallery: ["/images/pic4.png", "/images/pic10.png", "/images/pic11.png"],
     price: 160,
@@ -55,12 +55,12 @@ export const newArrivalsData: Product[] = [
     },
     rating: 4.5,
   },
-];
+]
 
 export const topSellingData: Product[] = [
   {
     id: 5,
-    title: "Vertical Striped Shirt",
+    title: "Paquete Premium Instagram",
     srcUrl: "/images/pic5.png",
     gallery: ["/images/pic5.png", "/images/pic10.png", "/images/pic11.png"],
     price: 232,
@@ -72,7 +72,7 @@ export const topSellingData: Product[] = [
   },
   {
     id: 6,
-    title: "Courage Graphic T-shirt",
+    title: "Seguidores Twitter/X",
     srcUrl: "/images/pic6.png",
     gallery: ["/images/pic6.png", "/images/pic10.png", "/images/pic11.png"],
     price: 145,
@@ -84,7 +84,7 @@ export const topSellingData: Product[] = [
   },
   {
     id: 7,
-    title: "Loose Fit Bermuda Shorts",
+    title: "Reproducciones para Reels",
     srcUrl: "/images/pic7.png",
     gallery: ["/images/pic7.png"],
     price: 80,
@@ -96,7 +96,7 @@ export const topSellingData: Product[] = [
   },
   {
     id: 8,
-    title: "Faded Skinny Jeans",
+    title: "Likes para TikTok",
     srcUrl: "/images/pic8.png",
     gallery: ["/images/pic8.png"],
     price: 210,
@@ -106,12 +106,12 @@ export const topSellingData: Product[] = [
     },
     rating: 4.5,
   },
-];
+]
 
 export const relatedProductData: Product[] = [
   {
     id: 12,
-    title: "Polo with Contrast Trims",
+    title: "Combo Redes Sociales",
     srcUrl: "/images/pic12.png",
     gallery: ["/images/pic12.png", "/images/pic10.png", "/images/pic11.png"],
     price: 242,
@@ -123,7 +123,7 @@ export const relatedProductData: Product[] = [
   },
   {
     id: 13,
-    title: "Gradient Graphic T-shirt",
+    title: "Paquete Influencer",
     srcUrl: "/images/pic13.png",
     gallery: ["/images/pic13.png", "/images/pic10.png", "/images/pic11.png"],
     price: 145,
@@ -135,7 +135,7 @@ export const relatedProductData: Product[] = [
   },
   {
     id: 14,
-    title: "Polo with Tipping Details",
+    title: "Servicio de Comentarios",
     srcUrl: "/images/pic14.png",
     gallery: ["/images/pic14.png"],
     price: 180,
@@ -147,7 +147,7 @@ export const relatedProductData: Product[] = [
   },
   {
     id: 15,
-    title: "Black Striped T-shirt",
+    title: "Paquete Empresarial",
     srcUrl: "/images/pic15.png",
     gallery: ["/images/pic15.png"],
     price: 150,
@@ -157,53 +157,53 @@ export const relatedProductData: Product[] = [
     },
     rating: 5.0,
   },
-];
+]
 
 export const reviewsData: Review[] = [
   {
     id: 1,
-    user: "Alex K.",
+    user: "Alejandro K.",
     content:
-      '"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.”',
+      '"Encontrar servicios que realmente funcionen para mis redes sociales era un desafío hasta que descubrí CERETTI MGTM. La variedad de opciones que ofrecen es realmente notable, adaptándose a diferentes necesidades y plataformas."',
     rating: 5,
-    date: "August 14, 2023",
+    date: "14 de agosto, 2023",
   },
   {
     id: 2,
-    user: "Sarah M.",
-    content: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”`,
+    user: "Sara M.",
+    content: `"Estoy impresionada con la calidad y eficiencia de los servicios que recibí de CERETTI MGTM. Desde seguidores hasta likes, cada servicio que he comprado ha superado mis expectativas."`,
     rating: 5,
-    date: "August 15, 2023",
+    date: "15 de agosto, 2023",
   },
   {
     id: 3,
-    user: "Ethan R.",
-    content: `"This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt."`,
+    user: "Eduardo R.",
+    content: `"El paquete de seguidores es imprescindible para cualquiera que quiera crecer en redes. El crecimiento fue natural y constante, y la calidad de los seguidores es excelente. Puedo ver el toque profesional en cada aspecto del servicio."`,
     rating: 5,
-    date: "August 16, 2023",
+    date: "16 de agosto, 2023",
   },
   {
     id: 4,
     user: "Olivia P.",
-    content: `"As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out."`,
+    content: `"Como entusiasta del marketing digital, valoro la simplicidad y funcionalidad. Este servicio no solo representa esos principios, sino que también ofrece resultados reales. Es evidente que el equipo puso su creatividad en hacer que este servicio destaque."`,
     rating: 5,
-    date: "August 17, 2023",
+    date: "17 de agosto, 2023",
   },
   {
     id: 5,
-    user: "Liam K.",
-    content: `"This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion."`,
+    user: "Lucas K.",
+    content: `"Este servicio es una fusión de eficiencia y creatividad. Los resultados son rápidos, y la estrategia detrás habla del conocimiento del equipo. Es como tener un equipo de marketing que refleja mi pasión por el crecimiento en redes sociales."`,
     rating: 5,
-    date: "August 18, 2023",
+    date: "18 de agosto, 2023",
   },
   {
     id: 6,
     user: "Samantha D.",
-    content: `"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt."`,
+    content: `"¡Me encanta este servicio! Los resultados son únicos y el soporte es muy atento. Como profesional de marketing, aprecio la atención al detalle. Se ha convertido en mi proveedor favorito para impulsar mis redes sociales."`,
     rating: 5,
-    date: "August 19, 2023",
+    date: "19 de agosto, 2023",
   },
-];
+]
 
 export default function Home() {
   return (
@@ -211,20 +211,12 @@ export default function Home() {
       <Header />
       <Brands />
       <main className="my-[50px] sm:my-[72px]">
-        <ProductListSec
-          title="NEW ARRIVALS"
-          data={newArrivalsData}
-          viewAllLink="/shop#new-arrivals"
-        />
+        <ProductListSec title="NOVEDADES" data={newArrivalsData} viewAllLink="/shop#novedades" />
         <div className="max-w-frame mx-auto px-4 xl:px-0">
           <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         </div>
         <div className="mb-[50px] sm:mb-20">
-          <ProductListSec
-            title="top selling"
-            data={topSellingData}
-            viewAllLink="/shop#top-selling"
-          />
+          <ProductListSec title="MÁS VENDIDOS" data={topSellingData} viewAllLink="/shop#mas-vendidos" />
         </div>
         <div className="mb-[50px] sm:mb-20">
           <DressStyle />
@@ -232,5 +224,6 @@ export default function Home() {
         <Reviews data={reviewsData} />
       </main>
     </>
-  );
+  )
 }
+
