@@ -7,6 +7,7 @@ import TopNavbar from "@/components/layout/Navbar/TopNavbar"
 import Footer from "@/components/layout/Footer"
 import HolyLoader from "holy-loader"
 import Providers from "./providers"
+import WhatsAppButton from "@/components/common/WhatsAppButton"
 
 export const metadata: Metadata = {
   title: "CERETTI MGTM - Impulsa Tu Presencia",
@@ -33,6 +34,7 @@ export default function RootLayout({
           {children}
         </Providers>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   )
