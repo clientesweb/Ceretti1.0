@@ -9,28 +9,28 @@ const trustFeaturesData = [
     title: "SERVICIOS 100% SEGUROS",
     description: "Sin baneos ni shadow-bans",
     iconUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frame-1654503804702_56x_4d1805a2-6a9e-431c-8284-73a7af4c0eb5-nFdJ8dQ0aBOJiEQOfiUa9auGCqvo8Q.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frame-1654503804702_56x_4d1805a2-6a9e-431c-8284-73a7af4c0eb5-mXqzAk3qqbdnpOADUrKiFnFJf3whNC.png",
   },
   {
     id: 2,
     title: "PAGO SEGURO",
     description: "Transacciones Encriptadas",
     iconUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frame-1-1654503768600_56x_aae6ae13-b8bb-4296-b132-260dee1b523e-3nvp8XCevxcQwBVEfB844P3TddJiHR.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frame-1-1654503768600_56x_aae6ae13-b8bb-4296-b132-260dee1b523e-2kLa1yzsLoNDuku7Vr1XVSla0dDs2m.png",
   },
   {
     id: 3,
     title: "GARANTÍA EXTENDIDA",
     description: "Servicios estables y garantizados",
     iconUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frame-2-1654503818128_56x_d3a54829-1282-4cbe-8477-a83367993ed5-I0SV0PtrIEnq9CqKySgBb1nvHtjsZ2.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frame-2-1654503818128_56x_d3a54829-1282-4cbe-8477-a83367993ed5-BkVgtui5XG2sVUJiEhlm3pYRMI1a8M.png",
   },
   {
     id: 4,
     title: "EFICACIA GARANTIZADA",
     description: "+23.000 Ordenes entregadas",
     iconUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frame-3-1654503832241_56x_94c0808e-8fb1-47bb-811b-09c6dd84a17b-ULwaxOd4RqEwFbABoTsAhyCoRqBVxk.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frame-3-1654503832241_56x_94c0808e-8fb1-47bb-811b-09c6dd84a17b-OUkYrvf3DqF9pGauHupzoNaOeUv4K2.png",
   },
 ]
 
