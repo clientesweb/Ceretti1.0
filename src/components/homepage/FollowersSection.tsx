@@ -3,26 +3,7 @@ import { cn } from "@/lib/utils"
 import { integralCF } from "@/styles/fonts"
 import FollowersProductCard from "../common/FollowersProductCard"
 import Link from "next/link"
-
-type FollowersOption = {
-  amount: number
-  price: number
-  bonuses?: string
-}
-
-type QualityOption = {
-  id: string
-  name: string
-  followers: FollowersOption[]
-}
-
-type FollowersProduct = {
-  id: number
-  title: string
-  srcUrl: string
-  rating: number
-  qualityOptions: QualityOption[]
-}
+import type { FollowersProduct } from "@/types/followers.types"
 
 type FollowersSectionProps = {
   title: string
