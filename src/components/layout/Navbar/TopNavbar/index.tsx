@@ -6,7 +6,6 @@ import type { NavMenu } from "../navbar.types"
 import { MenuList } from "./MenuList"
 import { NavigationMenu, NavigationMenuList } from "@/components/ui/navigation-menu"
 import { MenuItem } from "./MenuItem"
-import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 import ResTopNavbar from "./ResTopNavbar"
 import CartBtn from "./CartBtn"
@@ -94,7 +93,21 @@ const TopNavbar = () => {
         </NavigationMenu>
         <InputGroup className="hidden md:flex bg-[#F0F0F0] mr-3 lg:mr-10">
           <InputGroup.Text>
-            <Image priority src="/icons/search.svg" height={20} width={20} alt="buscar" className="min-w-5 min-h-5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="min-w-5 min-h-5"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
           </InputGroup.Text>
           <InputGroup.Input
             type="search"
@@ -105,25 +118,39 @@ const TopNavbar = () => {
         </InputGroup>
         <div className="flex items-center">
           <Link href="/search" className="block md:hidden mr-[14px] p-1">
-            <Image
-              priority
-              src="/icons/search-black.svg"
-              height={100}
-              width={100}
-              alt="buscar"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="max-w-[22px] max-h-[22px]"
-            />
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
           </Link>
           <CartBtn />
           <Link href="/#signin" className="p-1">
-            <Image
-              priority
-              src="/icons/user.svg"
-              height={100}
-              width={100}
-              alt="usuario"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="max-w-[22px] max-h-[22px]"
-            />
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
           </Link>
         </div>
       </div>
