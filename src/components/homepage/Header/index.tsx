@@ -8,7 +8,13 @@ import * as motion from "framer-motion/client"
 
 const Header = () => {
   return (
-    <header className="bg-[#F2F0F1] pt-10 md:pt-24 overflow-hidden">
+    <header className="bg-[#F2F0F1] pt-10 md:pt-24 overflow-hidden relative">
+      {/* Picas decorativas */}
+      <div className="absolute top-12 left-8 w-4 h-4 bg-ceretti-blue/20 rounded-full" />
+      <div className="absolute top-24 left-24 w-2 h-2 bg-ceretti-blue/20 rounded-full" />
+      <div className="absolute bottom-8 right-16 w-3 h-3 bg-ceretti-blue/20 rounded-full" />
+      <div className="absolute top-16 right-32 w-2 h-2 bg-ceretti-blue/20 rounded-full" />
+
       <div className="md:max-w-frame mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <section className="max-w-frame px-4">
           <motion.h2
@@ -81,12 +87,16 @@ const Header = () => {
         >
           <Image
             priority
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PNG%20-%20B.-ln0NQIk0uEBXmhED48y2zHi5Hmwcos.png"
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PNG_-_B.-removebg-preview-Ig1L1p2nAUwnRVk4Ya1B4KBCVyDzUa.png"
             height={400}
             width={400}
             alt="CERETTI MGTM Rocket"
-            className="max-w-[300px] md:max-w-[400px] animate-pulse"
+            className="max-w-[300px] md:max-w-[400px] animate-bounce"
           />
+          {/* Picas decorativas alrededor del cohete */}
+          <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-ceretti-blue/20 rounded-full" />
+          <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-ceretti-blue/20 rounded-full" />
+          <div className="absolute top-1/3 right-1/3 w-4 h-4 bg-ceretti-lightBlue/20 rounded-full" />
         </motion.section>
       </div>
     </header>
