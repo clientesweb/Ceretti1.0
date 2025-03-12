@@ -2,7 +2,6 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter"
 import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 import { integralCF } from "@/styles/fonts"
-import Image from "next/image"
 import Link from "next/link"
 import * as motion from "framer-motion/client"
 
@@ -85,11 +84,8 @@ const Header = () => {
           transition={{ delay: 2.3, duration: 0.8 }}
           className="relative md:px-4 min-h-[448px] md:min-h-[428px] flex items-center justify-center"
         >
-          <Image
-            priority
+          <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PNG_-_B.-removebg-preview-Ig1L1p2nAUwnRVk4Ya1B4KBCVyDzUa.png"
-            height={400}
-            width={400}
             alt="CERETTI MGTM Rocket"
             className="max-w-[300px] md:max-w-[400px] animate-bounce"
           />
