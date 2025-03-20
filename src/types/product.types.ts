@@ -13,5 +13,6 @@ export type Product = {
   discount: Discount
   rating: number
   platform?: string
+  category?: string
 }
 
