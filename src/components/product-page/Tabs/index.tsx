@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import React, { useState } from "react";
-import ProductDetailsContent from "./ProductDetailsContent";
-import ReviewsContent from "./ReviewsContent";
-import FaqContent from "./FaqContent";
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { useState } from "react"
+import ProductDetailsContent from "./ProductDetailsContent"
+import ReviewsContent from "./ReviewsContent"
+import FaqContent from "./FaqContent"
 
 type TabBtn = {
-  id: number;
-  label: string;
-};
+  id: number
+  label: string
+}
 
 const tabBtnData: TabBtn[] = [
   {
@@ -25,10 +25,10 @@ const tabBtnData: TabBtn[] = [
     id: 3,
     label: "FAQs",
   },
-];
+]
 
 const Tabs = () => {
-  const [active, setActive] = useState<number>(1);
+  const [active, setActive] = useState<number>(1)
 
   return (
     <div>
@@ -56,7 +56,8 @@ const Tabs = () => {
         {active === 3 && <FaqContent />}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default Tabs
+

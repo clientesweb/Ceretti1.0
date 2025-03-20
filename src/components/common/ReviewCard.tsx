@@ -1,26 +1,20 @@
-import React from "react";
-import Rating from "../ui/Rating";
-import { IoEllipsisHorizontal } from "react-icons/io5";
-import { Button } from "../ui/button";
-import { IoIosCheckmarkCircle } from "react-icons/io";
-import { Review } from "@/types/review.types";
-import { cn } from "@/lib/utils";
+import type React from "react"
+import Rating from "../ui/Rating"
+import { IoEllipsisHorizontal } from "react-icons/io5"
+import { Button } from "../ui/button"
+import { IoIosCheckmarkCircle } from "react-icons/io"
+import type { Review } from "@/types/review.types"
+import { cn } from "@/lib/utils"
 
 type ReviewCardProps = {
-  blurChild?: React.ReactNode;
-  isAction?: boolean;
-  isDate?: boolean;
-  data: Review;
-  className?: string;
-};
+  blurChild?: React.ReactNode
+  isAction?: boolean
+  isDate?: boolean
+  data: Review
+  className?: string
+}
 
-const ReviewCard = ({
-  blurChild,
-  isAction = false,
-  isDate = false,
-  data,
-  className,
-}: ReviewCardProps) => {
+const ReviewCard = ({ blurChild, isAction = false, isDate = false, data, className }: ReviewCardProps) => {
   return (
     <div
       className={cn([
@@ -30,13 +24,7 @@ const ReviewCard = ({
     >
       {blurChild && blurChild}
       <div className="w-full flex items-center justify-between mb-3 sm:mb-4">
-        <Rating
-          initialValue={data.rating}
-          allowFraction
-          SVGclassName="inline-block"
-          size={23}
-          readonly
-        />
+        <Rating initialValue={data.rating} allowFraction SVGclassName="inline-block" size={23} readonly />
         {isAction && (
           <Button variant="ghost" size="icon">
             <IoEllipsisHorizontal className="text-black/40 text-2xl" />
@@ -48,13 +36,10 @@ const ReviewCard = ({
         <IoIosCheckmarkCircle className="text-[#01AB31] text-xl sm:text-2xl" />
       </div>
       <p className="text-sm sm:text-base text-black/60">{data.content}</p>
-      {isDate && (
-        <p className="text-black/60 text-sm font-medium mt-4 sm:mt-6">
-          Posted on {data.date}
-        </p>
-      )}
+      {isDate && <p className="text-black/60 text-sm font-medium mt-4 sm:mt-6">Posted on {data.date}</p>}
     </div>
-  );
-};
+  )
+}
 
-export default ReviewCard;
+export default ReviewCard
+

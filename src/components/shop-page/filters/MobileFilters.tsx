@@ -1,26 +1,20 @@
-import React from "react";
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { FiSliders } from "react-icons/fi";
-import Filters from ".";
+} from "@/components/ui/drawer"
+import { FiSliders } from "react-icons/fi"
+import Filters from "."
 
 const MobileFilters = () => {
   return (
     <>
       <Drawer>
         <DrawerTrigger asChild>
-          <button
-            type="button"
-            className="h-8 w-8 rounded-full bg-[#F0F0F0] text-black p-1 md:hidden"
-          >
+          <button type="button" className="h-8 w-8 rounded-full bg-[#F0F0F0] text-black p-1 md:hidden">
             <FiSliders className="text-base mx-auto" />
           </button>
         </DrawerTrigger>
@@ -39,7 +33,8 @@ const MobileFilters = () => {
         </DrawerContent>
       </Drawer>
     </>
-  );
-};
+  )
+}
 
-export default MobileFilters;
+export default MobileFilters
+

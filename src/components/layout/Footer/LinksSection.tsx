@@ -1,123 +1,120 @@
-import React from "react";
-import { FooterLinks } from "./footer.types";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+import type { FooterLinks } from "./footer.types"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 const footerLinksData: FooterLinks[] = [
   {
     id: 1,
-    title: "company",
+    title: "empresa",
     children: [
       {
         id: 11,
-        label: "about",
+        label: "sobre nosotros",
         url: "#",
       },
       {
         id: 12,
-        label: "features",
+        label: "servicios",
         url: "#",
       },
       {
         id: 13,
-        label: "works",
+        label: "trabajos",
         url: "#",
       },
       {
         id: 14,
-        label: "career",
+        label: "carrera",
         url: "#",
       },
     ],
   },
   {
     id: 2,
-    title: "help",
+    title: "ayuda",
     children: [
       {
         id: 21,
-        label: "customer support",
+        label: "atención al cliente",
         url: "#",
       },
       {
         id: 22,
-        label: "delivery details",
+        label: "detalles de entrega",
         url: "#",
       },
       {
         id: 23,
-        label: "terms & conditions",
+        label: "términos y condiciones",
         url: "#",
       },
       {
         id: 24,
-        label: "privacy policy",
+        label: "política de privacidad",
         url: "#",
       },
     ],
   },
   {
     id: 3,
-    title: "faq",
+    title: "preguntas",
     children: [
       {
         id: 31,
-        label: "account",
+        label: "cuenta",
         url: "#",
       },
       {
         id: 32,
-        label: "manage deliveries",
+        label: "gestionar entregas",
         url: "#",
       },
       {
         id: 33,
-        label: "orders",
+        label: "pedidos",
         url: "#",
       },
       {
         id: 34,
-        label: "payments",
+        label: "pagos",
         url: "#",
       },
     ],
   },
   {
     id: 4,
-    title: "resources",
+    title: "recursos",
     children: [
       {
         id: 41,
-        label: "Free eBooks",
+        label: "Guías gratuitas",
         url: "#",
       },
       {
         id: 42,
-        label: "development tutorial",
+        label: "tutoriales",
         url: "#",
       },
       {
         id: 43,
-        label: "How to - Blog",
+        label: "Blog",
         url: "#",
       },
       {
         id: 44,
-        label: "youtube playlist",
+        label: "videos de YouTube",
         url: "#",
       },
     ],
   },
-];
+]
 
 const LinksSection = () => {
   return (
     <>
       {footerLinksData.map((item) => (
         <section className="flex flex-col mt-5" key={item.id}>
-          <h3 className="font-medium text-sm md:text-base uppercase tracking-widest mb-6">
-            {item.title}
-          </h3>
+          <h3 className="font-medium text-sm md:text-base uppercase tracking-widest mb-6">{item.title}</h3>
           {item.children.map((link) => (
             <Link
               href={link.url}
@@ -133,7 +130,8 @@ const LinksSection = () => {
         </section>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default LinksSection;
+export default LinksSection
+

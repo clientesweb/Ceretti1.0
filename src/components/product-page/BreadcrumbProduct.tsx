@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,8 +5,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import Link from "next/link";
+} from "@/components/ui/breadcrumb"
+import Link from "next/link"
 
 const BreadcrumbProduct = ({ title }: { title: string }) => {
   return (
@@ -30,7 +29,8 @@ const BreadcrumbProduct = ({ title }: { title: string }) => {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  );
-};
+  )
+}
 
-export default BreadcrumbProduct;
+export default BreadcrumbProduct
+

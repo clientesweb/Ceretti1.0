@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { Product } from "@/types/product.types";
-import Image from "next/image";
-import React, { useState } from "react";
+import type { Product } from "@/types/product.types"
+import Image from "next/image"
+import { useState } from "react"
 
 const PhotoSection = ({ data }: { data: Product }) => {
-  const [selected, setSelected] = useState<string>(data.srcUrl);
+  const [selected, setSelected] = useState<string>(data.srcUrl)
 
   return (
     <div className="flex flex-col-reverse lg:flex-row lg:space-x-3.5">
@@ -43,7 +43,8 @@ const PhotoSection = ({ data }: { data: Product }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PhotoSection;
+export default PhotoSection
+

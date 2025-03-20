@@ -1,12 +1,11 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import React from "react";
+import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 type DressStyleCardProps = {
-  title: string;
-  url: string;
-  className?: string;
-};
+  title: string
+  url: string
+  className?: string
+}
 
 const DressStyleCard = ({ title, url, className }: DressStyleCardProps) => {
   return (
@@ -19,7 +18,8 @@ const DressStyleCard = ({ title, url, className }: DressStyleCardProps) => {
     >
       {title}
     </Link>
-  );
-};
+  )
+}
 
-export default DressStyleCard;
+export default DressStyleCard
+

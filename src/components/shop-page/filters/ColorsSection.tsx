@@ -1,17 +1,12 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { IoMdCheckmark } from "react-icons/io";
-import { cn } from "@/lib/utils";
+import { useState } from "react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { IoMdCheckmark } from "react-icons/io"
+import { cn } from "@/lib/utils"
 
 const ColorsSection = () => {
-  const [selected, setSelected] = useState<string>("bg-green-600");
+  const [selected, setSelected] = useState<string>("bg-green-600")
 
   return (
     <Accordion type="single" collapsible defaultValue="filter-colors">
@@ -42,16 +37,15 @@ const ColorsSection = () => {
                 ])}
                 onClick={() => setSelected(color)}
               >
-                {selected === color && (
-                  <IoMdCheckmark className="text-base text-white" />
-                )}
+                {selected === color && <IoMdCheckmark className="text-base text-white" />}
               </button>
             ))}
           </div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-  );
-};
+  )
+}
 
-export default ColorsSection;
+export default ColorsSection
+

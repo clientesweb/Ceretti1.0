@@ -1,73 +1,69 @@
-import { cn } from "@/lib/utils";
-import { integralCF } from "@/styles/fonts";
-import Link from "next/link";
-import React from "react";
-import { NavMenu } from "../navbar.types";
-import { MenuList } from "./MenuList";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import { MenuItem } from "./MenuItem";
-import Image from "next/image";
-import InputGroup from "@/components/ui/input-group";
-import ResTopNavbar from "./ResTopNavbar";
-import CartBtn from "./CartBtn";
+import { cn } from "@/lib/utils"
+import { integralCF } from "@/styles/fonts"
+import Link from "next/link"
+import React from "react"
+import type { NavMenu } from "../navbar.types"
+import { MenuList } from "./MenuList"
+import { NavigationMenu, NavigationMenuList } from "@/components/ui/navigation-menu"
+import { MenuItem } from "./MenuItem"
+import InputGroup from "@/components/ui/input-group"
+import ResTopNavbar from "./ResTopNavbar"
+import CartBtn from "./CartBtn"
 
 const data: NavMenu = [
   {
     id: 1,
-    label: "Shop",
+    label: "Tienda",
     type: "MenuList",
     children: [
       {
         id: 11,
-        label: "Men's clothes",
-        url: "/shop#men-clothes",
-        description: "In attractive and spectacular colors and designs",
+        label: "Redes Sociales",
+        url: "/shop#redes-sociales",
+        description: "Servicios para Instagram, Facebook, Twitter y más",
       },
       {
         id: 12,
-        label: "Women's clothes",
-        url: "/shop#women-clothes",
-        description: "Ladies, your style and tastes are important to us",
+        label: "Paquetes",
+        url: "/shop#paquetes",
+        description: "Combos especiales para potenciar tu presencia digital",
       },
       {
         id: 13,
-        label: "Kids clothes",
-        url: "/shop#kids-clothes",
-        description: "For all ages, with happy and beautiful colors",
+        label: "Servicios Premium",
+        url: "/shop#premium",
+        description: "Soluciones personalizadas para influencers y marcas",
       },
       {
         id: 14,
-        label: "Bags and Shoes",
-        url: "/shop#bag-shoes",
-        description: "Suitable for men, women and all tastes and styles",
+        label: "Ofertas",
+        url: "/shop#ofertas",
+        description: "Promociones especiales por tiempo limitado",
       },
     ],
   },
   {
     id: 2,
     type: "MenuItem",
-    label: "On Sale",
-    url: "/shop#on-sale",
+    label: "Ofertas",
+    url: "/shop#ofertas",
     children: [],
   },
   {
     id: 3,
     type: "MenuItem",
-    label: "New Arrivals",
-    url: "/shop#new-arrivals",
+    label: "Novedades",
+    url: "/shop#novedades",
     children: [],
   },
   {
     id: 4,
     type: "MenuItem",
-    label: "Brands",
-    url: "/shop#brands",
+    label: "Servicios",
+    url: "/shop#servicios",
     children: [],
   },
-];
+]
 
 const TopNavbar = () => {
   return (
@@ -79,72 +75,88 @@ const TopNavbar = () => {
           </div>
           <Link
             href="/"
-            className={cn([
-              integralCF.className,
-              "text-2xl lg:text-[32px] mb-2 mr-3 lg:mr-10",
-            ])}
+            className={cn([integralCF.className, "text-2xl lg:text-[32px] mb-2 mr-3 lg:mr-10 flex items-center"])}
           >
-            SHOP.CO
+            <span className="mr-2">TT</span>
+            <span className="text-sm font-normal">CERETTI MGTM</span>
           </Link>
         </div>
         <NavigationMenu className="hidden md:flex mr-2 lg:mr-7">
           <NavigationMenuList>
             {data.map((item) => (
               <React.Fragment key={item.id}>
-                {item.type === "MenuItem" && (
-                  <MenuItem label={item.label} url={item.url} />
-                )}
-                {item.type === "MenuList" && (
-                  <MenuList data={item.children} label={item.label} />
-                )}
+                {item.type === "MenuItem" && <MenuItem label={item.label} url={item.url} />}
+                {item.type === "MenuList" && <MenuList data={item.children} label={item.label} />}
               </React.Fragment>
             ))}
           </NavigationMenuList>
         </NavigationMenu>
         <InputGroup className="hidden md:flex bg-[#F0F0F0] mr-3 lg:mr-10">
           <InputGroup.Text>
-            <Image
-              priority
-              src="/icons/search.svg"
-              height={20}
-              width={20}
-              alt="search"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="min-w-5 min-h-5"
-            />
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
           </InputGroup.Text>
           <InputGroup.Input
             type="search"
             name="search"
-            placeholder="Search for products..."
+            placeholder="Buscar servicios..."
             className="bg-transparent placeholder:text-black/40"
           />
         </InputGroup>
         <div className="flex items-center">
           <Link href="/search" className="block md:hidden mr-[14px] p-1">
-            <Image
-              priority
-              src="/icons/search-black.svg"
-              height={100}
-              width={100}
-              alt="search"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="max-w-[22px] max-h-[22px]"
-            />
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
           </Link>
           <CartBtn />
           <Link href="/#signin" className="p-1">
-            <Image
-              priority
-              src="/icons/user.svg"
-              height={100}
-              width={100}
-              alt="user"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="max-w-[22px] max-h-[22px]"
-            />
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
           </Link>
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default TopNavbar;
+export default TopNavbar
+
