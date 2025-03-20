@@ -77,6 +77,29 @@ export default function CheckoutForm() {
       return
     }
 
+    // Validar campos del formulario
+    if (!formData.nombre.trim() || !formData.email.trim() || !formData.telefono.trim()) {
+      toast({
+        title: "Error",
+        description: "Por favor completa todos los campos obligatorios",
+        variant: "destructive",
+      })
+      setLoading(false)
+      return
+    }
+
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Error",
+        description: "Por favor ingresa un email válido",
+        variant: "destructive",
+      })
+      setLoading(false)
+      return
+    }
+
     try {
       // Si el método de pago es WhatsApp, redirigir al usuario
       if (paymentMethod === "whatsapp") {
@@ -89,10 +112,13 @@ export default function CheckoutForm() {
         }\nNotas: ${formData.notas}`
 
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-        window.open(whatsappUrl, "_blank")
+
+        // Guardar estado de checkout completado
+        sessionStorage.setItem("checkoutCompleted", "true")
 
         // Limpiar carrito y redirigir a página de confirmación
         dispatch(clearCart())
+        window.open(whatsappUrl, "_blank")
         router.push("/checkout/success")
         return
       }
@@ -111,12 +137,25 @@ export default function CheckoutForm() {
           total_price: `$${Math.round(adjustedTotalPrice)} ARS`,
         }
 
-        // Enviar email
-        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+        try {
+          // Enviar email
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
 
-        // Limpiar carrito y redirigir a página de confirmación
-        dispatch(clearCart())
-        router.push("/checkout/success")
+          // Guardar estado de checkout completado
+          sessionStorage.setItem("checkoutCompleted", "true")
+
+          // Limpiar carrito y redirigir a página de confirmación
+          dispatch(clearCart())
+          router.push("/checkout/success")
+        } catch (error) {
+          console.error("Error al enviar el email:", error)
+          toast({
+            title: "Error",
+            description:
+              "Hubo un problema al enviar el email. Por favor, intenta nuevamente o elige otro método de pago.",
+            variant: "destructive",
+          })
+        }
       }
     } catch (error) {
       console.error("Error al procesar el pedido:", error)
