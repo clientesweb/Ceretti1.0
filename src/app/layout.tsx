@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer"
 import HolyLoader from "holy-loader"
 import Providers from "./providers"
 import WhatsAppButton from "@/components/common/WhatsAppButton"
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "CERETTI MGTM - Impulsa Tu Presencia",
@@ -35,6 +36,7 @@ export default function RootLayout({
         </Providers>
         <Footer />
         <WhatsAppButton />
+        <Toaster />
       </body>
     </html>
   )
