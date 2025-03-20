@@ -44,6 +44,7 @@ export default function GuardadosInstagramPage() {
     }
   }
 
+  // Update the handleAddToCart function to use the new image path
   const handleAddToCart = () => {
     if (!postLink) {
       alert("Por favor ingresa el link de la publicación de Instagram")
@@ -54,8 +55,7 @@ export default function GuardadosInstagramPage() {
       addToCart({
         id: 5,
         name: `Guardados Instagram - ${quantity}`,
-        srcUrl:
-          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
+        srcUrl: "/images/instagram-3d-logo.png",
         price: price,
         attributes: [quantity, postLink],
         discount: {
@@ -79,7 +79,7 @@ export default function GuardadosInstagramPage() {
           <div className="bg-[#F0EEED] rounded-[20px] overflow-hidden flex items-center justify-center p-8">
             <div className="relative">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg"
+                src="/images/instagram-3d-logo.png"
                 width={400}
                 height={400}
                 alt="Guardados Instagram"
