@@ -3,16 +3,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import MobileFilters from "@/components/shop-page/filters/MobileFilters"
 import Filters from "@/components/shop-page/filters"
 import { FiSliders } from "react-icons/fi"
-import { newArrivalsData, relatedProductData, topSellingData } from "../page"
+import { allProductsData } from "../page"
 import ProductCard from "@/components/common/ProductCard"
 import TrustFeatures from "@/components/homepage/TrustFeatures"
 import Faqs from "@/components/homepage/Faqs"
 import ShopHeader from "@/components/shop-page/ShopHeader"
 
 export default function ShopPage() {
-  // Combinar todos los productos para la página de shop
-  const allProducts = [...newArrivalsData, ...topSellingData, ...relatedProductData]
-
   return (
     <>
       <ShopHeader />
@@ -36,7 +33,7 @@ export default function ShopPage() {
                 </div>
                 <div className="flex flex-col sm:items-center sm:flex-row">
                   <span className="text-sm md:text-base text-black/60 mr-3">
-                    Mostrando todos los {allProducts.length} Servicios
+                    Mostrando todos los {allProductsData.length} Servicios
                   </span>
                   <div className="flex items-center">
                     Ordenar por:{" "}
@@ -54,7 +51,7 @@ export default function ShopPage() {
                 </div>
               </div>
               <div className="w-full grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-                {allProducts.map((product) => (
+                {allProductsData.map((product) => (
                   <ProductCard key={product.id} data={product} />
                 ))}
               </div>
