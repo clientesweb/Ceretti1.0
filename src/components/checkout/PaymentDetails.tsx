@@ -13,7 +13,7 @@ export default function PaymentDetails({ method }: PaymentDetailsProps) {
         <AlertDescription className="text-blue-800">
           <p className="font-medium mb-2">Datos bancarios:</p>
           <p>Banco: Banco Nación Argentina</p>
-          <p>Titular: Juan Pérez</p>
+          <p>Titular: CERETTI MGTM</p>
           <p>CBU: 0110000000000000000000</p>
           <p>Alias: CERETTI.MGTM</p>
           <p className="mt-2 text-sm">
@@ -30,7 +30,7 @@ export default function PaymentDetails({ method }: PaymentDetailsProps) {
         <FaBitcoin className="h-4 w-4 text-purple-600 mr-2" />
         <AlertDescription className="text-purple-800">
           <p className="font-medium mb-2">Datos para pago con criptomonedas:</p>
-          <p>Wallet Binance: 123456789</p>
+          <p>Wallet Binance: CERETTI_MGTM</p>
           <p>Aceptamos: USDT, BTC, ETH, BNB</p>
           <p className="mt-2 text-sm">
             Una vez realizado el pago, recibirás un email con los detalles de tu compra y los próximos pasos.
