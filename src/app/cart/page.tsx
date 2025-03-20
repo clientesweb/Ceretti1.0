@@ -85,12 +85,14 @@ export default function CartPage() {
                   </Button>
                 </div>
                 <div className="space-y-4">
-                  <Button
-                    type="button"
-                    className="text-sm md:text-base font-medium bg-black rounded-full w-full py-4 h-[54px] md:h-[60px] group"
-                  >
-                    Ir a Pagar <FaArrowRight className="text-xl ml-2 group-hover:translate-x-1 transition-all" />
-                  </Button>
+                  <Link href="/checkout" passHref>
+                    <Button
+                      type="button"
+                      className="text-sm md:text-base font-medium bg-black rounded-full w-full py-4 h-[54px] md:h-[60px] group"
+                    >
+                      Ir a Pagar <FaArrowRight className="text-xl ml-2 group-hover:translate-x-1 transition-all" />
+                    </Button>
+                  </Link>
 
                   <div className="pt-2">
                     <p className="text-sm text-black/60 mb-3 text-center">Métodos de pago aceptados:</p>
