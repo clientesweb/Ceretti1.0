@@ -14,6 +14,7 @@ export default function ProductPage() {
   const params = useParams()
   const router = useRouter()
   const [product, setProduct] = useState<Product | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const id = Number(params.id)
@@ -37,6 +38,21 @@ export default function ProductPage() {
     } else if (id === 6) {
       router.push("/shop/product/6/comentarios-instagram")
       return
+    } else if (id === 9) {
+      router.push("/shop/product/9/suscriptores-youtube")
+      return
+    } else if (id === 10) {
+      router.push("/shop/product/10/visitas-youtube")
+      return
+    } else if (id === 11) {
+      router.push("/shop/product/11/reproducciones-spotify")
+      return
+    } else if (id === 12) {
+      router.push("/shop/product/12/seguidores-spotify")
+      return
+    } else if (id === 13) {
+      router.push("/shop/product/13/oyentes-mensuales-spotify")
+      return
     }
 
     // Para otros productos, mostrar la página genérica
@@ -46,10 +62,31 @@ export default function ProductPage() {
     if (foundProduct) {
       setProduct(foundProduct)
     }
+
+    setLoading(false)
   }, [params.id, router])
 
+  if (loading) {
+    return (
+      <div className="max-w-frame mx-auto px-4 xl:px-0 py-20 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-ceretti-blue"></div>
+      </div>
+    )
+  }
+
   if (!product) {
-    return <div className="max-w-frame mx-auto px-4 xl:px-0 py-20">Cargando producto...</div>
+    return (
+      <div className="max-w-frame mx-auto px-4 xl:px-0 py-20 text-center">
+        <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
+        <p className="mb-6">Lo sentimos, el producto que estás buscando no existe o ha sido eliminado.</p>
+        <a
+          href="/shop"
+          className="bg-ceretti-blue text-white px-6 py-3 rounded-full hover:bg-ceretti-blue/80 transition-all"
+        >
+          Volver a la tienda
+        </a>
+      </div>
+    )
   }
 
   return (
