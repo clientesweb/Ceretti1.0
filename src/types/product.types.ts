@@ -15,3 +15,12 @@ export type Product = {
   platform?: string
 }
 
+export type QuantityOption = {
+  value: string
+  label: string
+  price: number
+  bonus: string
+}
+
+export type GeoType = "calidad" | "mundial"
+
