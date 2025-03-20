@@ -79,11 +79,11 @@ const ProductCard = ({ data }: ProductCardProps) => {
               <>
                 <span className="font-bold text-xl text-black line-through text-black/40">${data.price} ARS</span>
                 <span className="font-bold text-xl text-black">
-                  A partir de ${Math.round(data.price - (data.price * data.discount.percentage) / 100)} ARS
+                  Desde ${Math.round(data.price - (data.price * data.discount.percentage) / 100)} ARS
                 </span>
               </>
             ) : (
-              <span className="font-bold text-xl text-black">A partir de ${data.price} ARS</span>
+              <span className="font-bold text-xl text-black">Desde ${data.price} ARS</span>
             )}
           </div>
           {data.discount.percentage > 0 && <span className="text-sm text-red-600 font-medium">Precio de oferta</span>}
