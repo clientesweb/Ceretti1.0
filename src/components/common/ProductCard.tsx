@@ -45,6 +45,12 @@ const ProductCard = ({ data }: ProductCardProps) => {
         return `/shop/product/19/likes-facebook`
       case 20:
         return `/shop/product/20/promo-tiktok`
+      case 21:
+        return `/shop/product/21/likes-youtube-premium`
+      case 22:
+        return `/shop/product/22/comentarios-youtube-random`
+      case 23:
+        return `/shop/product/23/comentarios-youtube-personalizados`
       default:
         return `/shop/product/${data.id}/${data.title.split(" ").join("-").toLowerCase()}`
     }
