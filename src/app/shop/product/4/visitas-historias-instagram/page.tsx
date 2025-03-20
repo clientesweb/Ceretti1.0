@@ -55,8 +55,7 @@ export default function VisitasHistoriasInstagramPage() {
       addToCart({
         id: 4,
         name: `Visitas Historias Instagram - ${quantity}`,
-        srcUrl:
-          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
+        srcUrl: "/images/instagram-3d-logo.png",
         price: price,
         attributes: [quantity, username || storyLink],
         discount: {
@@ -70,6 +69,7 @@ export default function VisitasHistoriasInstagramPage() {
     alert("¡Producto agregado al carrito!")
   }
 
+  // Update the image source to use the new Instagram logo
   return (
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
@@ -80,7 +80,7 @@ export default function VisitasHistoriasInstagramPage() {
           <div className="bg-[#F0EEED] rounded-[20px] overflow-hidden flex items-center justify-center p-8">
             <div className="relative">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg"
+                src="/images/instagram-3d-logo.png"
                 width={400}
                 height={400}
                 alt="Visitas para Historias Instagram"
