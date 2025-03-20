@@ -6,7 +6,7 @@ const platformsData = [
   {
     id: 1,
     title: "Instagram",
-    url: "/shop#instagram",
+    url: "/shop?platform=instagram",
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-4Af8AiOp6ugrokyImESdpfoNsRJ1UW.jpeg",
     description: "Impulsa tu presencia en Instagram",
@@ -14,7 +14,7 @@ const platformsData = [
   {
     id: 2,
     title: "Facebook",
-    url: "/shop#facebook",
+    url: "/shop?platform=facebook",
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-fePHK9IZItSvCkUW1Gm6uf8R0nUCiL.jpeg",
     description: "Destaca en Facebook",
@@ -22,7 +22,7 @@ const platformsData = [
   {
     id: 3,
     title: "TikTok",
-    url: "/shop#tiktok",
+    url: "/shop?platform=tiktok",
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-JGNGrEBEfo0cdBP1gAHkOBk9c1uwAL.jpeg",
     description: "Viralízate en TikTok",
@@ -30,10 +30,17 @@ const platformsData = [
   {
     id: 4,
     title: "YouTube",
-    url: "/shop#youtube",
+    url: "/shop?platform=youtube",
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-XWNWNh4DxwyZRIqrY7RyPHExLZ5L5s.jpeg",
     description: "Crece en YouTube",
+  },
+  {
+    id: 5,
+    title: "Spotify",
+    url: "/shop?platform=spotify",
+    image: "/images/spotify-3d-logo.png",
+    description: "Potencia tu música",
   },
 ]
 
@@ -50,7 +57,7 @@ const DressStyle = () => {
         >
           EXPLORA POR PLATAFORMA
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {platformsData.map((platform, index) => (
             <motion.div
               key={platform.id}
