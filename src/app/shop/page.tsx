@@ -5,15 +5,6 @@ import Filters from "@/components/shop-page/filters"
 import { FiSliders } from "react-icons/fi"
 import { newArrivalsData, relatedProductData, topSellingData } from "../page"
 import ProductCard from "@/components/common/ProductCard"
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
 import TrustFeatures from "@/components/homepage/TrustFeatures"
 import Faqs from "@/components/homepage/Faqs"
 import ShopHeader from "@/components/shop-page/ShopHeader"
@@ -45,7 +36,7 @@ export default function ShopPage() {
                 </div>
                 <div className="flex flex-col sm:items-center sm:flex-row">
                   <span className="text-sm md:text-base text-black/60 mr-3">
-                    Mostrando 1-12 de {allProducts.length} Servicios
+                    Mostrando todos los {allProducts.length} Servicios
                   </span>
                   <div className="flex items-center">
                     Ordenar por:{" "}
@@ -63,51 +54,11 @@ export default function ShopPage() {
                 </div>
               </div>
               <div className="w-full grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-                {allProducts.slice(0, 12).map((product) => (
+                {allProducts.map((product) => (
                   <ProductCard key={product.id} data={product} />
                 ))}
               </div>
-              <hr className="border-t-black/10" />
-              <Pagination className="justify-between">
-                <PaginationPrevious href="#" className="border border-black/10" />
-                <PaginationContent>
-                  <PaginationItem>
-                    <PaginationLink href="#" className="text-black/50 font-medium text-sm" isActive>
-                      1
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#" className="text-black/50 font-medium text-sm">
-                      2
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem className="hidden lg:block">
-                    <PaginationLink href="#" className="text-black/50 font-medium text-sm">
-                      3
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationEllipsis className="text-black/50 font-medium text-sm" />
-                  </PaginationItem>
-                  <PaginationItem className="hidden lg:block">
-                    <PaginationLink href="#" className="text-black/50 font-medium text-sm">
-                      8
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem className="hidden sm:block">
-                    <PaginationLink href="#" className="text-black/50 font-medium text-sm">
-                      9
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#" className="text-black/50 font-medium text-sm">
-                      10
-                    </PaginationLink>
-                  </PaginationItem>
-                </PaginationContent>
-
-                <PaginationNext href="#" className="border border-black/10" />
-              </Pagination>
+              <hr className="border-t-black/10 mt-8" />
             </div>
           </div>
         </div>
