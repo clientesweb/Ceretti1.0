@@ -100,6 +100,17 @@ const Footer = () => {
             <p className="text-sm text-center sm:text-left text-black/60 mb-4 sm:mb-0 sm:mr-1">
               CERETTI MGTM © 2023 - Todos los derechos reservados
             </p>
+            <p className="text-sm text-center sm:text-left text-black/60 mb-4 sm:mb-0">
+              Desarrollado por{" "}
+              <a
+                href="https://dualitydomain.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ceretti-blue hover:underline"
+              >
+                Duality Domain
+              </a>
+            </p>
             <div className="flex items-center">
               {paymentBadgesData.map((badge, _, arr) => (
                 <span
