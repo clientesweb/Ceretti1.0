@@ -3,7 +3,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import MobileFilters from "@/components/shop-page/filters/MobileFilters"
 import Filters from "@/components/shop-page/filters"
 import { FiSliders } from "react-icons/fi"
-import { newArrivalsData, relatedProductData, topSellingData } from "../page"
+import { instagramServicesData } from "../instagram-services"
 import ProductCard from "@/components/common/ProductCard"
 import {
   Pagination,
@@ -19,8 +19,8 @@ import Faqs from "@/components/homepage/Faqs"
 import ShopHeader from "@/components/shop-page/ShopHeader"
 
 export default function ShopPage() {
-  // Combinar todos los productos para la página de shop
-  const allProducts = [...newArrivalsData, ...topSellingData, ...relatedProductData]
+  // Mostrar todos los productos de Instagram
+  const allProducts = instagramServicesData
 
   return (
     <>
