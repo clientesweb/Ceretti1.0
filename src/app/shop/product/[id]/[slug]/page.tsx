@@ -4,11 +4,10 @@ import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct"
 import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import ProductListSec from "@/components/common/ProductListSec"
-import { relatedProductData } from "@/app/page"
+import { relatedProductData, allProductsData } from "@/app/page"
 import { useParams, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import type { Product } from "@/types/product.types"
-import { newArrivalsData, topSellingData } from "@/app/page"
 
 export default function ProductPage() {
   const params = useParams()
@@ -53,11 +52,28 @@ export default function ProductPage() {
     } else if (id === 13) {
       router.push("/shop/product/13/oyentes-mensuales-spotify")
       return
+    } else if (id === 15) {
+      router.push("/shop/product/15/visitas-tiktok")
+      return
+    } else if (id === 16) {
+      router.push("/shop/product/16/seguidores-tiktok")
+      return
+    } else if (id === 17) {
+      router.push("/shop/product/17/likes-tiktok")
+      return
+    } else if (id === 18) {
+      router.push("/shop/product/18/seguidores-facebook")
+      return
+    } else if (id === 19) {
+      router.push("/shop/product/19/likes-facebook")
+      return
+    } else if (id === 20) {
+      router.push("/shop/product/20/promo-tiktok")
+      return
     }
 
     // Para otros productos, mostrar la página genérica
-    const allProducts = [...newArrivalsData, ...topSellingData, ...relatedProductData]
-    const foundProduct = allProducts.find((p) => p.id === id)
+    const foundProduct = allProductsData.find((p) => p.id === id)
 
     if (foundProduct) {
       setProduct(foundProduct)
