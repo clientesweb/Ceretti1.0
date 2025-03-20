@@ -7,6 +7,7 @@ export type Product = {
   id: number
   title: string
   description?: string
+  longDescription?: string
   srcUrl: string
   gallery?: string[]
   price: number
@@ -14,5 +15,6 @@ export type Product = {
   rating: number
   platform?: string
   category?: string
+  features?: string[]
 }
 
