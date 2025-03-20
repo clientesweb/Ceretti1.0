@@ -277,6 +277,52 @@ export const facebookProductsData: Product[] = [
   },
 ]
 
+// Nuevos productos YouTube
+export const youtubeProductsData: Product[] = [
+  {
+    id: 21,
+    title: "Likes YouTube",
+    description: "Aumenta los likes de tus videos en YouTube y mejora tu engagement.",
+    srcUrl: "/images/youtube-3d-logo.png",
+    gallery: ["/images/youtube-3d-logo.png"],
+    price: 500,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "youtube",
+  },
+  {
+    id: 22,
+    title: "Comentarios Random YouTube",
+    description: "Aumenta el engagement con comentarios aleatorios en inglés o español para tus videos.",
+    srcUrl: "/images/youtube-3d-logo.png",
+    gallery: ["/images/youtube-3d-logo.png"],
+    price: 1000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "youtube",
+  },
+  {
+    id: 23,
+    title: "Comentarios Personalizados YouTube",
+    description: "Aumenta el engagement con comentarios personalizados para tus videos.",
+    srcUrl: "/images/youtube-3d-logo.png",
+    gallery: ["/images/youtube-3d-logo.png"],
+    price: 2000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "youtube",
+  },
+]
+
 // Combinamos todos los productos para exportarlos juntos
 export const allProductsData: Product[] = [
   ...newArrivalsData,
@@ -284,6 +330,7 @@ export const allProductsData: Product[] = [
   ...relatedProductData,
   ...tiktokProductsData,
   ...facebookProductsData,
+  ...youtubeProductsData,
 ]
 
 export const reviewsData: Review[] = [
