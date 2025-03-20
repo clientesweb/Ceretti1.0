@@ -97,43 +97,6 @@ export const topSellingData: Product[] = [
     platform: "instagram",
   },
   {
-    id: 7,
-    title: "Seguidores Spotify",
-    description: "Aumenta tus seguidores y reproducciones en Spotify.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.57.22-Asquareaspectratioimagefeaturinga3DSpotifylogoinspiredbytheprovidedreference.Thelogoisgreenwithblacksoundwaves.Thebackgroundi-g0fuePytiZoF9vwnglG7pJNRkktUvk.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.57.22-Asquareaspectratioimagefeaturinga3DSpotifylogoinspiredbytheprovidedreference.Thelogoisgreenwithblacksoundwaves.Thebackgroundi-g0fuePytiZoF9vwnglG7pJNRkktUvk.jpeg",
-    ],
-    price: 145,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.5,
-    platform: "spotify",
-  },
-  {
-    id: 8,
-    title: "Pack Viral TikTok",
-    description: "Impulsa tus videos con likes, comentarios y shares.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    ],
-    price: 250,
-    discount: {
-      amount: 0,
-      percentage: 20,
-    },
-    rating: 4.8,
-    platform: "tiktok",
-  },
-]
-
-export const relatedProductData: Product[] = [
-  {
     id: 9,
     title: "Suscriptores YouTube",
     description: "Aumenta tus suscriptores y haz crecer tu canal de forma orgánica.",
@@ -148,7 +111,66 @@ export const relatedProductData: Product[] = [
     platform: "youtube",
   },
   {
+    id: 10,
+    title: "Visitas YouTube",
+    description: "Aumenta las visualizaciones de tus videos con retención de calidad.",
+    srcUrl: "/images/youtube-3d-logo.png",
+    gallery: ["/images/youtube-3d-logo.png"],
+    price: 600,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "youtube",
+  },
+]
+
+export const relatedProductData: Product[] = [
+  {
+    id: 11,
+    title: "Reproducciones Spotify",
+    description: "Aumenta las reproducciones de tus canciones y mejora tu visibilidad.",
+    srcUrl: "/images/spotify-3d-logo.png",
+    gallery: ["/images/spotify-3d-logo.png"],
+    price: 1500,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "spotify",
+  },
+  {
     id: 12,
+    title: "Seguidores Spotify",
+    description: "Incrementa tus seguidores y mejora tu credibilidad como artista.",
+    srcUrl: "/images/spotify-3d-logo.png",
+    gallery: ["/images/spotify-3d-logo.png"],
+    price: 1500,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "spotify",
+  },
+  {
+    id: 13,
+    title: "Oyentes Mensuales Spotify",
+    description: "Aumenta tus oyentes mensuales y mejora tu posicionamiento.",
+    srcUrl: "/images/spotify-3d-logo.png",
+    gallery: ["/images/spotify-3d-logo.png"],
+    price: 5000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "spotify",
+  },
+  {
+    id: 14,
     title: "Combo Redes Sociales",
     description: "Paquete completo para todas tus plataformas sociales.",
     srcUrl: "/images/instagram-3d-logo.png",
@@ -160,54 +182,6 @@ export const relatedProductData: Product[] = [
     },
     rating: 4.9,
     platform: "instagram",
-  },
-  {
-    id: 13,
-    title: "Paquete Influencer",
-    description: "Todo lo que necesitas para convertirte en influencer.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    ],
-    price: 499,
-    discount: {
-      amount: 0,
-      percentage: 10,
-    },
-    rating: 4.8,
-    platform: "tiktok",
-  },
-  {
-    id: 14,
-    title: "Servicio de Comentarios",
-    description: "Comentarios personalizados para aumentar tu engagement.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
-    ],
-    price: 180,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.5,
-    platform: "facebook",
-  },
-  {
-    id: 15,
-    title: "Paquete Empresarial",
-    description: "Soluciones completas para empresas y marcas.",
-    srcUrl: "/images/youtube-3d-logo.png",
-    gallery: ["/images/youtube-3d-logo.png"],
-    price: 599,
-    discount: {
-      amount: 0,
-      percentage: 15,
-    },
-    rating: 5.0,
-    platform: "youtube",
   },
 ]
 
