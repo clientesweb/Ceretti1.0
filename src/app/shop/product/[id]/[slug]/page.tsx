@@ -70,6 +70,15 @@ export default function ProductPage() {
     } else if (id === 20) {
       router.push("/shop/product/20/promo-tiktok")
       return
+    } else if (id === 21) {
+      router.push("/shop/product/21/likes-youtube-premium")
+      return
+    } else if (id === 22) {
+      router.push("/shop/product/22/comentarios-youtube-random")
+      return
+    } else if (id === 23) {
+      router.push("/shop/product/23/comentarios-youtube-personalizados")
+      return
     }
 
     // Para otros productos, mostrar la página genérica
