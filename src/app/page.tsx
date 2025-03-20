@@ -13,12 +13,9 @@ export const newArrivalsData: Product[] = [
     id: 1,
     title: "Seguidores Instagram",
     description: "Impulsa tu cuenta con seguidores reales y activos. Entrega gradual y natural.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 455,
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 1800,
     discount: {
       amount: 0,
       percentage: 0,
@@ -30,15 +27,12 @@ export const newArrivalsData: Product[] = [
     id: 2,
     title: "Likes Instagram",
     description: "Aumenta el engagement de tus publicaciones con likes de calidad.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 1500,
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 800,
     discount: {
       amount: 0,
-      percentage: 90,
+      percentage: 40,
     },
     rating: 4.7,
     platform: "instagram",
@@ -47,15 +41,12 @@ export const newArrivalsData: Product[] = [
     id: 3,
     title: "Visitas Instagram",
     description: "Mejora la visibilidad de tus publicaciones y alcanza más usuarios.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 2500,
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 500,
     discount: {
       amount: 0,
-      percentage: 90,
+      percentage: 50,
     },
     rating: 4.9,
     platform: "instagram",
@@ -64,15 +55,12 @@ export const newArrivalsData: Product[] = [
     id: 4,
     title: "Visitas para Historias Instagram",
     description: "Aumenta las visualizaciones de tus historias de forma orgánica.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 9000,
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 400,
     discount: {
       amount: 0,
-      percentage: 98,
+      percentage: 62.5,
     },
     rating: 4.6,
     platform: "instagram",
@@ -84,15 +72,12 @@ export const topSellingData: Product[] = [
     id: 5,
     title: "Guardados Instagram",
     description: "Aumenta los guardados de tus publicaciones para mejorar el alcance.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 4000,
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 800,
     discount: {
       amount: 0,
-      percentage: 90,
+      percentage: 50,
     },
     rating: 5.0,
     platform: "instagram",
@@ -101,11 +86,8 @@ export const topSellingData: Product[] = [
     id: 6,
     title: "Comentarios Instagram",
     description: "Aumenta el engagement con comentarios positivos en tus publicaciones.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
     price: 2000,
     discount: {
       amount: 0,
@@ -155,12 +137,9 @@ export const relatedProductData: Product[] = [
     id: 12,
     title: "Combo Redes Sociales",
     description: "Paquete completo para todas tus plataformas sociales.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 399,
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 3999,
     discount: {
       amount: 0,
       percentage: 20,
