@@ -5,9 +5,6 @@ import Faqs from "@/components/homepage/Faqs"
 import Header from "@/components/homepage/Header"
 import Reviews from "@/components/homepage/Reviews"
 import TrustFeatures from "@/components/homepage/TrustFeatures"
-import BlogPreview from "@/components/homepage/BlogPreview"
-import PortfolioPreview from "@/components/homepage/PortfolioPreview"
-import PaquetesPreview from "@/components/homepage/PaquetesPreview"
 import type { Product } from "@/types/product.types"
 import type { Review } from "@/types/review.types"
 
@@ -399,16 +396,9 @@ export default function Home() {
         <div className="mb-[50px] sm:mb-20">
           <DressStyle />
         </div>
-        <div className="mb-[50px] sm:mb-20">
-          <DressStyle />
-        </div>
         <Faqs />
         <Reviews data={reviewsData} />
-        <BlogPreview />
-        <PortfolioPreview />
-        <PaquetesPreview />
       </main>
     </>
   )
 }
-
