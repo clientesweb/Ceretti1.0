@@ -52,17 +52,21 @@ const ProductCard = ({ data }: ProductCardProps) => {
             <span className="text-black/60">/5</span>
           </span>
         </div>
-        <div className="flex items-center space-x-2">
-          {data.discount.percentage > 0 ? (
-            <>
-              <span className="font-bold text-xl text-black">
-                ${Math.round(data.price - (data.price * data.discount.percentage) / 100)}
-              </span>
-              <span className="font-bold text-black/40 line-through text-lg">${data.price}</span>
-            </>
-          ) : (
-            <span className="font-bold text-xl text-black">${data.price}</span>
-          )}
+        <div className="flex flex-col space-y-1">
+          <span className="text-sm text-black/60">Precio habitual</span>
+          <div className="flex items-center space-x-2">
+            {data.discount.percentage > 0 ? (
+              <>
+                <span className="font-bold text-xl text-black line-through text-black/40">${data.price} ARS</span>
+                <span className="font-bold text-xl text-black">
+                  A partir de ${Math.round(data.price - (data.price * data.discount.percentage) / 100)} ARS
+                </span>
+              </>
+            ) : (
+              <span className="font-bold text-xl text-black">A partir de ${data.price} ARS</span>
+            )}
+          </div>
+          {data.discount.percentage > 0 && <span className="text-sm text-red-600 font-medium">Precio de oferta</span>}
         </div>
       </div>
     </Link>
