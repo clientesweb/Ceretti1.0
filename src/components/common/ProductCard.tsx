@@ -33,6 +33,18 @@ const ProductCard = ({ data }: ProductCardProps) => {
         return `/shop/product/12/seguidores-spotify`
       case 13:
         return `/shop/product/13/oyentes-mensuales-spotify`
+      case 15:
+        return `/shop/product/15/visitas-tiktok`
+      case 16:
+        return `/shop/product/16/seguidores-tiktok`
+      case 17:
+        return `/shop/product/17/likes-tiktok`
+      case 18:
+        return `/shop/product/18/seguidores-facebook`
+      case 19:
+        return `/shop/product/19/likes-facebook`
+      case 20:
+        return `/shop/product/20/promo-tiktok`
       default:
         return `/shop/product/${data.id}/${data.title.split(" ").join("-").toLowerCase()}`
     }
