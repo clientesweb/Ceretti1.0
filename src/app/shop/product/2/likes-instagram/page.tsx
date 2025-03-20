@@ -204,12 +204,48 @@ export default function LikesInstagramPage() {
             <div className="mt-6">
               <p className="text-sm text-black/60 mb-3">Métodos de pago aceptados:</p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <img src="/icons/mercadopago.svg" alt="MercadoPago" className="h-8" />
-                <img src="/icons/mastercard.svg" alt="Mastercard" className="h-8" />
-                <img src="/icons/visa.svg" alt="Visa" className="h-8" />
-                <img src="/icons/maestro.svg" alt="Maestro" className="h-8" />
-                <img src="/icons/itau.svg" alt="Itaú" className="h-8" />
-                <img src="/icons/pagofacil.svg" alt="PagoFácil" className="h-8" />
+                <Image
+                  src="/images/payment/mercadopago_1_color.svg"
+                  alt="MercadoPago"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <Image
+                  src="/images/payment/mastercard_color.svg"
+                  alt="Mastercard"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <Image
+                  src="/images/payment/visa_1_color.svg"
+                  alt="Visa"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <Image
+                  src="/images/payment/maestro_color.svg"
+                  alt="Maestro"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <Image
+                  src="/images/payment/itauunibanco_color.svg"
+                  alt="Itaú"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <Image
+                  src="/images/payment/pagofacil_color.svg"
+                  alt="PagoFácil"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
               </div>
             </div>
           </div>
