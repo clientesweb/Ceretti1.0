@@ -185,6 +185,107 @@ export const relatedProductData: Product[] = [
   },
 ]
 
+// Nuevos productos TikTok
+export const tiktokProductsData: Product[] = [
+  {
+    id: 15,
+    title: "Visitas TikTok",
+    description: "Aumenta las visualizaciones de tus videos en TikTok y mejora tu alcance.",
+    srcUrl: "/images/tiktok-3d-logo.png",
+    gallery: ["/images/tiktok-3d-logo.png"],
+    price: 500,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "tiktok",
+  },
+  {
+    id: 16,
+    title: "Seguidores TikTok",
+    description: "Incrementa tus seguidores en TikTok y mejora tu credibilidad.",
+    srcUrl: "/images/tiktok-3d-logo.png",
+    gallery: ["/images/tiktok-3d-logo.png"],
+    price: 850,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "tiktok",
+  },
+  {
+    id: 17,
+    title: "Likes TikTok",
+    description: "Aumenta los likes de tus videos en TikTok y mejora tu engagement.",
+    srcUrl: "/images/tiktok-3d-logo.png",
+    gallery: ["/images/tiktok-3d-logo.png"],
+    price: 600,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "tiktok",
+  },
+]
+
+// Nuevos productos Facebook
+export const facebookProductsData: Product[] = [
+  {
+    id: 18,
+    title: "Seguidores Facebook",
+    description: "Incrementa tus seguidores en Facebook y mejora tu presencia social.",
+    srcUrl: "/images/facebook-3d-logo.png",
+    gallery: ["/images/facebook-3d-logo.png"],
+    price: 5000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "facebook",
+  },
+  {
+    id: 19,
+    title: "Likes Facebook",
+    description: "Aumenta los likes de tus publicaciones en Facebook y mejora tu engagement.",
+    srcUrl: "/images/facebook-3d-logo.png",
+    gallery: ["/images/facebook-3d-logo.png"],
+    price: 900,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "facebook",
+  },
+  {
+    id: 20,
+    title: "Promo TikTok",
+    description: "2.500 visitas + 1.000 likes a un precio especial.",
+    srcUrl: "/images/tiktok-3d-logo.png",
+    gallery: ["/images/tiktok-3d-logo.png"],
+    price: 3500,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 5.0,
+    platform: "tiktok",
+  },
+]
+
+// Combinamos todos los productos para exportarlos juntos
+export const allProductsData: Product[] = [
+  ...newArrivalsData,
+  ...topSellingData,
+  ...relatedProductData,
+  ...tiktokProductsData,
+  ...facebookProductsData,
+]
+
 export const reviewsData: Review[] = [
   {
     id: 1,
