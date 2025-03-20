@@ -40,20 +40,20 @@ const Header = ({ data }: { data: Product }) => {
           <div className="flex items-center space-x-2.5 sm:space-x-3 mb-5">
             {data.discount.percentage > 0 ? (
               <span className="font-bold text-black text-2xl sm:text-[32px]">
-                {`$${Math.round(data.price - (data.price * data.discount.percentage) / 100)}`}
+                {`$${Math.round(data.price - (data.price * data.discount.percentage) / 100)} ARS`}
               </span>
             ) : data.discount.amount > 0 ? (
               <span className="font-bold text-black text-2xl sm:text-[32px]">
-                {`$${data.price - data.discount.amount}`}
+                {`$${data.price - data.discount.amount} ARS`}
               </span>
             ) : (
-              <span className="font-bold text-black text-2xl sm:text-[32px]">${data.price}</span>
+              <span className="font-bold text-black text-2xl sm:text-[32px]">A partir de ${data.price} ARS</span>
             )}
             {data.discount.percentage > 0 && (
-              <span className="font-bold text-black/40 line-through text-2xl sm:text-[32px]">${data.price}</span>
+              <span className="font-bold text-black/40 line-through text-2xl sm:text-[32px]">${data.price} ARS</span>
             )}
             {data.discount.amount > 0 && (
-              <span className="font-bold text-black/40 line-through text-2xl sm:text-[32px]">${data.price}</span>
+              <span className="font-bold text-black/40 line-through text-2xl sm:text-[32px]">${data.price} ARS</span>
             )}
             {data.discount.percentage > 0 ? (
               <span className="font-medium text-[10px] sm:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
@@ -62,7 +62,7 @@ const Header = ({ data }: { data: Product }) => {
             ) : (
               data.discount.amount > 0 && (
                 <span className="font-medium text-[10px] sm:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
-                  {`-$${data.discount.amount}`}
+                  {`-$${data.discount.amount} ARS`}
                 </span>
               )
             )}
