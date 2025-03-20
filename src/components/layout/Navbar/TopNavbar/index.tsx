@@ -25,8 +25,8 @@ const data: NavMenu = [
       {
         id: 12,
         label: "Paquetes",
-        url: "/shop#paquetes",
-        description: "Combos especiales para potenciar tu presencia digital",
+        url: "/paquetes",
+        description: "Planes de gestión de redes sociales",
       },
       {
         id: 13,
@@ -59,8 +59,8 @@ const data: NavMenu = [
   {
     id: 4,
     type: "MenuItem",
-    label: "Servicios",
-    url: "/shop#servicios",
+    label: "Paquetes",
+    url: "/paquetes",
     children: [],
   },
 ]
