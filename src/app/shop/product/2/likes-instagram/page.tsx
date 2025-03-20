@@ -70,8 +70,7 @@ export default function LikesInstagramPage() {
       addToCart({
         id: 2,
         name: `Likes Instagram ${geoType === "calidad" ? "Calidad" : "Mundial"} - ${quantity}`,
-        srcUrl:
-          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
+        srcUrl: "/images/instagram-3d-logo.png",
         price: price,
         attributes: [geoType, quantity, postLink],
         discount: {
@@ -95,7 +94,7 @@ export default function LikesInstagramPage() {
           <div className="bg-[#F0EEED] rounded-[20px] overflow-hidden flex items-center justify-center p-8">
             <div className="relative">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg"
+                src="/images/instagram-3d-logo.png"
                 width={400}
                 height={400}
                 alt="Likes Instagram"
