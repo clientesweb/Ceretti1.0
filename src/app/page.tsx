@@ -1,3 +1,5 @@
+"use client"
+
 import ProductListSec from "@/components/common/ProductListSec"
 import Brands from "@/components/homepage/Brands"
 import DressStyle from "@/components/homepage/DressStyle"
