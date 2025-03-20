@@ -24,7 +24,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
       case 6:
         return `/shop/product/6/comentarios-instagram`
       default:
-        return `/shop/product/${data.id}/${data.title.split(" ").join("-")}`
+        return `/shop/product/${data.id}/${data.title.split(" ").join("-").toLowerCase()}`
     }
   }
 
