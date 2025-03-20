@@ -5,7 +5,6 @@ import { satoshi } from "@/styles/fonts"
 import TopBanner from "@/components/layout/Banner/TopBanner"
 import TopNavbar from "@/components/layout/Navbar/TopNavbar"
 import Footer from "@/components/layout/Footer"
-import HolyLoader from "holy-loader"
 import Providers from "./providers"
 import WhatsAppButton from "@/components/common/WhatsAppButton"
 import { Toaster } from "@/components/ui/toaster"
@@ -28,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={satoshi.className}>
-        <HolyLoader color="#00C2FF" />
         <TopBanner />
         <Providers>
           <TopNavbar />
