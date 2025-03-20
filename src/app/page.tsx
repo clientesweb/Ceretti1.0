@@ -11,88 +11,88 @@ import type { Review } from "@/types/review.types"
 export const newArrivalsData: Product[] = [
   {
     id: 1,
-    title: "Seguidores Instagram Premium",
+    title: "Seguidores Instagram",
     description: "Impulsa tu cuenta con seguidores reales y activos. Entrega gradual y natural.",
     srcUrl:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     gallery: [
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     ],
-    price: 120,
+    price: 455,
     discount: {
       amount: 0,
-      percentage: 20,
+      percentage: 0,
     },
     rating: 4.8,
     platform: "instagram",
   },
   {
     id: 2,
-    title: "Likes Facebook Garantizados",
+    title: "Likes Instagram",
     description: "Aumenta el engagement de tus publicaciones con likes de calidad.",
     srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     ],
-    price: 99,
+    price: 1500,
     discount: {
       amount: 0,
-      percentage: 15,
+      percentage: 90,
     },
     rating: 4.7,
-    platform: "facebook",
+    platform: "instagram",
   },
   {
     id: 3,
-    title: "Visualizaciones TikTok",
-    description: "Mejora la visibilidad de tus videos y alcanza más usuarios.",
+    title: "Visitas Instagram",
+    description: "Mejora la visibilidad de tus publicaciones y alcanza más usuarios.",
     srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     ],
-    price: 150,
+    price: 2500,
     discount: {
       amount: 0,
-      percentage: 0,
+      percentage: 90,
     },
     rating: 4.9,
-    platform: "tiktok",
+    platform: "instagram",
   },
   {
     id: 4,
-    title: "Reproducciones YouTube",
-    description: "Aumenta las visualizaciones de tus videos de forma orgánica.",
+    title: "Visitas para Historias Instagram",
+    description: "Aumenta las visualizaciones de tus historias de forma orgánica.",
     srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     ],
-    price: 180,
+    price: 9000,
     discount: {
       amount: 0,
-      percentage: 10,
+      percentage: 98,
     },
     rating: 4.6,
-    platform: "youtube",
+    platform: "instagram",
   },
 ]
 
 export const topSellingData: Product[] = [
   {
     id: 5,
-    title: "Pack Engagement Instagram",
-    description: "Combinación perfecta de likes, comentarios y guardados.",
+    title: "Guardados Instagram",
+    description: "Aumenta los guardados de tus publicaciones para mejorar el alcance.",
     srcUrl:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     gallery: [
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
     ],
-    price: 199,
+    price: 4000,
     discount: {
       amount: 0,
-      percentage: 25,
+      percentage: 90,
     },
     rating: 5.0,
     platform: "instagram",
@@ -290,3 +290,4 @@ export default function Home() {
     </>
   )
 }
+
