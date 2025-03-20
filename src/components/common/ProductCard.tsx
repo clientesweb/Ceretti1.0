@@ -23,6 +23,16 @@ const ProductCard = ({ data }: ProductCardProps) => {
         return `/shop/product/5/guardados-instagram`
       case 6:
         return `/shop/product/6/comentarios-instagram`
+      case 9:
+        return `/shop/product/9/suscriptores-youtube`
+      case 10:
+        return `/shop/product/10/visitas-youtube`
+      case 11:
+        return `/shop/product/11/reproducciones-spotify`
+      case 12:
+        return `/shop/product/12/seguidores-spotify`
+      case 13:
+        return `/shop/product/13/oyentes-mensuales-spotify`
       default:
         return `/shop/product/${data.id}/${data.title.split(" ").join("-").toLowerCase()}`
     }
