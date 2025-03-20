@@ -30,7 +30,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
       case 6:
         return `/shop/product/6/comentarios-instagram`
       default:
-        return `/shop/product/${data.id}/${data.name.split(" ").join("-")}`
+        return `/shop/product/${data.id}/${data.name.split(" ").join("-").toLowerCase()}`
     }
   }
 
