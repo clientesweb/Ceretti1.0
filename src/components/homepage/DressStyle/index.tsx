@@ -15,16 +15,14 @@ const platformsData = [
     id: 2,
     title: "Facebook",
     url: "/shop?platform=facebook",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-fePHK9IZItSvCkUW1Gm6uf8R0nUCiL.jpeg",
+    image: "/images/facebook-3d-logo.png",
     description: "Destaca en Facebook",
   },
   {
     id: 3,
     title: "TikTok",
     url: "/shop?platform=tiktok",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-JGNGrEBEfo0cdBP1gAHkOBk9c1uwAL.jpeg",
+    image: "/images/tiktok-3d-logo.png",
     description: "Viralízate en TikTok",
   },
   {
