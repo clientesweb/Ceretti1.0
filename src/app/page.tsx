@@ -5,221 +5,26 @@ import Faqs from "@/components/homepage/Faqs"
 import Header from "@/components/homepage/Header"
 import Reviews from "@/components/homepage/Reviews"
 import TrustFeatures from "@/components/homepage/TrustFeatures"
-import type { Product } from "@/types/product.types"
+import { instagramServicesData } from "@/app/instagram-services"
 import type { Review } from "@/types/review.types"
 
-export const newArrivalsData: Product[] = [
-  {
-    id: 1,
-    title: "Seguidores Instagram Premium",
-    description: "Impulsa tu cuenta con seguidores reales y activos. Entrega gradual y natural.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 120,
-    discount: {
-      amount: 0,
-      percentage: 20,
-    },
-    rating: 4.8,
-    platform: "instagram",
-  },
-  {
-    id: 2,
-    title: "Likes Facebook Garantizados",
-    description: "Aumenta el engagement de tus publicaciones con likes de calidad.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
-    ],
-    price: 99,
-    discount: {
-      amount: 0,
-      percentage: 15,
-    },
-    rating: 4.7,
-    platform: "facebook",
-  },
-  {
-    id: 3,
-    title: "Visualizaciones TikTok",
-    description: "Mejora la visibilidad de tus videos y alcanza más usuarios.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    ],
-    price: 150,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.9,
-    platform: "tiktok",
-  },
-  {
-    id: 4,
-    title: "Reproducciones YouTube",
-    description: "Aumenta las visualizaciones de tus videos de forma orgánica.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    ],
-    price: 180,
-    discount: {
-      amount: 0,
-      percentage: 10,
-    },
-    rating: 4.6,
-    platform: "youtube",
-  },
-]
+// Seleccionar algunos productos destacados para la página de inicio
+export const newArrivalsData = instagramServicesData
+  .filter((product) => product.category === "seguidores-mundiales" || product.category === "likes-mundiales")
+  .slice(0, 4)
 
-export const topSellingData: Product[] = [
-  {
-    id: 5,
-    title: "Pack Engagement Instagram",
-    description: "Combinación perfecta de likes, comentarios y guardados.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 199,
-    discount: {
-      amount: 0,
-      percentage: 25,
-    },
-    rating: 5.0,
-    platform: "instagram",
-  },
-  {
-    id: 6,
-    title: "Seguidores Spotify",
-    description: "Aumenta tus seguidores y reproducciones en Spotify.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.57.22-Asquareaspectratioimagefeaturinga3DSpotifylogoinspiredbytheprovidedreference.Thelogoisgreenwithblacksoundwaves.Thebackgroundi-g0fuePytiZoF9vwnglG7pJNRkktUvk.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.57.22-Asquareaspectratioimagefeaturinga3DSpotifylogoinspiredbytheprovidedreference.Thelogoisgreenwithblacksoundwaves.Thebackgroundi-g0fuePytiZoF9vwnglG7pJNRkktUvk.jpeg",
-    ],
-    price: 145,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.5,
-    platform: "spotify",
-  },
-  {
-    id: 7,
-    title: "Pack Viral TikTok",
-    description: "Impulsa tus videos con likes, comentarios y shares.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    ],
-    price: 250,
-    discount: {
-      amount: 0,
-      percentage: 20,
-    },
-    rating: 4.8,
-    platform: "tiktok",
-  },
-  {
-    id: 8,
-    title: "Suscriptores YouTube",
-    description: "Incrementa tu comunidad con suscriptores reales.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    ],
-    price: 299,
-    discount: {
-      amount: 0,
-      percentage: 15,
-    },
-    rating: 4.7,
-    platform: "youtube",
-  },
-]
+export const topSellingData = instagramServicesData
+  .filter((product) => product.category === "seguidores-calidad" || product.category === "comentarios")
+  .slice(0, 4)
 
-export const relatedProductData: Product[] = [
-  {
-    id: 12,
-    title: "Combo Redes Sociales",
-    description: "Paquete completo para todas tus plataformas sociales.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
-    ],
-    price: 399,
-    discount: {
-      amount: 0,
-      percentage: 20,
-    },
-    rating: 4.9,
-    platform: "instagram",
-  },
-  {
-    id: 13,
-    title: "Paquete Influencer",
-    description: "Todo lo que necesitas para convertirte en influencer.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2406.23.54-Asquareaspectratioimagefeaturinga3DTikToklogoinspiredbytheprovidedreference.ThelogohastheclassicTikTokcolorswiththeblack_red-lVbG3FnkduI1QeOB9ycTx1EfWyyDDI.jpeg",
-    ],
-    price: 499,
-    discount: {
-      amount: 0,
-      percentage: 10,
-    },
-    rating: 4.8,
-    platform: "tiktok",
-  },
-  {
-    id: 14,
-    title: "Servicio de Comentarios",
-    description: "Comentarios personalizados para aumentar tu engagement.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E_2024-05-24_06.38.59_-_A_square_aspect_ratio_image_featuring_a_3D_Facebook_logo_inspired_by_the_provided_reference._The_logo_has_the_classic_blue_circle_with_a_white_f_ico-drLETDolr8fsOLQdc5WELqRLFe0vM5.jpeg",
-    ],
-    price: 180,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.5,
-    platform: "facebook",
-  },
-  {
-    id: 15,
-    title: "Paquete Empresarial",
-    description: "Soluciones completas para empresas y marcas.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    ],
-    price: 599,
-    discount: {
-      amount: 0,
-      percentage: 15,
-    },
-    rating: 5.0,
-    platform: "youtube",
-  },
-]
+export const relatedProductData = instagramServicesData
+  .filter(
+    (product) =>
+      product.category === "visitas-mundiales" ||
+      product.category === "visitas-historias" ||
+      product.category === "guardados",
+  )
+  .slice(0, 4)
 
 export const reviewsData: Review[] = [
   {
@@ -274,12 +79,12 @@ export default function Home() {
       <Brands />
       <TrustFeatures />
       <main className="my-[50px] sm:my-[72px]">
-        <ProductListSec title="NOVEDADES" data={newArrivalsData} viewAllLink="/shop#novedades" />
+        <ProductListSec title="NOVEDADES" data={newArrivalsData} viewAllLink="/instagram" />
         <div className="max-w-frame mx-auto px-4 xl:px-0">
           <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         </div>
         <div className="mb-[50px] sm:mb-20">
-          <ProductListSec title="MÁS VENDIDOS" data={topSellingData} viewAllLink="/shop#mas-vendidos" />
+          <ProductListSec title="MÁS VENDIDOS" data={topSellingData} viewAllLink="/instagram" />
         </div>
         <div className="mb-[50px] sm:mb-20">
           <DressStyle />
