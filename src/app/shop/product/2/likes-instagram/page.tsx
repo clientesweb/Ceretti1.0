@@ -2,7 +2,7 @@
 
 import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct"
 import ProductListSec from "@/components/common/ProductListSec"
-import { relatedProductData } from "@/app/page"
+import { relatedProductData, reviewsData } from "@/app/page"
 import { useState, useEffect } from "react"
 import { integralCF } from "@/styles/fonts"
 import { cn } from "@/lib/utils"
@@ -127,7 +127,7 @@ export default function LikesInstagramPage() {
             </div>
 
             <div className="mb-6">
-              <div className="text-3xl md:text-4xl font-bold mb-2">${price} ARS</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">Desde ${price} ARS</div>
               <div className="flex items-center text-green-500 font-medium">
                 <FaCheck className="mr-2" /> Servicio funcionando.
               </div>
@@ -276,6 +276,26 @@ export default function LikesInstagramPage() {
 
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
 
+        {/* Testimonios */}
+        <div className="mb-16">
+          <h2 className={cn([integralCF.className, "text-2xl mb-6"])}>TESTIMONIOS DE CLIENTES</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {reviewsData.slice(0, 4).map((review) => (
+              <div key={review.id} className="bg-white border border-black/10 rounded-xl p-5">
+                <div className="flex items-center mb-3">
+                  <Rating initialValue={review.rating} SVGclassName="inline-block" size={16} readonly />
+                  <span className="ml-2 text-sm font-medium">{review.date}</span>
+                </div>
+                <p className="text-black/70 mb-3">{review.content}</p>
+                <div className="font-bold">{review.user}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
+
         {/* Productos relacionados */}
         <ProductListSec title="SERVICIOS RELACIONADOS" data={relatedProductData.slice(0, 4)} viewAllLink="/shop" />
       </div>
@@ -283,4 +303,3 @@ export default function LikesInstagramPage() {
   )
 }
 
-      
