@@ -14,14 +14,22 @@ type ProductCardProps = {
 const ProductCard = ({ data }: ProductCardProps) => {
   const dispatch = useAppDispatch()
 
+  // Función para determinar la URL correcta según el ID del producto
+  const getProductUrl = () => {
+    switch (data.id) {
+      case 1:
+        return `/shop/product/1/seguidores-instagram-premium`
+      case 2:
+        return `/shop/product/2/likes-instagram`
+      default:
+        return `/shop/product/${data.id}/${data.name.split(" ").join("-")}`
+    }
+  }
+
   return (
     <div className="flex items-start space-x-4">
       <Link
-        href={
-          data.id === 1
-            ? `/shop/product/1/seguidores-instagram-premium`
-            : `/shop/product/${data.id}/${data.name.split(" ").join("-")}`
-        }
+        href={getProductUrl()}
         className="bg-[#F0EEED] rounded-lg w-full min-w-[100px] max-w-[100px] sm:max-w-[124px] aspect-square overflow-hidden"
       >
         <Image
@@ -35,14 +43,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
       </Link>
       <div className="flex w-full self-stretch flex-col">
         <div className="flex items-center justify-between">
-          <Link
-            href={
-              data.id === 1
-                ? `/shop/product/1/seguidores-instagram-premium`
-                : `/shop/product/${data.id}/${data.name.split(" ").join("-")}`
-            }
-            className="text-black font-bold text-base xl:text-xl"
-          >
+          <Link href={getProductUrl()} className="text-black font-bold text-base xl:text-xl">
             {data.name}
           </Link>
           <Button
