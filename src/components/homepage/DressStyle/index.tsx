@@ -1,12 +1,13 @@
 import { cn } from "@/lib/utils"
 import { integralCF } from "@/styles/fonts"
 import * as motion from "framer-motion/client"
+import Link from "next/link"
 
 const platformsData = [
   {
     id: 1,
     title: "Instagram",
-    url: "/shop#instagram",
+    url: "/instagram",
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-4Af8AiOp6ugrokyImESdpfoNsRJ1UW.jpeg",
     description: "Impulsa tu presencia en Instagram",
@@ -60,18 +61,20 @@ const DressStyle = () => {
               transition={{ delay: index * 0.2, duration: 0.6 }}
               className="relative group cursor-pointer overflow-hidden rounded-2xl"
             >
-              <div className="relative aspect-square overflow-hidden bg-black rounded-2xl">
-                <img
-                  src={platform.image || "/placeholder.svg"}
-                  alt={platform.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">{platform.title}</h3>
-                  <p className="text-sm opacity-90">{platform.description}</p>
+              <Link href={platform.url} className="block">
+                <div className="relative aspect-square overflow-hidden bg-black rounded-2xl">
+                  <img
+                    src={platform.image || "/placeholder.svg"}
+                    alt={platform.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-xl font-bold mb-2">{platform.title}</h3>
+                    <p className="text-sm opacity-90">{platform.description}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
