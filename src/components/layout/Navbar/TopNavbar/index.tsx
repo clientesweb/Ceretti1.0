@@ -45,22 +45,15 @@ const data: NavMenu = [
   {
     id: 2,
     type: "MenuItem",
-    label: "Ofertas",
-    url: "/shop#ofertas",
+    label: "Portfolio",
+    url: "/portfolio",
     children: [],
   },
   {
     id: 3,
     type: "MenuItem",
-    label: "Novedades",
-    url: "/shop#novedades",
-    children: [],
-  },
-  {
-    id: 4,
-    type: "MenuItem",
-    label: "Paquetes",
-    url: "/paquetes",
+    label: "Blog",
+    url: "/blog",
     children: [],
   },
 ]
