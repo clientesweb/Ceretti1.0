@@ -1,71 +1,121 @@
-import Rating from "../ui/Rating"
+"use client"
+import { PiTrashFill } from "react-icons/pi"
 import Image from "next/image"
 import Link from "next/link"
-import type { Product } from "@/types/product.types"
+import CartCounter from "@/components/ui/CartCounter"
+import { Button } from "../ui/button"
+import { addToCart, type CartItem, remove, removeCartItem } from "@/lib/features/carts/cartsSlice"
+import { useAppDispatch } from "@/lib/hooks/redux"
 
-interface ProductCardProps {
-  data: Product
+type ProductCardProps = {
+  data: CartItem
 }
 
 const ProductCard = ({ data }: ProductCardProps) => {
+  const dispatch = useAppDispatch()
+
+  // Determinar la URL correcta basada en los atributos
+  const productUrl =
+    data.attributes[0].includes("instagram") || data.attributes[1].includes("instagram")
+      ? `/instagram/product/${data.id}`
+      : `/shop/product/${data.id}`
+
   return (
-    <Link
-      href={`/shop/product/${data.id}`}
-      className="group flex flex-col items-start bg-white rounded-2xl p-4 border border-black/5 hover:border-ceretti-blue/20 transition-all duration-300 h-full"
-    >
-      <div className="bg-[#F8F9FB] rounded-xl w-full aspect-square mb-4 overflow-hidden relative">
+    <div className="flex items-start space-x-4">
+      <Link
+        href={productUrl}
+        className="bg-[#F0EEED] rounded-lg w-full min-w-[100px] max-w-[100px] sm:max-w-[124px] aspect-square overflow-hidden"
+      >
         <Image
           src={data.srcUrl || "/placeholder.svg"}
-          width={295}
-          height={295}
-          className="w-full h-full object-contain p-6 group-hover:scale-110 transition-all duration-500"
-          alt={data.title}
+          width={124}
+          height={124}
+          className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-500"
+          alt={data.name}
           priority
         />
-        {data.discount.percentage > 0 && (
-          <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-medium px-2 py-1 rounded-full">
-            -{data.discount.percentage}%
-          </span>
-        )}
-      </div>
-      <div className="flex flex-col flex-grow w-full">
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="font-bold text-lg leading-tight">{data.title}</h3>
-          {data.platform && (
-            <span className="shrink-0 text-xs font-medium px-2 py-1 rounded-full bg-ceretti-blue/10 text-ceretti-blue">
-              {data.platform}
-            </span>
-          )}
+      </Link>
+      <div className="flex w-full self-stretch flex-col">
+        <div className="flex items-center justify-between">
+          <Link href={productUrl} className="text-black font-bold text-base xl:text-xl">
+            {data.name}
+          </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-5 w-5 md:h-9 md:w-9"
+            onClick={() =>
+              dispatch(
+                remove({
+                  id: data.id,
+                  attributes: data.attributes,
+                  quantity: data.quantity,
+                }),
+              )
+            }
+          >
+            <PiTrashFill className="text-xl md:text-2xl text-red-600" />
+          </Button>
         </div>
-        {data.description && <p className="text-sm text-black/60 mb-3 line-clamp-2">{data.description}</p>}
-        <div className="flex items-center mb-3 mt-auto">
-          <Rating
-            initialValue={data.rating}
-            allowFraction
-            SVGclassName="inline-block"
-            emptyClassName="fill-gray-50"
-            size={16}
-            readonly
-          />
-          <span className="text-black text-xs ml-2">
-            {data.rating.toFixed(1)}
-            <span className="text-black/60">/5</span>
-          </span>
+        <div className="-mt-1">
+          <span className="text-black text-xs md:text-sm mr-1">Tipo:</span>
+          <span className="text-black/60 text-xs md:text-sm">{data.attributes[0]}</span>
         </div>
-        <div className="flex items-center space-x-2">
-          {data.discount.percentage > 0 ? (
-            <>
-              <span className="font-bold text-xl text-black">
-                ${Math.round(data.price - (data.price * data.discount.percentage) / 100)}
+        <div className="mb-auto -mt-1.5">
+          <span className="text-black text-xs md:text-sm mr-1">Plataforma:</span>
+          <span className="text-black/60 text-xs md:text-sm">{data.attributes[1]}</span>
+        </div>
+        <div className="flex items-center flex-wrap justify-between">
+          <div className="flex items-center space-x-[5px] xl:space-x-2.5">
+            {data.discount.percentage > 0 ? (
+              <span className="font-bold text-black text-xl xl:text-2xl">
+                {`$${Math.round(data.price - (data.price * data.discount.percentage) / 100)}`}
               </span>
-              <span className="font-bold text-black/40 line-through text-lg">${data.price}</span>
-            </>
-          ) : (
-            <span className="font-bold text-xl text-black">${data.price}</span>
-          )}
+            ) : data.discount.amount > 0 ? (
+              <span className="font-bold text-black text-xl xl:text-2xl">
+                {`$${data.price - data.discount.amount}`}
+              </span>
+            ) : (
+              <span className="font-bold text-black text-xl xl:text-2xl">${data.price}</span>
+            )}
+            {data.discount.percentage > 0 && (
+              <span className="font-bold text-black/40 line-through text-xl xl:text-2xl">${data.price}</span>
+            )}
+            {data.discount.amount > 0 && (
+              <span className="font-bold text-black/40 line-through text-xl xl:text-2xl">${data.price}</span>
+            )}
+            {data.discount.percentage > 0 ? (
+              <span className="font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
+                {`-${data.discount.percentage}%`}
+              </span>
+            ) : (
+              data.discount.amount > 0 && (
+                <span className="font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
+                  {`-$${data.discount.amount}`}
+                </span>
+              )
+            )}
+          </div>
+          <CartCounter
+            initialValue={data.quantity}
+            onAdd={() => dispatch(addToCart({ ...data, quantity: 1 }))}
+            onRemove={() =>
+              data.quantity === 1
+                ? dispatch(
+                    remove({
+                      id: data.id,
+                      attributes: data.attributes,
+                      quantity: data.quantity,
+                    }),
+                  )
+                : dispatch(removeCartItem({ id: data.id, attributes: data.attributes }))
+            }
+            isZeroDelete
+            className="px-5 py-3 max-h-8 md:max-h-10 min-w-[105px] max-w-[105px] sm:max-w-32"
+          />
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
 
