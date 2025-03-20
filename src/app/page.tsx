@@ -134,6 +134,20 @@ export const topSellingData: Product[] = [
 
 export const relatedProductData: Product[] = [
   {
+    id: 9,
+    title: "Suscriptores YouTube",
+    description: "Aumenta tus suscriptores y haz crecer tu canal de forma orgánica.",
+    srcUrl: "/images/youtube-3d-logo.png",
+    gallery: ["/images/youtube-3d-logo.png"],
+    price: 1000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "youtube",
+  },
+  {
     id: 12,
     title: "Combo Redes Sociales",
     description: "Paquete completo para todas tus plataformas sociales.",
@@ -185,11 +199,8 @@ export const relatedProductData: Product[] = [
     id: 15,
     title: "Paquete Empresarial",
     description: "Soluciones completas para empresas y marcas.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    ],
+    srcUrl: "/images/youtube-3d-logo.png",
+    gallery: ["/images/youtube-3d-logo.png"],
     price: 599,
     discount: {
       amount: 0,
