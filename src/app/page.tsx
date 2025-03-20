@@ -99,6 +99,23 @@ export const topSellingData: Product[] = [
   },
   {
     id: 6,
+    title: "Comentarios Instagram",
+    description: "Aumenta el engagement con comentarios positivos en tus publicaciones.",
+    srcUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
+    gallery: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-GGFMEpsfFM6U4tiP1Bge0shInCOSgy.jpeg",
+    ],
+    price: 2000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "instagram",
+  },
+  {
+    id: 7,
     title: "Seguidores Spotify",
     description: "Aumenta tus seguidores y reproducciones en Spotify.",
     srcUrl:
@@ -115,7 +132,7 @@ export const topSellingData: Product[] = [
     platform: "spotify",
   },
   {
-    id: 7,
+    id: 8,
     title: "Pack Viral TikTok",
     description: "Impulsa tus videos con likes, comentarios y shares.",
     srcUrl:
@@ -130,23 +147,6 @@ export const topSellingData: Product[] = [
     },
     rating: 4.8,
     platform: "tiktok",
-  },
-  {
-    id: 8,
-    title: "Suscriptores YouTube",
-    description: "Incrementa tu comunidad con suscriptores reales.",
-    srcUrl:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    gallery: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-IiIWl3fNupocEDlOutgzWnWwSsfFj4.jpeg",
-    ],
-    price: 299,
-    discount: {
-      amount: 0,
-      percentage: 15,
-    },
-    rating: 4.7,
-    platform: "youtube",
   },
 ]
 
