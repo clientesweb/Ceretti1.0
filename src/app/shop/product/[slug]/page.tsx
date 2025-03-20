@@ -1,12 +1,10 @@
 import { instagramServicesData } from "@/app/instagram-services"
+import { relatedProductData } from "@/lib/data/homepage-data"
 import ProductListSec from "@/components/common/ProductListSec"
 import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct"
 import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import { notFound } from "next/navigation"
-
-// Seleccionar algunos productos relacionados para mostrar
-const relatedProductData = instagramServicesData.slice(0, 4)
 
 export default function ProductPage({
   params,
