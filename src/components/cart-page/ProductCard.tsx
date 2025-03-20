@@ -21,6 +21,14 @@ const ProductCard = ({ data }: ProductCardProps) => {
         return `/shop/product/1/seguidores-instagram-premium`
       case 2:
         return `/shop/product/2/likes-instagram`
+      case 3:
+        return `/shop/product/3/visitas-instagram`
+      case 4:
+        return `/shop/product/4/visitas-historias-instagram`
+      case 5:
+        return `/shop/product/5/guardados-instagram`
+      case 6:
+        return `/shop/product/6/comentarios-instagram`
       default:
         return `/shop/product/${data.id}/${data.name.split(" ").join("-")}`
     }
