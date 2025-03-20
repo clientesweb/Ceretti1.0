@@ -10,7 +10,11 @@ interface ProductCardProps {
 const ProductCard = ({ data }: ProductCardProps) => {
   return (
     <Link
-      href={`/shop/product/${data.id}/${data.title.split(" ").join("-")}`}
+      href={
+        data.id === 1
+          ? `/shop/product/1/seguidores-instagram-premium`
+          : `/shop/product/${data.id}/${data.title.split(" ").join("-")}`
+      }
       className="group flex flex-col items-start bg-white rounded-2xl p-4 border border-black/5 hover:border-ceretti-blue/20 transition-all duration-300 h-full"
     >
       <div className="bg-[#F8F9FB] rounded-xl w-full aspect-square mb-4 overflow-hidden relative">
