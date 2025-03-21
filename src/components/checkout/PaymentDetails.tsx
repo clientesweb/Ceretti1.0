@@ -1,5 +1,6 @@
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { FaInfoCircle, FaWhatsapp, FaBitcoin, FaUniversity } from "react-icons/fa"
+import Image from "next/image"
 
 interface PaymentDetailsProps {
   method: string
@@ -12,10 +13,11 @@ export default function PaymentDetails({ method }: PaymentDetailsProps) {
         <FaUniversity className="h-4 w-4 text-blue-600 mr-2" />
         <AlertDescription className="text-blue-800">
           <p className="font-medium mb-2">Datos bancarios:</p>
-          <p>Banco: Banco Nación Argentina</p>
-          <p>Titular: CERETTI MGTM</p>
-          <p>CBU: 0110000000000000000000</p>
-          <p>Alias: CERETTI.MGTM</p>
+          <p>Titular: Oscar Agustin Cordero</p>
+          <p>CVU: 0000003100099339817715</p>
+          <p>Alias: cerettimgmt</p>
+          <p>CUIT/CUIL: 20434359598</p>
+          <p>Entidad: Mercado Pago</p>
           <p className="mt-2 text-sm">
             Una vez realizada la transferencia, recibirás un email con los detalles de tu compra y los próximos pasos.
           </p>
@@ -30,9 +32,23 @@ export default function PaymentDetails({ method }: PaymentDetailsProps) {
         <FaBitcoin className="h-4 w-4 text-purple-600 mr-2" />
         <AlertDescription className="text-purple-800">
           <p className="font-medium mb-2">Datos para pago con criptomonedas:</p>
-          <p>Wallet Binance: CERETTI_MGTM</p>
+          <p>ID Binance: 162929823</p>
+          <p>Usuario: Cerettimgmt</p>
           <p>Aceptamos: USDT, BTC, ETH, BNB</p>
-          <p className="mt-2 text-sm">
+          <div className="mt-4 flex justify-center">
+            <div className="bg-gray-900 p-4 rounded-xl max-w-xs">
+              <p className="text-white text-center mb-4">Escanea con la app de Binance para pagar</p>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_20250321-160344-i4pD25kFmya34ovcuFhFO7vBruSROP.png"
+                alt="Código QR de Binance"
+                width={250}
+                height={250}
+                className="mx-auto"
+              />
+              <p className="text-white text-center mt-4">Cerettimgmt</p>
+            </div>
+          </div>
+          <p className="mt-4 text-sm">
             Una vez realizado el pago, recibirás un email con los detalles de tu compra y los próximos pasos.
           </p>
         </AlertDescription>
