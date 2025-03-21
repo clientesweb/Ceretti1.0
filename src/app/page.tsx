@@ -338,14 +338,14 @@ export const reviewsData: Review[] = [
     id: 1,
     user: "Alejandro K.",
     content:
-      '"Encontrar servicios que realmente funcionen para mis redes sociales era un desafío hasta que descubrí CERETTI MGTM. La variedad de opciones que ofrecen es realmente notable, adaptándose a diferentes necesidades y plataformas."',
+      '"Encontrar servicios que realmente funcionen para mis redes sociales era un desafío hasta que descubrí CERETTI MGMT. La variedad de opciones que ofrecen es realmente notable, adaptándose a diferentes necesidades y plataformas."',
     rating: 5,
     date: "14 de agosto, 2023",
   },
   {
     id: 2,
     user: "Sara M.",
-    content: `"Estoy impresionada con la calidad y eficiencia de los servicios que recibí de CERETTI MGTM. Desde seguidores hasta likes, cada servicio que he comprado ha superado mis expectativas."`,
+    content: `"Estoy impresionada con la calidad y eficiencia de los servicios que recibí de CERETTI MGMT. Desde seguidores hasta likes, cada servicio que he comprado ha superado mis expectativas."`,
     rating: 5,
     date: "15 de agosto, 2023",
   },
@@ -402,3 +402,4 @@ export default function Home() {
     </>
   )
 }
+
