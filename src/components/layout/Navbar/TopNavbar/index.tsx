@@ -71,7 +71,7 @@ const TopNavbar = () => {
             className={cn([integralCF.className, "text-2xl lg:text-[32px] mb-2 mr-3 lg:mr-10 flex items-center"])}
           >
             <span className="mr-2">TT</span>
-            <span className="text-sm font-normal">CERETTI MGTM</span>
+            <span className="text-sm font-normal">CERETTI MGMT</span>
           </Link>
         </div>
         <NavigationMenu className="hidden md:flex mr-2 lg:mr-7">
