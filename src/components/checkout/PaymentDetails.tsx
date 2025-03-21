@@ -1,6 +1,5 @@
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { FaInfoCircle, FaWhatsapp, FaBitcoin, FaUniversity } from "react-icons/fa"
-import Image from "next/image"
 
 interface PaymentDetailsProps {
   method: string
@@ -38,13 +37,7 @@ export default function PaymentDetails({ method }: PaymentDetailsProps) {
           <div className="mt-4 flex justify-center">
             <div className="bg-gray-900 p-4 rounded-xl max-w-xs">
               <p className="text-white text-center mb-4">Escanea con la app de Binance para pagar</p>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_20250321-160344-i4pD25kFmya34ovcuFhFO7vBruSROP.png"
-                alt="Código QR de Binance"
-                width={250}
-                height={250}
-                className="mx-auto"
-              />
+              <img src="/images/binance-qr.png" alt="Código QR de Binance" className="mx-auto w-[250px] h-[250px]" />
               <p className="text-white text-center mt-4">Cerettimgmt</p>
             </div>
           </div>
