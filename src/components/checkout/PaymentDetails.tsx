@@ -32,13 +32,13 @@ export default function PaymentDetails({ method }: PaymentDetailsProps) {
         <AlertDescription className="text-purple-800">
           <p className="font-medium mb-2">Datos para pago con criptomonedas:</p>
           <p>ID Binance: 162929823</p>
-          <p>Usuario: Cerettimgmt</p>
+          <p>Usuario: Ceretti Mgmt</p>
           <p>Aceptamos: USDT, BTC, ETH, BNB</p>
           <div className="mt-4 flex justify-center">
             <div className="bg-gray-900 p-4 rounded-xl max-w-xs">
               <p className="text-white text-center mb-4">Escanea con la app de Binance para pagar</p>
               <img src="/images/binance-qr.png" alt="Código QR de Binance" className="mx-auto w-[250px] h-[250px]" />
-              <p className="text-white text-center mt-4">Cerettimgmt</p>
+              <p className="text-white text-center mt-4">Ceretti Mgmt</p>
             </div>
           </div>
           <p className="mt-4 text-sm">
