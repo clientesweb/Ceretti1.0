@@ -86,7 +86,7 @@ const Header = () => {
         >
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PNG_-_B.-removebg-preview-Ig1L1p2nAUwnRVk4Ya1B4KBCVyDzUa.png"
-            alt="CERETTI MGTM Rocket"
+            alt="CERETTI MGMT Rocket"
             className="max-w-[300px] md:max-w-[400px] animate-bounce"
           />
           {/* Picas decorativas alrededor del cohete */}
