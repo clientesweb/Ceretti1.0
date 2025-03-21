@@ -20,66 +20,68 @@ const categoriasData = [
   { id: "seo", name: "SEO" },
 ]
 
-// Datos de artículos
+// Update the article data with more current dates and refreshed titles
+
+// Change the articulosData array to have updated dates and some refreshed titles
 const articulosData = [
   {
     id: 1,
-    title: "10 estrategias para aumentar tus seguidores en Instagram",
-    excerpt: "Descubre las mejores tácticas para crecer orgánicamente en Instagram y aumentar tu engagement.",
+    title: "10 estrategias para aumentar tus seguidores en Instagram en 2025",
+    excerpt: "Descubre las mejores tácticas actualizadas para crecer orgánicamente en Instagram y aumentar tu engagement.",
     image: "/images/blog/articulo1.jpg",
     category: "redes-sociales",
-    date: "15 Mar 2023",
+    date: "15 Mar 2025",
     readTime: "5 min",
     featured: true,
   },
   {
     id: 2,
-    title: "Guía completa de SEO para principiantes",
+    title: "Guía completa de SEO para 2025: Nuevas tendencias y algoritmos",
     excerpt:
-      "Todo lo que necesitas saber para empezar a optimizar tu sitio web y mejorar tu posicionamiento en buscadores.",
+      "Todo lo que necesitas saber para optimizar tu sitio web y mejorar tu posicionamiento en buscadores este año.",
     image: "/images/blog/articulo2.jpg",
     category: "seo",
-    date: "28 Feb 2023",
+    date: "28 Feb 2025",
     readTime: "8 min",
     featured: true,
   },
   {
     id: 3,
-    title: "Cómo crear una estrategia de contenido efectiva",
-    excerpt: "Aprende a desarrollar una estrategia de contenido que conecte con tu audiencia y genere resultados.",
+    title: "Estrategias de contenido efectivas con IA para 2025",
+    excerpt: "Aprende a desarrollar una estrategia de contenido potenciada por inteligencia artificial que conecte con tu audiencia.",
     image: "/images/blog/articulo3.jpg",
     category: "marketing",
-    date: "10 Feb 2023",
+    date: "10 Feb 2025",
     readTime: "6 min",
     featured: false,
   },
   {
     id: 4,
-    title: "Tendencias de diseño web para 2023",
-    excerpt: "Las últimas tendencias en diseño web que debes conocer para mantener tu sitio actualizado y atractivo.",
+    title: "Tendencias de diseño web para 2025",
+    excerpt: "Las últimas innovaciones en diseño web que debes conocer para mantener tu sitio actualizado y atractivo.",
     image: "/images/blog/articulo4.jpg",
     category: "diseno",
-    date: "5 Feb 2023",
+    date: "5 Feb 2025",
     readTime: "4 min",
     featured: false,
   },
   {
     id: 5,
-    title: "Herramientas esenciales para gestionar redes sociales",
-    excerpt: "Una selección de las mejores herramientas para optimizar la gestión de tus redes sociales.",
+    title: "Herramientas esenciales para gestionar redes sociales en 2025",
+    excerpt: "Una selección de las mejores herramientas actualizadas para optimizar la gestión de tus redes sociales.",
     image: "/images/blog/articulo5.jpg",
     category: "redes-sociales",
-    date: "20 Ene 2023",
+    date: "20 Ene 2025",
     readTime: "7 min",
     featured: false,
   },
   {
     id: 6,
-    title: "Introducción a React para desarrolladores web",
-    excerpt: "Guía básica para empezar a desarrollar aplicaciones web con React desde cero.",
+    title: "React en 2025: Novedades y mejores prácticas",
+    excerpt: "Guía actualizada para desarrollar aplicaciones web modernas con React y las últimas tecnologías.",
     image: "/images/blog/articulo6.jpg",
     category: "desarrollo",
-    date: "12 Ene 2023",
+    date: "12 Ene 2025",
     readTime: "10 min",
     featured: false,
   },
@@ -359,4 +361,3 @@ export default function BlogPage() {
     </main>
   )
 }
-
