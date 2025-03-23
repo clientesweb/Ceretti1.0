@@ -3,5 +3,23 @@
 User-agent: *
 Allow: /
 
+# Rutas específicas
+Allow: /shop/
+Allow: /blog/
+Allow: /portfolio/
+Allow: /paquetes/
+
+# Recursos estáticos
+Allow: /images/
+Allow: /icons/
+
+# Archivos específicos
+Allow: /sitemap.xml
+Allow: /site.webmanifest
+
+# Disallow admin or private areas if they exist
+Disallow: /admin/
+Disallow: /checkout/success/
+
 Sitemap: https://www.cerettimanagement.com/sitemap.xml
 
