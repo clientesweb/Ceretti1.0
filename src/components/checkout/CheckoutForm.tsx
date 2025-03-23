@@ -57,7 +57,7 @@ export default function CheckoutForm() {
           name: "No hay productos en el carrito",
           units: 0,
           price: 0,
-          image_url: "https://via.placeholder.com/64",
+          // No incluimos image_url para evitar errores
         },
       ]
     }
@@ -68,14 +68,11 @@ export default function CheckoutForm() {
           ? Math.round(item.price - (item.price * item.discount.percentage) / 100)
           : item.price
 
-      // Usar una imagen por defecto o la imagen del producto si está disponible
-      const imageUrl = item.images && item.images.length > 0 ? item.images[0] : "https://via.placeholder.com/64"
-
       return {
         name: `${item.name} ${item.attributes ? "(" + item.attributes.join(", ") + ")" : ""}`,
         units: item.quantity,
         price: (itemPrice * item.quantity).toFixed(2),
-        image_url: imageUrl,
+        // No incluimos image_url para evitar errores
       }
     })
   }
