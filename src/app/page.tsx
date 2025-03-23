@@ -7,6 +7,7 @@ import Reviews from "@/components/homepage/Reviews"
 import TrustFeatures from "@/components/homepage/TrustFeatures"
 import type { Product } from "@/types/product.types"
 import type { Review } from "@/types/review.types"
+import Script from "next/script"
 
 export const newArrivalsData: Product[] = [
   {
@@ -382,6 +383,7 @@ export const reviewsData: Review[] = [
 export default function Home() {
   return (
     <>
+      <Script src="/register-sw.js" strategy="afterInteractive" />
       <Header />
       <Brands />
       <TrustFeatures />
