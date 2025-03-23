@@ -49,6 +49,7 @@ export default function CheckoutForm() {
     })
   }
 
+  // Función simplificada para generar texto del carrito
   const generateCartItemsText = () => {
     if (!cart || !cart.items || cart.items.length === 0) return "No hay productos en el carrito"
 
@@ -60,8 +61,7 @@ export default function CheckoutForm() {
               ? Math.round(item.price - (item.price * item.discount.percentage) / 100) * item.quantity
               : item.price * item.quantity
 
-          return `- ${item.name} x${item.quantity} - $${itemPrice} ARS
-        Detalles: ${item.attributes ? item.attributes.join(", ") : "Sin detalles"}`
+          return `Producto: ${item.name}\nCantidad: ${item.quantity}\nPrecio: $${itemPrice} ARS\nDetalles: ${item.attributes ? item.attributes.join(", ") : "Sin detalles"}\n------------------------------`
         })
         .join("\n")
     } catch (error) {
@@ -132,14 +132,14 @@ export default function CheckoutForm() {
 
       // Para otros métodos de pago, enviar email
       if (formRef.current) {
-        // Preparar datos para EmailJS
+        // Preparar datos para EmailJS - usando exactamente los nombres de variables de la plantilla
         const templateParams = {
-          // Dirección del destinatario (IMPORTANTE)
+          // Dirección del destinatario
           to_email: ADMIN_EMAIL,
           to_name: "CERETTI MGMT",
 
           // Información del pedido
-          order_id: Date.now().toString().slice(-6), // ID simple basado en timestamp
+          order_id: Date.now().toString().slice(-6),
           fecha_pedido: new Date().toLocaleDateString("es-ES"),
 
           // Información del cliente
