@@ -18,11 +18,11 @@ import { useRouter } from "next/navigation"
 import { useAppDispatch } from "@/lib/hooks/redux"
 import { clearCart } from "@/lib/features/carts/cartsSlice"
 
-// Configuración de EmailJS
-const EMAILJS_SERVICE_ID = "service_frt57yd" // Tu Service ID
-const EMAILJS_TEMPLATE_ID = "template_tv5jtto" // Tu Template ID
-const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk" // Tu Public Key
-const ADMIN_EMAIL = "cerettimgtm@gmail.com" // Email donde recibirás las notificaciones
+// Configuración de EmailJS - NOTA: Crea una nueva plantilla de prueba simple
+const EMAILJS_SERVICE_ID = "service_frt57yd"
+const EMAILJS_TEMPLATE_ID = "template_tv5jtto" // Usa el ID de tu plantilla actual o crea una nueva
+const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk"
+const ADMIN_EMAIL = "cerettimgtm@gmail.com"
 
 export default function CheckoutForm() {
   const { cart, totalPrice, adjustedTotalPrice } = useAppSelector((state: RootState) => state.carts)
@@ -132,49 +132,20 @@ export default function CheckoutForm() {
 
       // Para otros métodos de pago, enviar email
       if (formRef.current) {
-        // Crear variables para las condiciones if_eq
-        const isTransferencia = paymentMethod === "transferencia" ? "true" : "false"
-        const isCripto = paymentMethod === "cripto" ? "true" : "false"
-        const isWhatsapp = paymentMethod === "whatsapp" ? "true" : "false"
-
-        // Traducir el método de pago a un texto más descriptivo
-        let metodoPagoTexto = "Transferencia Bancaria"
-        if (paymentMethod === "cripto") metodoPagoTexto = "Criptomonedas (Binance)"
-        if (paymentMethod === "whatsapp") metodoPagoTexto = "Contacto por WhatsApp"
-
-        // Preparar datos para EmailJS - usando exactamente los nombres de variables de la plantilla
-        const templateParams = {
-          // Dirección del destinatario
-          to_email: ADMIN_EMAIL,
-          to_name: "CERETTI MGMT",
-
-          // Información del pedido
-          order_id: Date.now().toString().slice(-6),
-          fecha_pedido: new Date().toLocaleDateString("es-ES"),
-
-          // Información del cliente
-          from_name: formData.nombre,
-          from_email: formData.email,
-          from_phone: formData.telefono,
-          message: formData.notas || "Sin notas adicionales",
-
-          // Información del pago - enviando múltiples variables para asegurar compatibilidad
-          metodo_pago: metodoPagoTexto,
-          payment_method: paymentMethod,
-
-          // Variables para las condiciones
-          is_transferencia: isTransferencia,
-          is_cripto: isCripto,
-          is_whatsapp: isWhatsapp,
-
-          // Detalles del carrito
-          cart_items: generateCartItemsText(),
-          total_price: `$${Math.round(adjustedTotalPrice)} ARS`,
-        }
-
-        console.log("Enviando datos a EmailJS:", JSON.stringify(templateParams, null, 2))
-
         try {
+          // ENFOQUE SIMPLIFICADO: Usar solo variables mínimas para prueba
+          const templateParams = {
+            to_email: ADMIN_EMAIL,
+            nombre: formData.nombre,
+            email: formData.email,
+            telefono: formData.telefono,
+            metodo: paymentMethod,
+            total: `$${Math.round(adjustedTotalPrice)} ARS`,
+            productos: generateCartItemsText().substring(0, 500), // Limitar longitud para evitar problemas
+          }
+
+          console.log("Enviando datos simplificados a EmailJS:", templateParams)
+
           // Enviar email
           const response = await emailjs.send(
             EMAILJS_SERVICE_ID,
