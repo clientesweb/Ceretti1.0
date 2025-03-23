@@ -132,6 +132,16 @@ export default function CheckoutForm() {
 
       // Para otros métodos de pago, enviar email
       if (formRef.current) {
+        // Crear variables para las condiciones if_eq
+        const isTransferencia = paymentMethod === "transferencia" ? "true" : "false"
+        const isCripto = paymentMethod === "cripto" ? "true" : "false"
+        const isWhatsapp = paymentMethod === "whatsapp" ? "true" : "false"
+
+        // Traducir el método de pago a un texto más descriptivo
+        let metodoPagoTexto = "Transferencia Bancaria"
+        if (paymentMethod === "cripto") metodoPagoTexto = "Criptomonedas (Binance)"
+        if (paymentMethod === "whatsapp") metodoPagoTexto = "Contacto por WhatsApp"
+
         // Preparar datos para EmailJS - usando exactamente los nombres de variables de la plantilla
         const templateParams = {
           // Dirección del destinatario
@@ -148,16 +158,21 @@ export default function CheckoutForm() {
           from_phone: formData.telefono,
           message: formData.notas || "Sin notas adicionales",
 
-          // Información del pago
-          metodo_pago: paymentMethod,
-          payment_method: paymentMethod, // Mantener esta variable para las condiciones if_eq
+          // Información del pago - enviando múltiples variables para asegurar compatibilidad
+          metodo_pago: metodoPagoTexto,
+          payment_method: paymentMethod,
+
+          // Variables para las condiciones
+          is_transferencia: isTransferencia,
+          is_cripto: isCripto,
+          is_whatsapp: isWhatsapp,
 
           // Detalles del carrito
           cart_items: generateCartItemsText(),
           total_price: `$${Math.round(adjustedTotalPrice)} ARS`,
         }
 
-        console.log("Enviando datos a EmailJS:", templateParams)
+        console.log("Enviando datos a EmailJS:", JSON.stringify(templateParams, null, 2))
 
         try {
           // Enviar email
@@ -309,3 +324,4 @@ export default function CheckoutForm() {
     </form>
   )
 }
+
