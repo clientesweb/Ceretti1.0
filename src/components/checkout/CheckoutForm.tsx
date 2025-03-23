@@ -18,9 +18,10 @@ import { useRouter } from "next/navigation"
 import { useAppDispatch } from "@/lib/hooks/redux"
 import { clearCart } from "@/lib/features/carts/cartsSlice"
 
-// Configuración de EmailJS - Usando la nueva plantilla que funciona
+// Configuración de EmailJS
 const EMAILJS_SERVICE_ID = "service_frt57yd"
-const EMAILJS_TEMPLATE_ID = "template_4k3l65s" // Nueva plantilla que funciona
+const EMAILJS_TEMPLATE_ID_ADMIN = "template_4k3l65s" // Plantilla para el administrador
+const EMAILJS_TEMPLATE_ID_CUSTOMER = "template_qw09d2a" // REEMPLAZA ESTO con el ID de tu nueva plantilla para clientes
 const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk"
 const ADMIN_EMAIL = "cerettimgtm@gmail.com"
 
@@ -57,7 +58,6 @@ export default function CheckoutForm() {
           name: "No hay productos en el carrito",
           units: 0,
           price: 0,
-          // No incluimos image_url para evitar errores
         },
       ]
     }
@@ -72,7 +72,6 @@ export default function CheckoutForm() {
         name: `${item.name} ${item.attributes ? "(" + item.attributes.join(", ") + ")" : ""}`,
         units: item.quantity,
         price: (itemPrice * item.quantity).toFixed(2),
-        // No incluimos image_url para evitar errores
       }
     })
   }
@@ -149,51 +148,69 @@ export default function CheckoutForm() {
       // Para otros métodos de pago, enviar email
       if (formRef.current) {
         try {
-          // Formatear los datos según la estructura de la plantilla
-          const templateParams = {
-            // Información del pedido
-            order_id: Date.now().toString().slice(-6),
+          // Crear variables para las condiciones if_eq
+          const isTransferencia = paymentMethod === "transferencia" ? "true" : "false"
+          const isCripto = paymentMethod === "cripto" ? "true" : "false"
+          const isWhatsapp = paymentMethod === "whatsapp" ? "true" : "false"
 
-            // Información del cliente
+          // Traducir el método de pago a un texto más descriptivo
+          let metodoPagoTexto = "Transferencia Bancaria"
+          if (paymentMethod === "cripto") metodoPagoTexto = "Criptomonedas (Binance)"
+          if (paymentMethod === "whatsapp") metodoPagoTexto = "Contacto por WhatsApp"
+
+          // Generar ID de pedido único
+          const orderId = Date.now().toString().slice(-6)
+
+          // Formatear productos del carrito
+          const formattedCartItems = formatCartItems()
+
+          // Preparar datos comunes para ambos emails
+          const commonParams = {
+            order_id: orderId,
             email: formData.email,
-
-            // Información adicional que agregaremos al primer producto
             customer_name: formData.nombre,
             customer_phone: formData.telefono,
             customer_notes: formData.notas || "Sin notas adicionales",
-            payment_method:
-              paymentMethod === "transferencia"
-                ? "Transferencia Bancaria"
-                : paymentMethod === "cripto"
-                  ? "Criptomonedas (Binance)"
-                  : "Contacto por WhatsApp",
-
-            // Productos del carrito
-            orders: formatCartItems(),
-
-            // Costos
+            payment_method: metodoPagoTexto,
+            is_transferencia: isTransferencia,
+            is_cripto: isCripto,
+            is_whatsapp: isWhatsapp,
+            orders: formattedCartItems,
             cost: {
               shipping: "0.00",
               tax: "0.00",
               total: Math.round(adjustedTotalPrice).toFixed(2),
             },
+          }
 
-            // Destinatario (para uso interno)
+          // 1. Enviar email al administrador
+          const adminTemplateParams = {
+            ...commonParams,
             to_email: ADMIN_EMAIL,
             to_name: "CERETTI MGMT",
           }
 
-          console.log("Enviando datos a EmailJS:", JSON.stringify(templateParams, null, 2))
+          console.log("Enviando email al administrador:", JSON.stringify(adminTemplateParams, null, 2))
 
-          // Enviar email
-          const response = await emailjs.send(
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID_ADMIN, adminTemplateParams, EMAILJS_PUBLIC_KEY)
+
+          // 2. Enviar email al cliente
+          const customerTemplateParams = {
+            ...commonParams,
+            to_email: formData.email,
+            to_name: formData.nombre,
+          }
+
+          console.log("Enviando email al cliente:", JSON.stringify(customerTemplateParams, null, 2))
+
+          await emailjs.send(
             EMAILJS_SERVICE_ID,
-            EMAILJS_TEMPLATE_ID,
-            templateParams,
+            EMAILJS_TEMPLATE_ID_CUSTOMER,
+            customerTemplateParams,
             EMAILJS_PUBLIC_KEY,
           )
 
-          console.log("Email enviado con éxito:", response)
+          console.log("Emails enviados con éxito")
 
           // Guardar estado de checkout completado
           sessionStorage.setItem("checkoutCompleted", "true")
