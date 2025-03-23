@@ -49,19 +49,24 @@ export default function CheckoutForm() {
   }
 
   const generateCartItemsText = () => {
-    if (!cart) return ""
+    if (!cart || !cart.items || cart.items.length === 0) return "No hay productos en el carrito"
 
-    return cart.items
-      .map((item) => {
-        const itemPrice =
-          item.discount.percentage > 0
-            ? Math.round(item.price - (item.price * item.discount.percentage) / 100) * item.quantity
-            : item.price * item.quantity
+    try {
+      return cart.items
+        .map((item) => {
+          const itemPrice =
+            item.discount.percentage > 0
+              ? Math.round(item.price - (item.price * item.discount.percentage) / 100) * item.quantity
+              : item.price * item.quantity
 
-        return `- ${item.name} x${item.quantity} - $${itemPrice} ARS
-        Detalles: ${item.attributes.join(", ")}`
-      })
-      .join("\n")
+          return `- ${item.name} x${item.quantity} - $${itemPrice} ARS
+        Detalles: ${item.attributes ? item.attributes.join(", ") : "Sin detalles"}`
+        })
+        .join("\n")
+    } catch (error) {
+      console.error("Error al generar texto del carrito:", error)
+      return "Error al procesar los productos del carrito"
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -136,7 +141,7 @@ export default function CheckoutForm() {
           from_name: formData.nombre,
           from_email: formData.email,
           from_phone: formData.telefono,
-          message: formData.notas,
+          message: formData.notas || "Sin notas adicionales",
 
           // Información del pago
           payment_method: paymentMethod,
@@ -146,9 +151,18 @@ export default function CheckoutForm() {
           total_price: `$${Math.round(adjustedTotalPrice)} ARS`,
         }
 
+        console.log("Enviando datos a EmailJS:", templateParams)
+
         try {
           // Enviar email
-          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+          const response = await emailjs.send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            templateParams,
+            EMAILJS_PUBLIC_KEY,
+          )
+
+          console.log("Email enviado con éxito:", response)
 
           // Guardar estado de checkout completado
           sessionStorage.setItem("checkoutCompleted", "true")
@@ -156,12 +170,22 @@ export default function CheckoutForm() {
           // Limpiar carrito y redirigir a página de confirmación
           dispatch(clearCart())
           router.push("/checkout/success")
-        } catch (error) {
-          console.error("Error al enviar el email:", error)
+        } catch (error: any) {
+          console.error("Error detallado al enviar el email:", error)
+
+          let errorMessage = "Hubo un problema al enviar el email. Por favor, intenta nuevamente."
+
+          if (error.text) {
+            errorMessage += ` Error: ${error.text}`
+          }
+
+          if (error.status) {
+            errorMessage += ` (Status: ${error.status})`
+          }
+
           toast({
-            title: "Error",
-            description:
-              "Hubo un problema al enviar el email. Por favor, intenta nuevamente o elige otro método de pago.",
+            title: "Error al enviar el email",
+            description: errorMessage,
             variant: "destructive",
           })
         }
