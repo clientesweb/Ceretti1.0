@@ -18,9 +18,9 @@ import { useRouter } from "next/navigation"
 import { useAppDispatch } from "@/lib/hooks/redux"
 import { clearCart } from "@/lib/features/carts/cartsSlice"
 
-// Configuración de EmailJS - NOTA: Crea una nueva plantilla de prueba simple
+// Configuración de EmailJS - Usando la nueva plantilla que funciona
 const EMAILJS_SERVICE_ID = "service_frt57yd"
-const EMAILJS_TEMPLATE_ID = "template_tv5jtto" // Usa el ID de tu plantilla actual o crea una nueva
+const EMAILJS_TEMPLATE_ID = "template_4k3l65s" // Nueva plantilla que funciona
 const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk"
 const ADMIN_EMAIL = "cerettimgtm@gmail.com"
 
@@ -49,25 +49,35 @@ export default function CheckoutForm() {
     })
   }
 
-  // Función simplificada para generar texto del carrito
-  const generateCartItemsText = () => {
-    if (!cart || !cart.items || cart.items.length === 0) return "No hay productos en el carrito"
-
-    try {
-      return cart.items
-        .map((item) => {
-          const itemPrice =
-            item.discount.percentage > 0
-              ? Math.round(item.price - (item.price * item.discount.percentage) / 100) * item.quantity
-              : item.price * item.quantity
-
-          return `Producto: ${item.name}\nCantidad: ${item.quantity}\nPrecio: $${itemPrice} ARS\nDetalles: ${item.attributes ? item.attributes.join(", ") : "Sin detalles"}\n------------------------------`
-        })
-        .join("\n")
-    } catch (error) {
-      console.error("Error al generar texto del carrito:", error)
-      return "Error al procesar los productos del carrito"
+  // Función para formatear los productos del carrito según la estructura de la plantilla
+  const formatCartItems = () => {
+    if (!cart || !cart.items || cart.items.length === 0) {
+      return [
+        {
+          name: "No hay productos en el carrito",
+          units: 0,
+          price: 0,
+          image_url: "https://via.placeholder.com/64",
+        },
+      ]
     }
+
+    return cart.items.map((item) => {
+      const itemPrice =
+        item.discount.percentage > 0
+          ? Math.round(item.price - (item.price * item.discount.percentage) / 100)
+          : item.price
+
+      // Usar una imagen por defecto o la imagen del producto si está disponible
+      const imageUrl = item.images && item.images.length > 0 ? item.images[0] : "https://via.placeholder.com/64"
+
+      return {
+        name: `${item.name} ${item.attributes ? "(" + item.attributes.join(", ") + ")" : ""}`,
+        units: item.quantity,
+        price: (itemPrice * item.quantity).toFixed(2),
+        image_url: imageUrl,
+      }
+    })
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -111,7 +121,16 @@ export default function CheckoutForm() {
       // Si el método de pago es WhatsApp, redirigir al usuario
       if (paymentMethod === "whatsapp") {
         const phoneNumber = "5492262325666"
-        const cartItemsText = generateCartItemsText()
+        const cartItemsText = cart.items
+          .map((item) => {
+            const itemPrice =
+              item.discount.percentage > 0
+                ? Math.round(item.price - (item.price * item.discount.percentage) / 100) * item.quantity
+                : item.price * item.quantity
+            return `Producto: ${item.name}\nCantidad: ${item.quantity}\nPrecio: $${itemPrice} ARS\nDetalles: ${item.attributes ? item.attributes.join(", ") : "Sin detalles"}`
+          })
+          .join("\n\n")
+
         const message = `Hola, quiero realizar la siguiente compra:\n\n${cartItemsText}\n\nTotal: $${Math.round(
           adjustedTotalPrice,
         )} ARS\n\nMis datos:\nNombre: ${formData.nombre}\nEmail: ${formData.email}\nTeléfono: ${
@@ -133,18 +152,41 @@ export default function CheckoutForm() {
       // Para otros métodos de pago, enviar email
       if (formRef.current) {
         try {
-          // ENFOQUE SIMPLIFICADO: Usar solo variables mínimas para prueba
+          // Formatear los datos según la estructura de la plantilla
           const templateParams = {
-            to_email: ADMIN_EMAIL,
-            nombre: formData.nombre,
+            // Información del pedido
+            order_id: Date.now().toString().slice(-6),
+
+            // Información del cliente
             email: formData.email,
-            telefono: formData.telefono,
-            metodo: paymentMethod,
-            total: `$${Math.round(adjustedTotalPrice)} ARS`,
-            productos: generateCartItemsText().substring(0, 500), // Limitar longitud para evitar problemas
+
+            // Información adicional que agregaremos al primer producto
+            customer_name: formData.nombre,
+            customer_phone: formData.telefono,
+            customer_notes: formData.notas || "Sin notas adicionales",
+            payment_method:
+              paymentMethod === "transferencia"
+                ? "Transferencia Bancaria"
+                : paymentMethod === "cripto"
+                  ? "Criptomonedas (Binance)"
+                  : "Contacto por WhatsApp",
+
+            // Productos del carrito
+            orders: formatCartItems(),
+
+            // Costos
+            cost: {
+              shipping: "0.00",
+              tax: "0.00",
+              total: Math.round(adjustedTotalPrice).toFixed(2),
+            },
+
+            // Destinatario (para uso interno)
+            to_email: ADMIN_EMAIL,
+            to_name: "CERETTI MGMT",
           }
 
-          console.log("Enviando datos simplificados a EmailJS:", templateParams)
+          console.log("Enviando datos a EmailJS:", JSON.stringify(templateParams, null, 2))
 
           // Enviar email
           const response = await emailjs.send(
