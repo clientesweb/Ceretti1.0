@@ -22,6 +22,7 @@ import { clearCart } from "@/lib/features/carts/cartsSlice"
 const EMAILJS_SERVICE_ID = "service_frt57yd" // Tu Service ID
 const EMAILJS_TEMPLATE_ID = "template_tv5jtto" // Tu Template ID
 const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk" // Tu Public Key
+const ADMIN_EMAIL = "cerettimgtm@gmail.com" // Email donde recibirás las notificaciones
 
 export default function CheckoutForm() {
   const { cart, totalPrice, adjustedTotalPrice } = useAppSelector((state: RootState) => state.carts)
@@ -133,6 +134,10 @@ export default function CheckoutForm() {
       if (formRef.current) {
         // Preparar datos para EmailJS
         const templateParams = {
+          // Dirección del destinatario (IMPORTANTE)
+          to_email: ADMIN_EMAIL,
+          to_name: "CERETTI MGMT",
+
           // Información del pedido
           order_id: Date.now().toString().slice(-6), // ID simple basado en timestamp
           fecha_pedido: new Date().toLocaleDateString("es-ES"),
