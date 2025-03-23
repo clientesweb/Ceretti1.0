@@ -19,9 +19,9 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import { clearCart } from "@/lib/features/carts/cartsSlice"
 
 // Configuración de EmailJS
-const EMAILJS_SERVICE_ID = "service_id" // Reemplazar con tu Service ID
-const EMAILJS_TEMPLATE_ID = "template_id" // Reemplazar con tu Template ID
-const EMAILJS_PUBLIC_KEY = "public_key" // Reemplazar con tu Public Key
+const EMAILJS_SERVICE_ID = "service_frt57yd" // Tu Service ID
+const EMAILJS_TEMPLATE_ID = "template_tv5jtto" // Tu Template ID
+const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk" // Tu Public Key
 
 export default function CheckoutForm() {
   const { cart, totalPrice, adjustedTotalPrice } = useAppSelector((state: RootState) => state.carts)
@@ -53,11 +53,12 @@ export default function CheckoutForm() {
 
     return cart.items
       .map((item) => {
-        return `- ${item.name} x${item.quantity} - $${
+        const itemPrice =
           item.discount.percentage > 0
             ? Math.round(item.price - (item.price * item.discount.percentage) / 100) * item.quantity
             : item.price * item.quantity
-        } ARS
+
+        return `- ${item.name} x${item.quantity} - $${itemPrice} ARS
         Detalles: ${item.attributes.join(", ")}`
       })
       .join("\n")
@@ -127,12 +128,20 @@ export default function CheckoutForm() {
       if (formRef.current) {
         // Preparar datos para EmailJS
         const templateParams = {
-          to_name: "CERETTI MGTM",
+          // Información del pedido
+          order_id: Date.now().toString().slice(-6), // ID simple basado en timestamp
+          fecha_pedido: new Date().toLocaleDateString("es-ES"),
+
+          // Información del cliente
           from_name: formData.nombre,
           from_email: formData.email,
           from_phone: formData.telefono,
           message: formData.notas,
+
+          // Información del pago
           payment_method: paymentMethod,
+
+          // Detalles del carrito
           cart_items: generateCartItemsText(),
           total_price: `$${Math.round(adjustedTotalPrice)} ARS`,
         }
