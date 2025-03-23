@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "CERETTI MANAGEMENT",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image-ceretti.jpg",
         width: 1200,
         height: 630,
         alt: "CERETTI MANAGEMENT - Servicios de Marketing Digital para Redes Sociales",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "CERETTI MANAGEMENT | Aumenta Seguidores, Likes y Visitas en Instagram y YouTube",
     description:
       "Potencia tu presencia digital con servicios premium para aumentar seguidores reales, likes, reproducciones y engagement en Instagram, YouTube, TikTok, Spotify y Facebook.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image-ceretti.jpg"],
   },
   alternates: {
     canonical: "https://www.cerettimanagement.com",
