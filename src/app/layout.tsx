@@ -6,8 +6,8 @@ import TopBanner from "@/components/layout/Banner/TopBanner"
 import TopNavbar from "@/components/layout/Navbar/TopNavbar"
 import Footer from "@/components/layout/Footer"
 import Providers from "./providers"
-import WhatsAppButton from "@/components/common/WhatsAppButton"
 import { Toaster } from "@/components/ui/toaster"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cerettimanagement.com"),
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: "/og-image-ceretti.jpg",
         width: 1200,
         height: 630,
-        alt: "CERETTI MANAGEMENT - Servicios de Marketing Digital para Redes Sociales",
+        alt: "CERETTI MANAGEMENT - Impulsa Tu Presencia Digital",
       },
     ],
   },
@@ -96,8 +96,20 @@ export default function RootLayout({
           {children}
         </Providers>
         <Footer />
-        <WhatsAppButton />
         <Toaster />
+        <Script id="tawk-to" strategy="afterInteractive">
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/67dfe67f98d9ad1905a9ca32/1in19op7a';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
+        </Script>
       </body>
     </html>
   )
