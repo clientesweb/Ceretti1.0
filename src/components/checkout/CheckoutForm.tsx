@@ -149,7 +149,8 @@ export default function CheckoutForm() {
           message: formData.notas || "Sin notas adicionales",
 
           // Información del pago
-          payment_method: paymentMethod,
+          metodo_pago: paymentMethod,
+          payment_method: paymentMethod, // Mantener esta variable para las condiciones if_eq
 
           // Detalles del carrito
           cart_items: generateCartItemsText(),
@@ -308,4 +309,3 @@ export default function CheckoutForm() {
     </form>
   )
 }
-
