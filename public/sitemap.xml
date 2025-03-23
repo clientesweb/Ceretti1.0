@@ -36,24 +36,126 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Instagram Products -->
   <url>
     <loc>https://www.cerettimanagement.com/shop/product/1/seguidores-instagram-premium</loc>
     <lastmod>2025-03-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cerettimanagement.com/shop/product/2/likes-instagram</loc>
     <lastmod>2025-03-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/3/visitas-instagram</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/4/visitas-historias-instagram</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/5/guardados-instagram</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/6/comentarios-instagram</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- YouTube Products -->
   <url>
     <loc>https://www.cerettimanagement.com/shop/product/9/suscriptores-youtube</loc>
     <lastmod>2025-03-23</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/10/visitas-youtube</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/21/likes-youtube-premium</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/22/comentarios-youtube-random</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/23/comentarios-youtube-personalizados</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Spotify Products -->
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/11/reproducciones-spotify</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/12/seguidores-spotify</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/13/oyentes-mensuales-spotify</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- TikTok Products -->
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/15/visitas-tiktok</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/16/seguidores-tiktok</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/17/likes-tiktok</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Facebook Products -->
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/18/seguidores-facebook</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/shop/product/19/likes-facebook</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog Posts -->
   <url>
     <loc>https://www.cerettimanagement.com/blog/1</loc>
     <lastmod>2025-03-23</lastmod>
@@ -62,6 +164,30 @@
   </url>
   <url>
     <loc>https://www.cerettimanagement.com/blog/2</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/blog/3</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/blog/4</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/blog/5</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cerettimanagement.com/blog/6</loc>
     <lastmod>2025-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
