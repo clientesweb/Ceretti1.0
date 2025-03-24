@@ -78,6 +78,7 @@ const config: Config = {
           lightBlue: "#00C2FF",
           black: "#000000",
         },
+        "ceretti-blue": "#0D4C8B", // This is the blue color from your website
       },
       keyframes: {
         "accordion-down": {
