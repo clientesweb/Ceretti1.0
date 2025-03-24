@@ -1,76 +1,132 @@
 "use client"
-
+import { PiTrashFill } from "react-icons/pi"
 import Image from "next/image"
-import { Trash2 } from "lucide-react"
-import { useAppDispatch } from "@/lib/hooks/redux"
-import { removeFromCart, updateQuantity } from "@/lib/features/carts/cartsSlice"
+import Link from "next/link"
 import CartCounter from "@/components/ui/CartCounter"
-import { useCustomToast } from "@/components/ui/custom-toast"
+import { Button } from "../ui/button"
+import { addToCart, type CartItem, remove, removeCartItem } from "@/lib/features/carts/cartsSlice"
+import { useAppDispatch } from "@/lib/hooks/redux"
 
-interface ProductCardProps {
-  id: number
-  name: string
-  price: number
-  image: string
-  quantity: number
-  attributes?: string[]
-  discount: {
-    percentage: number
-    endDate: string
-  }
+type ProductCardProps = {
+  data: CartItem
 }
 
-const ProductCard = ({ id, name, price, image, quantity, attributes, discount }: ProductCardProps) => {
+const ProductCard = ({ data }: ProductCardProps) => {
   const dispatch = useAppDispatch()
-  const { showSuccessToast, showErrorToast } = useCustomToast()
 
-  const handleRemoveFromCart = () => {
-    dispatch(removeFromCart(id))
-    showSuccessToast("Producto eliminado", `${name} ha sido eliminado de tu carrito`)
-  }
-
-  const handleUpdateQuantity = (newQuantity: number) => {
-    if (newQuantity <= 0) {
-      dispatch(removeFromCart(id))
-      showSuccessToast("Producto eliminado", `${name} ha sido eliminado de tu carrito`)
-      return
+  // Función para determinar la URL correcta según el ID del producto
+  const getProductUrl = () => {
+    switch (data.id) {
+      case 1:
+        return `/shop/product/1/seguidores-instagram-premium`
+      case 2:
+        return `/shop/product/2/likes-instagram`
+      case 3:
+        return `/shop/product/3/visitas-instagram`
+      case 4:
+        return `/shop/product/4/visitas-historias-instagram`
+      case 5:
+        return `/shop/product/5/guardados-instagram`
+      case 6:
+        return `/shop/product/6/comentarios-instagram`
+      default:
+        return `/shop/product/${data.id}/${data.name.split(" ").join("-").toLowerCase()}`
     }
-
-    dispatch(updateQuantity({ id, quantity: newQuantity }))
-    showSuccessToast("Cantidad actualizada", `La cantidad de ${name} ha sido actualizada a ${newQuantity}`)
   }
-
-  const discountedPrice = discount.percentage > 0 ? price - (price * discount.percentage) / 100 : price
-  const totalPrice = discountedPrice * quantity
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 p-4 border border-gray-200 rounded-lg">
-      <div className="relative w-full sm:w-24 h-24 bg-gray-100 rounded-md overflow-hidden">
-        <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover" />
-      </div>
-      <div className="flex-1 flex flex-col">
-        <div className="flex justify-between">
-          <h3 className="font-medium text-lg">{name}</h3>
-          <button onClick={handleRemoveFromCart} className="text-red-500 hover:text-red-700">
-            <Trash2 size={18} />
-          </button>
+    <div className="flex items-start space-x-4">
+      <Link
+        href={getProductUrl()}
+        className="bg-[#F0EEED] rounded-lg w-full min-w-[100px] max-w-[100px] sm:max-w-[124px] aspect-square overflow-hidden"
+      >
+        <Image
+          src={data.srcUrl || "/placeholder.svg"}
+          width={124}
+          height={124}
+          className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-500"
+          alt={data.name}
+          priority
+        />
+      </Link>
+      <div className="flex w-full self-stretch flex-col">
+        <div className="flex items-center justify-between">
+          <Link href={getProductUrl()} className="text-black font-bold text-base xl:text-xl">
+            {data.name}
+          </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-5 w-5 md:h-9 md:w-9"
+            onClick={() =>
+              dispatch(
+                remove({
+                  id: data.id,
+                  attributes: data.attributes,
+                  quantity: data.quantity,
+                }),
+              )
+            }
+          >
+            <PiTrashFill className="text-xl md:text-2xl text-red-600" />
+          </Button>
         </div>
-        {attributes && attributes.length > 0 && <p className="text-sm text-gray-500 mt-1">{attributes.join(", ")}</p>}
-        <div className="mt-auto flex flex-col sm:flex-row justify-between items-start sm:items-center pt-2">
-          <div className="flex items-center gap-2 mb-2 sm:mb-0">
-            <CartCounter value={quantity} onValueChange={handleUpdateQuantity} />
-          </div>
-          <div className="text-right">
-            {discount.percentage > 0 ? (
-              <>
-                <p className="text-sm line-through text-gray-500">${price.toLocaleString()}</p>
-                <p className="font-semibold">${discountedPrice.toLocaleString()}</p>
-              </>
+        <div className="-mt-1">
+          <span className="text-black text-xs md:text-sm mr-1">Tamaño:</span>
+          <span className="text-black/60 text-xs md:text-sm">{data.attributes[0]}</span>
+        </div>
+        <div className="mb-auto -mt-1.5">
+          <span className="text-black text-xs md:text-sm mr-1">Tipo:</span>
+          <span className="text-black/60 text-xs md:text-sm">{data.attributes[1]}</span>
+        </div>
+        <div className="flex items-center flex-wrap justify-between">
+          <div className="flex items-center space-x-[5px] xl:space-x-2.5">
+            {data.discount.percentage > 0 ? (
+              <span className="font-bold text-black text-xl xl:text-2xl">
+                {`$${Math.round(data.price - (data.price * data.discount.percentage) / 100)} ARS`}
+              </span>
+            ) : data.discount.amount > 0 ? (
+              <span className="font-bold text-black text-xl xl:text-2xl">
+                {`$${data.price - data.discount.amount} ARS`}
+              </span>
             ) : (
-              <p className="font-semibold">${price.toLocaleString()}</p>
+              <span className="font-bold text-black text-xl xl:text-2xl">${data.price} ARS</span>
             )}
-            <p className="text-sm text-gray-700">Total: ${totalPrice.toLocaleString()}</p>
+            {data.discount.percentage > 0 && (
+              <span className="font-bold text-black/40 line-through text-xl xl:text-2xl">${data.price} ARS</span>
+            )}
+            {data.discount.amount > 0 && (
+              <span className="font-bold text-black/40 line-through text-xl xl:text-2xl">${data.price} ARS</span>
+            )}
+            {data.discount.percentage > 0 ? (
+              <span className="font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
+                {`-${data.discount.percentage}%`}
+              </span>
+            ) : (
+              data.discount.amount > 0 && (
+                <span className="font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
+                  {`-$${data.discount.amount} ARS`}
+                </span>
+              )
+            )}
           </div>
+          <CartCounter
+            initialValue={data.quantity}
+            onAdd={() => dispatch(addToCart({ ...data, quantity: 1 }))}
+            onRemove={() =>
+              data.quantity === 1
+                ? dispatch(
+                    remove({
+                      id: data.id,
+                      attributes: data.attributes,
+                      quantity: data.quantity,
+                    }),
+                  )
+                : dispatch(removeCartItem({ id: data.id, attributes: data.attributes }))
+            }
+            isZeroDelete
+            className="px-5 py-3 max-h-8 md:max-h-10 min-w-[105px] max-w-[105px] sm:max-w-32"
+          />
         </div>
       </div>
     </div>
@@ -78,4 +134,3 @@ const ProductCard = ({ id, name, price, image, quantity, attributes, discount }:
 }
 
 export default ProductCard
-
