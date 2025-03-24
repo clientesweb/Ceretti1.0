@@ -10,7 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
+// Import the custom toast hook at the top where other imports are
+import { useCustomToast } from "@/components/ui/custom-toast"
 import { FaSpinner } from "react-icons/fa"
 import emailjs from "@emailjs/browser"
 import PaymentDetails from "./PaymentDetails"
@@ -21,7 +22,7 @@ import { clearCart } from "@/lib/features/carts/cartsSlice"
 // Configuración de EmailJS
 const EMAILJS_SERVICE_ID = "service_frt57yd"
 const EMAILJS_TEMPLATE_ID_ADMIN = "template_4k3l65s" // Plantilla para el administrador
-const EMAILJS_TEMPLATE_ID_CUSTOMER = "template_qw09d2a" // REEMPLAZA ESTO con el ID de tu nueva plantilla para clientes
+const EMAILJS_TEMPLATE_ID_CUSTOMER = "template_abc123" // REEMPLAZA ESTO con el ID de tu nueva plantilla para clientes
 const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk"
 const ADMIN_EMAIL = "cerettimgtm@gmail.com"
 
@@ -30,7 +31,9 @@ export default function CheckoutForm() {
   const [paymentMethod, setPaymentMethod] = useState("transferencia")
   const [loading, setLoading] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
-  const { toast } = useToast()
+  // Replace the existing useToast() with our custom toast
+  // const { toast } = useToast()
+  const { showSuccessToast, showErrorToast } = useCustomToast()
   const router = useRouter()
   const dispatch = useAppDispatch()
 
@@ -80,23 +83,19 @@ export default function CheckoutForm() {
     e.preventDefault()
     setLoading(true)
 
+    // First error toast
     if (!cart) {
-      toast({
-        title: "Error",
-        description: "No hay productos en el carrito",
-        variant: "destructive",
-      })
+      showErrorToast("Error", "No hay productos en el carrito")
       setLoading(false)
       return
     }
 
     // Validar campos del formulario
     if (!formData.nombre.trim() || !formData.email.trim() || !formData.telefono.trim()) {
-      toast({
-        title: "Error",
-        description: "Por favor completa todos los campos obligatorios",
-        variant: "destructive",
-      })
+      showErrorToast(
+        "Campos incompletos",
+        "Por favor completa todos los campos obligatorios para continuar con tu compra",
+      )
       setLoading(false)
       return
     }
@@ -104,11 +103,7 @@ export default function CheckoutForm() {
     // Validar formato de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Error",
-        description: "Por favor ingresa un email válido",
-        variant: "destructive",
-      })
+      showErrorToast("Email inválido", "Por favor ingresa un email válido para poder contactarte")
       setLoading(false)
       return
     }
@@ -231,20 +226,15 @@ export default function CheckoutForm() {
             errorMessage += ` (Status: ${error.status})`
           }
 
-          toast({
-            title: "Error al enviar el email",
-            description: errorMessage,
-            variant: "destructive",
-          })
+          showErrorToast("Error al enviar el email", errorMessage)
         }
       }
     } catch (error) {
       console.error("Error al procesar el pedido:", error)
-      toast({
-        title: "Error",
-        description: "Hubo un problema al procesar tu pedido. Por favor, intenta nuevamente.",
-        variant: "destructive",
-      })
+      showErrorToast(
+        "Error en el procesamiento",
+        "Hubo un problema al procesar tu pedido. Por favor, intenta nuevamente.",
+      )
     } finally {
       setLoading(false)
     }
