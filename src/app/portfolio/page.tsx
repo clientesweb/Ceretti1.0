@@ -149,7 +149,7 @@ export default function PortfolioPage() {
               className="flex justify-center"
             >
               <Image
-                src="diseno-web.png"
+                src="/diseno-web.png"
                 alt="Diseño y Desarrollo Web"
                 width={400}
                 height={400}
