@@ -63,32 +63,36 @@ const serviciosData = [
 const proyectosData = [
   {
     id: 1,
-    title: "E-commerce de Moda",
-    category: "Desarrollo Web",
+    title: "CafeClub TV",
+    category: "Desarrollo Web (PWA)",
     image: "/images/portfolio/proyecto1.jpg",
-    description: "Tienda online completa con pasarela de pagos, gestión de inventario y panel de administración.",
+    description: "Canal de streaming y entretenimiento con transmisiones en vivo y contenido interactivo.",
+    url: "https://cafeclubtv.com/",
   },
   {
     id: 2,
-    title: "App de Delivery",
-    category: "Desarrollo Mobile",
+    title: "Janneth Aguirre Bienes Raíces",
+    category: "Desarrollo Web & Mobile",
     image: "/images/portfolio/proyecto2.jpg",
-    description:
-      "Aplicación móvil para servicio de delivery con seguimiento en tiempo real y sistema de pagos integrado.",
+    description: "Página web completa para bienes raíces en Ecuador, con versiones para Android e iOS.",
+    url: "https://jannethaguirre.com/",
   },
   {
     id: 3,
-    title: "Sitio Web Corporativo",
+    title: "Asociación de Comercio y Turismo",
     category: "Diseño Web",
     image: "/images/portfolio/proyecto3.jpg",
-    description: "Diseño y desarrollo de sitio web corporativo con múltiples secciones y formularios de contacto.",
+    description:
+      "Sitio web de noticias, eventos, capacitaciones y turismo para la Asociación de Comercio y Turismo de Villa del Dique.",
+    url: "https://villadeldique.org/",
   },
   {
     id: 4,
-    title: "Plataforma Educativa",
+    title: "Iowa Restaurant",
     category: "Desarrollo Web",
     image: "/images/portfolio/proyecto4.jpg",
-    description: "Sistema de gestión de cursos online con videoconferencias, evaluaciones y certificaciones.",
+    description: "Sitio web para parrilla & restaurant con más de 50 años en la gastronomía de Villa del Dique.",
+    url: "https://iowa.ar/",
   },
 ]
 
@@ -145,7 +149,7 @@ export default function PortfolioPage() {
               className="flex justify-center"
             >
               <Image
-                src="/diseno-web.png"
+                src="/placeholder.svg?height=400&width=400"
                 alt="Diseño y Desarrollo Web"
                 width={400}
                 height={400}
@@ -246,7 +250,12 @@ export default function PortfolioPage() {
                 </span>
                 <h3 className="text-xl font-bold mb-2">{proyecto.title}</h3>
                 <p className="text-black/70 mb-4">{proyecto.description}</p>
-                <Link href="#" className="text-ceretti-blue hover:underline font-medium flex items-center">
+                <Link
+                  href={proyecto.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ceretti-blue hover:underline font-medium flex items-center"
+                >
                   Ver detalles <FaArrowRight className="ml-2" />
                 </Link>
               </div>
