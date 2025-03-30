@@ -17,16 +17,17 @@ import PaymentDetails from "./PaymentDetails"
 import { useRouter } from "next/navigation"
 import { useAppDispatch } from "@/lib/hooks/redux"
 import { clearCart } from "@/lib/features/carts/cartsSlice"
+import CouponForm from "./CouponForm"
 
 // Configuración de EmailJS
 const EMAILJS_SERVICE_ID = "service_frt57yd"
 const EMAILJS_TEMPLATE_ID_ADMIN = "template_4k3l65s" // Plantilla para el administrador
-const EMAILJS_TEMPLATE_ID_CUSTOMER = "template_qw09d2a" // REEMPLAZA ESTO con el ID de tu nueva plantilla para clientes
+const EMAILJS_TEMPLATE_ID_CUSTOMER = "template_abc123" // REEMPLAZA ESTO con el ID de tu nueva plantilla para clientes
 const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk"
 const ADMIN_EMAIL = "cerettimgtm@gmail.com"
 
 export default function CheckoutForm() {
-  const { cart, totalPrice, adjustedTotalPrice } = useAppSelector((state: RootState) => state.carts)
+  const { cart, totalPrice, adjustedTotalPrice, appliedCoupon } = useAppSelector((state: RootState) => state.carts)
   const [paymentMethod, setPaymentMethod] = useState("transferencia")
   const [loading, setLoading] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
@@ -127,11 +128,16 @@ export default function CheckoutForm() {
           })
           .join("\n\n")
 
-        const message = `Hola, quiero realizar la siguiente compra:\n\n${cartItemsText}\n\nTotal: $${Math.round(
-          adjustedTotalPrice,
-        )} ARS\n\nMis datos:\nNombre: ${formData.nombre}\nEmail: ${formData.email}\nTeléfono: ${
-          formData.telefono
-        }\nNotas: ${formData.notas}`
+        let message = `Hola, quiero realizar la siguiente compra:\n\n${cartItemsText}\n\n`
+
+        // Agregar información del cupón si se aplicó uno
+        if (appliedCoupon) {
+          message += `Cupón aplicado: ${appliedCoupon.code} (${appliedCoupon.discountPercentage}% de descuento)\n`
+        }
+
+        message += `Total: $${Math.round(adjustedTotalPrice)} ARS\n\nMis datos:\nNombre: ${formData.nombre}\nEmail: ${
+          formData.email
+        }\nTeléfono: ${formData.telefono}\nNotas: ${formData.notas}`
 
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
@@ -176,6 +182,8 @@ export default function CheckoutForm() {
             is_cripto: isCripto,
             is_whatsapp: isWhatsapp,
             orders: formattedCartItems,
+            coupon_code: appliedCoupon ? appliedCoupon.code : "No aplicado",
+            coupon_discount: appliedCoupon ? `${appliedCoupon.discountPercentage}%` : "0%",
             cost: {
               shipping: "0.00",
               tax: "0.00",
@@ -303,6 +311,8 @@ export default function CheckoutForm() {
               className="mt-1"
             />
           </div>
+
+          <CouponForm />
         </div>
       </div>
 
@@ -351,3 +361,4 @@ export default function CheckoutForm() {
     </form>
   )
 }
+
