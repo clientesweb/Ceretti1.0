@@ -97,7 +97,7 @@ export default function CouponForm() {
           </span>
         </div>
       ) : (
-        <div className="text-xs text-muted-foreground mt-1">Compra regularmente para acceder a cupones exlusivos🚀</div>
+        <div className="text-xs text-muted-foreground mt-1">Compra regularmente para acceder a cupones exclusivos🚀</div>
       )}
     </div>
   )
