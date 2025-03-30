@@ -7,15 +7,32 @@ import Link from "next/link"
 import { FaTrash } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
 import { useAppDispatch } from "@/lib/hooks/redux"
-import { remove } from "@/lib/features/carts/cartsSlice"
+import { remove, removeCoupon } from "@/lib/features/carts/cartsSlice"
+import { X } from "lucide-react"
 
 export default function CartSummary() {
-  const { cart, totalPrice, adjustedTotalPrice } = useAppSelector((state: RootState) => state.carts)
+  const { cart, totalPrice, adjustedTotalPrice, appliedCoupon, couponDiscount } = useAppSelector(
+    (state: RootState) => state.carts,
+  )
   const dispatch = useAppDispatch()
 
   if (!cart) {
     return null
   }
+
+  // Calcular el precio con descuento de productos (sin el cupón)
+  const productDiscountedPrice = cart.items.reduce((total, item) => {
+    const itemPrice =
+      item.discount.percentage > 0
+        ? Math.round(item.price - (item.price * item.discount.percentage) / 100)
+        : item.discount.amount > 0
+          ? Math.round(item.price - item.discount.amount)
+          : item.price
+    return total + itemPrice * item.quantity
+  }, 0)
+
+  // Calcular el descuento de productos (diferencia entre precio total y precio con descuento de productos)
+  const productDiscount = totalPrice - productDiscountedPrice
 
   return (
     <div className="bg-white p-6 rounded-xl border border-black/10">
@@ -85,12 +102,30 @@ export default function CartSummary() {
           <span className="text-black/60">Subtotal</span>
           <span className="font-medium">${totalPrice} ARS</span>
         </div>
-        {totalPrice !== adjustedTotalPrice && (
+        {productDiscount > 0 && (
           <div className="flex justify-between">
             <span className="text-black/60">
-              Descuento (-{Math.round(((totalPrice - adjustedTotalPrice) / totalPrice) * 100)}%)
+              Descuento productos (-{Math.round((productDiscount / totalPrice) * 100)}%)
             </span>
-            <span className="font-medium text-red-600">-${Math.round(totalPrice - adjustedTotalPrice)} ARS</span>
+            <span className="font-medium text-red-600">-${productDiscount} ARS</span>
+          </div>
+        )}
+        {appliedCoupon && (
+          <div className="flex justify-between items-center">
+            <div className="flex items-center">
+              <span className="text-black/60">
+                Cupón {appliedCoupon.code} (-{appliedCoupon.discountPercentage}%)
+              </span>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-5 w-5 ml-1 text-red-500"
+                onClick={() => dispatch(removeCoupon())}
+              >
+                <X size={14} />
+              </Button>
+            </div>
+            <span className="font-medium text-red-600">-${couponDiscount} ARS</span>
           </div>
         )}
         <div className="flex justify-between">
