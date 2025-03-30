@@ -22,7 +22,7 @@ import CouponForm from "./CouponForm"
 // Configuración de EmailJS
 const EMAILJS_SERVICE_ID = "service_frt57yd"
 const EMAILJS_TEMPLATE_ID_ADMIN = "template_4k3l65s" // Plantilla para el administrador
-const EMAILJS_TEMPLATE_ID_CUSTOMER = "template_abc123" // REEMPLAZA ESTO con el ID de tu nueva plantilla para clientes
+const EMAILJS_TEMPLATE_ID_CUSTOMER = "template_qw09d2a" // REEMPLAZA ESTO con el ID de tu nueva plantilla para clientes
 const EMAILJS_PUBLIC_KEY = "iDDoKDBMIvsNQY7mk"
 const ADMIN_EMAIL = "cerettimgtm@gmail.com"
 
