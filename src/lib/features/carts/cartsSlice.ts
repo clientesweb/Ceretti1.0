@@ -69,6 +69,21 @@ const initialState: CartsState = {
   couponDiscount: 0,
 }
 
+// Función auxiliar para calcular el precio con descuento de productos
+const calculateProductDiscountedPrice = (cart: Cart | null): number => {
+  if (!cart) return 0
+
+  return cart.items.reduce((total, item) => {
+    const itemPrice =
+      item.discount.percentage > 0
+        ? Math.round(item.price - (item.price * item.discount.percentage) / 100)
+        : item.discount.amount > 0
+          ? Math.round(item.price - item.discount.amount)
+          : item.price
+    return total + itemPrice * item.quantity
+  }, 0)
+}
+
 export const cartsSlice = createSlice({
   name: "carts",
   // `createSlice` will infer the state type from the `initialState` argument
@@ -81,8 +96,17 @@ export const cartsSlice = createSlice({
           items: [action.payload],
           totalQuantities: action.payload.quantity,
         }
-        state.totalPrice = state.totalPrice + action.payload.price * action.payload.quantity
-        state.adjustedTotalPrice = state.adjustedTotalPrice + calcAdjustedTotalPrice(state.totalPrice, action.payload)
+        state.totalPrice = action.payload.price * action.payload.quantity
+
+        // Calcular precio ajustado sin cupón
+        const itemPrice =
+          action.payload.discount.percentage > 0
+            ? Math.round(action.payload.price - (action.payload.price * action.payload.discount.percentage) / 100)
+            : action.payload.discount.amount > 0
+              ? Math.round(action.payload.price - action.payload.discount.amount)
+              : action.payload.price
+
+        state.adjustedTotalPrice = itemPrice * action.payload.quantity
 
         // Recalcular el descuento del cupón si hay uno aplicado
         if (state.appliedCoupon) {
@@ -116,7 +140,9 @@ export const cartsSlice = createSlice({
           totalQuantities: state.cart.totalQuantities + action.payload.quantity,
         }
         state.totalPrice = state.totalPrice + action.payload.price * action.payload.quantity
-        state.adjustedTotalPrice = state.adjustedTotalPrice + calcAdjustedTotalPrice(state.totalPrice, action.payload)
+
+        // Recalcular el precio ajustado completo
+        state.adjustedTotalPrice = calculateProductDiscountedPrice(state.cart)
 
         // Recalcular el descuento del cupón si hay uno aplicado
         if (state.appliedCoupon) {
@@ -132,7 +158,9 @@ export const cartsSlice = createSlice({
         totalQuantities: state.cart.totalQuantities + action.payload.quantity,
       }
       state.totalPrice = state.totalPrice + action.payload.price * action.payload.quantity
-      state.adjustedTotalPrice = state.adjustedTotalPrice + calcAdjustedTotalPrice(state.totalPrice, action.payload)
+
+      // Recalcular el precio ajustado completo
+      state.adjustedTotalPrice = calculateProductDiscountedPrice(state.cart)
 
       // Recalcular el descuento del cupón si hay uno aplicado
       if (state.appliedCoupon) {
@@ -170,8 +198,9 @@ export const cartsSlice = createSlice({
         }
 
         state.totalPrice = state.totalPrice - isItemInCart.price * 1
-        state.adjustedTotalPrice =
-          state.adjustedTotalPrice - calcAdjustedTotalPrice(isItemInCart.price, isItemInCart, 1)
+
+        // Recalcular el precio ajustado completo
+        state.adjustedTotalPrice = calculateProductDiscountedPrice(state.cart)
 
         // Recalcular el descuento del cupón si hay uno aplicado
         if (state.appliedCoupon) {
@@ -200,8 +229,9 @@ export const cartsSlice = createSlice({
         totalQuantities: state.cart.totalQuantities - isItemInCart.quantity,
       }
       state.totalPrice = state.totalPrice - isItemInCart.price * isItemInCart.quantity
-      state.adjustedTotalPrice =
-        state.adjustedTotalPrice - calcAdjustedTotalPrice(isItemInCart.price, isItemInCart, isItemInCart.quantity)
+
+      // Recalcular el precio ajustado completo
+      state.adjustedTotalPrice = calculateProductDiscountedPrice(state.cart)
 
       // Recalcular el descuento del cupón si hay uno aplicado
       if (state.appliedCoupon) {
@@ -217,18 +247,7 @@ export const cartsSlice = createSlice({
         state.appliedCoupon = coupon
 
         // Calcular el precio con descuento de productos
-        let productDiscountedPrice = 0
-        if (state.cart) {
-          productDiscountedPrice = state.cart.items.reduce((total, item) => {
-            const itemPrice =
-              item.discount.percentage > 0
-                ? Math.round(item.price - (item.price * item.discount.percentage) / 100)
-                : item.discount.amount > 0
-                  ? Math.round(item.price - item.discount.amount)
-                  : item.price
-            return total + itemPrice * item.quantity
-          }, 0)
-        }
+        const productDiscountedPrice = calculateProductDiscountedPrice(state.cart)
 
         // Calcular el descuento del cupón
         state.couponDiscount = Math.round((productDiscountedPrice * coupon.discountPercentage) / 100)
@@ -239,22 +258,9 @@ export const cartsSlice = createSlice({
     },
     removeCoupon: (state) => {
       // Calcular el precio con descuento de productos sin el cupón
-      let productDiscountedPrice = 0
-      if (state.cart) {
-        productDiscountedPrice = state.cart.items.reduce((total, item) => {
-          const itemPrice =
-            item.discount.percentage > 0
-              ? Math.round(item.price - (item.price * item.discount.percentage) / 100)
-              : item.discount.amount > 0
-                ? Math.round(item.price - item.discount.amount)
-                : item.price
-          return total + itemPrice * item.quantity
-        }, 0)
-      }
-
+      state.adjustedTotalPrice = calculateProductDiscountedPrice(state.cart)
       state.appliedCoupon = null
       state.couponDiscount = 0
-      state.adjustedTotalPrice = productDiscountedPrice
     },
     clearCart: (state) => {
       state.cart = null
