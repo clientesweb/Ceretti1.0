@@ -1,66 +1,123 @@
+"use client"
+
 import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct"
 import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import ProductListSec from "@/components/common/ProductListSec"
-import { relatedProductData, instagramNewServicesData } from "@/app/page"
-import type { QuantityOption } from "@/types/product.types"
+import { relatedProductData } from "@/app/page"
+import { useState } from "react"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Checkbox } from "@/components/ui/checkbox"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
-const quantityOptions: QuantityOption[] = [
+const quantityOptions = [
+  {
+    value: "5",
+    label: "5 Comentarios",
+    price: 2500,
+    bonus: "",
+  },
   {
     value: "10",
     label: "10 Comentarios",
     price: 4500,
-    bonus: "",
+    bonus: "Popular",
+  },
+  {
+    value: "25",
+    label: "25 Comentarios",
+    price: 10000,
+    bonus: "Mejor valor",
   },
   {
     value: "50",
     label: "50 Comentarios",
-    price: 20000,
-    bonus: "Mejor valor",
+    price: 18000,
+    bonus: "",
   },
   {
     value: "100",
     label: "100 Comentarios",
-    price: 35000,
-    bonus: "Popular",
-  },
-  {
-    value: "500",
-    label: "500 Comentarios",
-    price: 150000,
-    bonus: "Más vendido",
-  },
-  {
-    value: "1000",
-    label: "1.000 Comentarios",
-    price: 700000,
-    bonus: "Máximo impacto",
+    price: 30000,
+    bonus: "",
   },
 ]
 
-export default function ComentariosPersonalizadosInstagramPage() {
-  const product = instagramNewServicesData.find((p) => p.id === 29)
+export default function ComentariosPersonalizadosInstagram() {
+  const [profileLink, setProfileLink] = useState("")
+  const [isPublic, setIsPublic] = useState(false)
+  const [geoLocation, setGeoLocation] = useState("mundial")
+  const [commentText, setCommentText] = useState("")
 
-  if (!product) {
-    return (
-      <div className="max-w-frame mx-auto px-4 xl:px-0 py-20 text-center">
-        <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
-        <p className="mb-6">Lo sentimos, el producto que estás buscando no existe o ha sido eliminado.</p>
-        <a
-          href="/shop"
-          className="bg-ceretti-blue text-white px-6 py-3 rounded-full hover:bg-ceretti-blue/80 transition-all"
-        >
-          Volver a la tienda
-        </a>
-      </div>
-    )
+  const product = {
+    id: 29,
+    title: "Comentarios Personalizados Instagram",
+    description:
+      "Recibe comentarios personalizados en tus publicaciones de Instagram. Este servicio premium te permite especificar el contenido exacto de los comentarios para maximizar la relevancia y el impacto en tu audiencia.",
+    srcUrl: "/images/pic6.png",
+    price: 2500,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "Instagram",
   }
 
   return (
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
         <BreadcrumbProduct title={product.title} />
-        <Header data={product} quantityOptions={quantityOptions} geoType="mundial" />
+        <Header
+          data={product}
+          quantityOptions={quantityOptions}
+          customMessage="Para este servicio necesitamos que tu cuenta esté en público, nos proporciones el link de la publicación y los comentarios específicos que deseas recibir."
+        >
+          <div className="space-y-4 mt-6">
+            <div>
+              <Label htmlFor="profileLink">Link de la publicación</Label>
+              <Input
+                id="profileLink"
+                placeholder="https://www.instagram.com/p/..."
+                value={profileLink}
+                onChange={(e) => setProfileLink(e.target.value)}
+                className="mt-1"
+              />
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <Checkbox id="isPublic" checked={isPublic} onCheckedChange={(checked) => setIsPublic(checked === true)} />
+              <Label htmlFor="isPublic">Mi perfil está en público</Label>
+            </div>
+
+            <div>
+              <Label htmlFor="commentText">Texto de los comentarios</Label>
+              <Input
+                id="commentText"
+                placeholder="Escribe los comentarios que deseas recibir"
+                value={commentText}
+                onChange={(e) => setCommentText(e.target.value)}
+                className="mt-1"
+              />
+              <p className="text-xs text-gray-500 mt-1">Separa cada comentario con un punto y coma (;)</p>
+            </div>
+
+            <div>
+              <Label className="block mb-2">Geolocalización</Label>
+              <RadioGroup value={geoLocation} onValueChange={setGeoLocation} className="flex flex-col space-y-1">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="mundial" id="mundial" />
+                  <Label htmlFor="mundial">Mundial</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="calidad" id="calidad" />
+                  <Label htmlFor="calidad">Calidad</Label>
+                </div>
+              </RadioGroup>
+            </div>
+          </div>
+        </Header>
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
