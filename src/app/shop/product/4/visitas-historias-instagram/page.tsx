@@ -16,7 +16,7 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios para Visitas a Historias
+// Actualizar las opciones de precios para visitas a historias Instagram
 const visitasHistoriasOptions = [
   { value: "100", label: "100 Visitas", price: 150 },
   { value: "250", label: "250 Visitas", price: 400 },
@@ -333,4 +333,3 @@ export default function VisitasHistoriasInstagramPage() {
     </main>
   )
 }
-
