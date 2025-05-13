@@ -5,7 +5,7 @@ import ProductListSec from "@/components/common/ProductListSec"
 import { relatedProductData, instagramNewServicesData } from "@/app/page"
 import type { QuantityOption } from "@/types/product.types"
 
-export const quantityOptions: QuantityOption[] = [
+const quantityOptions: QuantityOption[] = [
   {
     value: "10",
     label: "10 Comentarios",
