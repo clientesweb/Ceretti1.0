@@ -14,7 +14,7 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para likes YouTube de calidad
 const calidadOptions = [
   { value: "100", label: "100 Likes", price: 1500, bonus: "" },
   { value: "500", label: "500 Likes", price: 4500, bonus: "" },
@@ -22,6 +22,7 @@ const calidadOptions = [
   { value: "2500", label: "2.500 Likes", price: 15000, bonus: "" },
 ]
 
+// Actualizar las opciones de precios para likes YouTube mundiales
 const mundialOptions = [
   { value: "100", label: "100 Likes", price: 500, bonus: "" },
   { value: "500", label: "500 Likes", price: 2500, bonus: "" },
@@ -362,4 +363,3 @@ export default function LikesYoutubePremiumPage() {
     </main>
   )
 }
-
