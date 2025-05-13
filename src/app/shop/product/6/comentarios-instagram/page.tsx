@@ -16,18 +16,18 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios para Comentarios
+// Actualizar las opciones de precios para comentarios Instagram
 const comentariosOptions = [
-  { value: "10", label: "10 Comentarios", price: 2000 },
-  { value: "50", label: "50 Comentarios", price: 4500 },
-  { value: "100", label: "100 Comentarios", price: 7500 },
+  { value: "10", label: "10 Comentarios", price: 2500 },
+  { value: "50", label: "50 Comentarios", price: 6500 },
+  { value: "100", label: "100 Comentarios", price: 9500 },
   { value: "500", label: "500 Comentarios", price: 15000 },
   { value: "1000", label: "1.000 Comentarios", price: 25000 },
 ]
 
 export default function ComentariosInstagramPage() {
   const [quantity, setQuantity] = useState<string>("10")
-  const [price, setPrice] = useState<number>(2000)
+  const [price, setPrice] = useState<number>(2500)
   const [postLink, setPostLink] = useState<string>("")
   const [customComments, setCustomComments] = useState<string>("")
   const dispatch = useAppDispatch()
@@ -306,4 +306,3 @@ export default function ComentariosInstagramPage() {
     </main>
   )
 }
-
