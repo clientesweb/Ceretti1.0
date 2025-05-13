@@ -16,18 +16,18 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios para Visitas
+// Actualizar las opciones de precios para visitas Instagram
 const visitasOptions = [
-  { value: "500", label: "500 Visitas", price: 250 },
-  { value: "1000", label: "1.000 Visitas", price: 500 },
-  { value: "2500", label: "2.500 Visitas", price: 1500 },
-  { value: "5000", label: "5.000 Visitas", price: 2500 },
-  { value: "10000", label: "10.000 Visitas", price: 4500 },
+  { value: "500", label: "500 Visitas", price: 350 },
+  { value: "1000", label: "1.000 Visitas", price: 600 },
+  { value: "2500", label: "2.500 Visitas", price: 1800 },
+  { value: "5000", label: "5.000 Visitas", price: 2800 },
+  { value: "10000", label: "10.000 Visitas", price: 6500 },
 ]
 
 export default function VisitasInstagramPage() {
   const [quantity, setQuantity] = useState<string>("500")
-  const [price, setPrice] = useState<number>(250)
+  const [price, setPrice] = useState<number>(350)
   const [postLink, setPostLink] = useState<string>("")
   const dispatch = useAppDispatch()
 
@@ -299,4 +299,3 @@ export default function VisitasInstagramPage() {
     </main>
   )
 }
-
