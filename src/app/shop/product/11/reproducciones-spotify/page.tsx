@@ -16,18 +16,18 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para reproducciones Spotify
 const reproduccionesOptions = [
-  { value: "500", label: "500 Reproducciones", price: 1500 },
-  { value: "1000", label: "1.000 Reproducciones", price: 2500 },
-  { value: "2500", label: "2.500 Reproducciones", price: 5000 },
-  { value: "5000", label: "5.000 Reproducciones", price: 8500 },
-  { value: "10000", label: "10.000 Reproducciones", price: 12500 },
+  { value: "500", label: "500 Reproducciones", price: 2500 },
+  { value: "1000", label: "1.000 Reproducciones", price: 3500 },
+  { value: "2500", label: "2.500 Reproducciones", price: 6500 },
+  { value: "5000", label: "5.000 Reproducciones", price: 11500 },
+  { value: "10000", label: "10.000 Reproducciones", price: 20000 },
 ]
 
 export default function ReproduccionesSpotifyPage() {
   const [quantity, setQuantity] = useState<string>("500")
-  const [price, setPrice] = useState<number>(1500)
+  const [price, setPrice] = useState<number>(2500)
   const [trackLink, setTrackLink] = useState<string>("")
   const dispatch = useAppDispatch()
 
@@ -330,4 +330,3 @@ export default function ReproduccionesSpotifyPage() {
     </main>
   )
 }
-
