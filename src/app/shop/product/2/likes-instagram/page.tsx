@@ -14,26 +14,27 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios para Likes
+// Actualizar las opciones de precios para likes Instagram de calidad
 const calidadOptions = [
   { value: "50", label: "50 Likes", price: 500, bonus: "" },
-  { value: "100", label: "100 Likes", price: 800, bonus: "" },
-  { value: "250", label: "250 Likes", price: 1500, bonus: "" },
-  { value: "500", label: "500 Likes", price: 2500, bonus: "" },
-  { value: "1000", label: "1.000 Likes", price: 4500, bonus: "" },
-  { value: "2500", label: "2.500 Likes", price: 7500, bonus: "" },
-  { value: "5000", label: "5.000 Likes", price: 12000, bonus: "" },
-  { value: "10000", label: "10.000 Likes", price: 20000, bonus: "" },
+  { value: "100", label: "100 Likes", price: 900, bonus: "" },
+  { value: "250", label: "250 Likes", price: 2000, bonus: "" },
+  { value: "500", label: "500 Likes", price: 3500, bonus: "" },
+  { value: "1000", label: "1.000 Likes", price: 5500, bonus: "" },
+  { value: "2500", label: "2.500 Likes", price: 9500, bonus: "" },
+  { value: "5000", label: "5.000 Likes", price: 14000, bonus: "" },
+  { value: "10000", label: "10.000 Likes", price: 22000, bonus: "" },
 ]
 
+// Actualizar las opciones de precios para likes Instagram mundiales
 const mundialOptions = [
-  { value: "100", label: "100 Likes", price: 500, bonus: "" },
-  { value: "250", label: "250 Likes", price: 750, bonus: "" },
-  { value: "500", label: "500 Likes", price: 1000, bonus: "" },
-  { value: "1000", label: "1.000 Likes", price: 1500, bonus: "" },
-  { value: "2500", label: "2.500 Likes", price: 2000, bonus: "" },
-  { value: "5000", label: "5.000 Likes", price: 3000, bonus: "" },
-  { value: "10000", label: "10.000 Likes", price: 4500, bonus: "" },
+  { value: "100", label: "100 Likes", price: 750, bonus: "" },
+  { value: "250", label: "250 Likes", price: 1200, bonus: "" },
+  { value: "500", label: "500 Likes", price: 1800, bonus: "" },
+  { value: "1000", label: "1.000 Likes", price: 2500, bonus: "" },
+  { value: "2500", label: "2.500 Likes", price: 4500, bonus: "" },
+  { value: "5000", label: "5.000 Likes", price: 7500, bonus: "" },
+  { value: "10000", label: "10.000 Likes", price: 12500, bonus: "" },
 ]
 
 export default function LikesInstagramPage() {
@@ -337,4 +338,3 @@ export default function LikesInstagramPage() {
     </main>
   )
 }
-
