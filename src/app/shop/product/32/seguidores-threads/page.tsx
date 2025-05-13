@@ -37,14 +37,15 @@ export default function SeguidoresThreadsPage() {
       dispatch(
         addToCart({
           id: 32,
-          title: "Seguidores Threads",
+          name: "Seguidores Threads",
+          srcUrl: "/images/threads-logo.png",
           price: selectedQuantity.price,
-          quantity: 1,
-          image: "/images/threads-logo.png",
-          selectedOptions: {
-            quantity: selectedQuantity.label,
-            geo: selectedGeo === "mundial" ? "Mundial" : "Calidad",
+          attributes: [selectedQuantity.label, selectedGeo === "mundial" ? "Mundial" : "Calidad"],
+          discount: {
+            amount: 0,
+            percentage: 0,
           },
+          quantity: 1,
         }),
       )
       toast({
