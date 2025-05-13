@@ -2,43 +2,48 @@ import { cn } from "@/lib/utils"
 import { integralCF } from "@/styles/fonts"
 import * as motion from "framer-motion/client"
 
-const platformsData = [
+const data = [
   {
     id: 1,
     title: "Instagram",
-    url: "/shop?platform=instagram",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2405.21.06-Asquareaspectratioimagefeaturinga3DInstagramlogoinspiredbytheprovidedreference.ThelogohastheclassicInstagramgradientwiththewhi-4Af8AiOp6ugrokyImESdpfoNsRJ1UW.jpeg",
-    description: "Impulsa tu presencia en Instagram",
+    description: "Impulsa tu presencia en Instagram con nuestros servicios de seguidores, likes, visitas y más.",
+    imgSrc: "/images/instagram-3d-logo.png",
+    link: "/shop?platform=instagram",
   },
   {
     id: 2,
-    title: "Facebook",
-    url: "/shop?platform=facebook",
-    image: "/images/facebook-3d-logo.png",
-    description: "Destaca en Facebook",
+    title: "YouTube",
+    description: "Aumenta tus suscriptores, visitas y engagement en YouTube con nuestros servicios de calidad.",
+    imgSrc: "/images/youtube-3d-logo.png",
+    link: "/shop?platform=youtube",
   },
   {
     id: 3,
     title: "TikTok",
-    url: "/shop?platform=tiktok",
-    image: "/images/tiktok-3d-logo.png",
-    description: "Viralízate en TikTok",
+    description: "Haz crecer tu cuenta de TikTok con seguidores, likes y visitas de calidad.",
+    imgSrc: "/images/tiktok-3d-logo.png",
+    link: "/shop?platform=tiktok",
   },
   {
     id: 4,
-    title: "YouTube",
-    url: "/shop?platform=youtube",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL_E2024-05-2403.06.32-Asquareaspectratioimagefeaturinga3DYouTubelogoinspiredbytheprovidedreference.Thelogoisredwithawhiteplayicon_elongatedhorizont_7b5b1c01-8f04-4df1-bfb0-f6aa66a2f82f-XWNWNh4DxwyZRIqrY7RyPHExLZ5L5s.jpeg",
-    description: "Crece en YouTube",
+    title: "Spotify",
+    description: "Mejora tu presencia en Spotify con reproducciones, seguidores y oyentes mensuales.",
+    imgSrc: "/images/spotify-3d-logo.png",
+    link: "/shop?platform=spotify",
   },
   {
     id: 5,
-    title: "Spotify",
-    url: "/shop?platform=spotify",
-    image: "/images/spotify-3d-logo.png",
-    description: "Potencia tu música",
+    title: "Threads",
+    description: "Impulsa tu cuenta de Threads con seguidores y likes de calidad.",
+    imgSrc: "/images/threads-logo.png",
+    link: "/shop?platform=threads",
+  },
+  {
+    id: 6,
+    title: "SoundCloud",
+    description: "Aumenta tu presencia en SoundCloud con reproducciones, seguidores y likes.",
+    imgSrc: "/images/soundcloud-logo.png",
+    link: "/shop?platform=soundcloud",
   },
 ]
 
@@ -56,7 +61,7 @@ const DressStyle = () => {
           EXPLORA POR PLATAFORMA
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {platformsData.map((platform, index) => (
+          {data.map((platform, index) => (
             <motion.div
               key={platform.id}
               initial={{ y: "100px", opacity: 0 }}
@@ -67,7 +72,7 @@ const DressStyle = () => {
             >
               <div className="relative aspect-square overflow-hidden bg-black rounded-2xl">
                 <img
-                  src={platform.image || "/placeholder.svg"}
+                  src={platform.imgSrc || "/placeholder.svg"}
                   alt={platform.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
@@ -86,4 +91,3 @@ const DressStyle = () => {
 }
 
 export default DressStyle
-
