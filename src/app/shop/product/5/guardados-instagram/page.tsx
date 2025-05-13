@@ -17,7 +17,7 @@ import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 import { reviewsData } from "@/app/page"
 
-// Definir las opciones de cantidad y precios para Guardados
+// Actualizar las opciones de precios para guardados Instagram
 const guardadosOptions = [
   { value: "250", label: "250 Guardados", price: 400 },
   { value: "500", label: "500 Guardados", price: 800 },
@@ -301,4 +301,3 @@ export default function GuardadosInstagramPage() {
     </main>
   )
 }
-
