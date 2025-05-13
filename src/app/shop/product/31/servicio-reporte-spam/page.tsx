@@ -31,14 +31,15 @@ export default function ServicioReporteSpamPage() {
       dispatch(
         addToCart({
           id: 31,
-          title: "Servicio de Reporte por Spam",
+          name: "Servicio de Reporte por Spam",
+          srcUrl: "/images/instagram-3d-logo.png",
           price: 0,
-          quantity: 1,
-          image: "/images/instagram-3d-logo.png",
-          selectedOptions: {
-            platform: platforms.find((p) => p.value === selectedPlatform)?.label || "Instagram",
-            type: "Consultar precio",
+          attributes: [platforms.find((p) => p.value === selectedPlatform)?.label || "Instagram", "Consultar precio"],
+          discount: {
+            amount: 0,
+            percentage: 0,
           },
+          quantity: 1,
         }),
       )
       toast({
