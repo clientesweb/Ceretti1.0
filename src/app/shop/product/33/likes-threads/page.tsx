@@ -1,72 +1,116 @@
+"use client"
+
 import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct"
 import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import ProductListSec from "@/components/common/ProductListSec"
-import { relatedProductData, threadsServicesData } from "@/app/page"
-import type { QuantityOption } from "@/types/product.types"
+import { relatedProductData } from "@/app/page"
+import { useState } from "react"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Checkbox } from "@/components/ui/checkbox"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
-const quantityOptions: QuantityOption[] = [
-  {
-    value: "50",
-    label: "50 Likes",
-    price: 900,
-    bonus: "",
-  },
+const quantityOptions = [
   {
     value: "100",
     label: "100 Likes",
-    price: 1500,
-    bonus: "Mejor valor",
+    price: 1000,
+    bonus: "",
   },
   {
     value: "250",
     label: "250 Likes",
-    price: 3000,
-    bonus: "Popular",
+    price: 2000,
+    bonus: "",
   },
   {
     value: "500",
     label: "500 Likes",
-    price: 5000,
-    bonus: "Más vendido",
+    price: 3500,
+    bonus: "Popular",
   },
   {
     value: "1000",
-    label: "1.000 Likes",
-    price: 9000,
-    bonus: "",
+    label: "1000 Likes",
+    price: 5000,
+    bonus: "Mejor valor",
   },
   {
     value: "2500",
-    label: "2.500 Likes",
-    price: 16000,
-    bonus: "Máximo impacto",
+    label: "2500 Likes",
+    price: 10000,
+    bonus: "",
+  },
+  {
+    value: "5000",
+    label: "5000 Likes",
+    price: 18000,
+    bonus: "",
   },
 ]
 
-export default function LikesThreadsPage() {
-  const product = threadsServicesData.find((p) => p.id === 33)
+export default function LikesThreads() {
+  const [postLink, setPostLink] = useState("")
+  const [isPublic, setIsPublic] = useState(false)
+  const [geoLocation, setGeoLocation] = useState("mundial")
 
-  if (!product) {
-    return (
-      <div className="max-w-frame mx-auto px-4 xl:px-0 py-20 text-center">
-        <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
-        <p className="mb-6">Lo sentimos, el producto que estás buscando no existe o ha sido eliminado.</p>
-        <a
-          href="/shop"
-          className="bg-ceretti-blue text-white px-6 py-3 rounded-full hover:bg-ceretti-blue/80 transition-all"
-        >
-          Volver a la tienda
-        </a>
-      </div>
-    )
+  const product = {
+    id: 33,
+    title: "Likes Threads",
+    description:
+      "Aumenta la interacción en tus publicaciones de Threads con likes reales. Este servicio mejora la visibilidad de tu contenido y aumenta tu credibilidad en la plataforma.",
+    srcUrl: "/images/threads-logo.png",
+    price: 1000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "Threads",
   }
 
   return (
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
         <BreadcrumbProduct title={product.title} />
-        <Header data={product} quantityOptions={quantityOptions} geoType="mundial" />
+        <Header
+          data={product}
+          quantityOptions={quantityOptions}
+          customMessage="Para este servicio necesitamos que tu cuenta esté en público y nos proporciones el link de la publicación donde deseas los likes."
+        >
+          <div className="space-y-4 mt-6">
+            <div>
+              <Label htmlFor="postLink">Link de la publicación</Label>
+              <Input
+                id="postLink"
+                placeholder="https://www.threads.net/t/..."
+                value={postLink}
+                onChange={(e) => setPostLink(e.target.value)}
+                className="mt-1"
+              />
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <Checkbox id="isPublic" checked={isPublic} onCheckedChange={(checked) => setIsPublic(checked === true)} />
+              <Label htmlFor="isPublic">Mi perfil está en público</Label>
+            </div>
+
+            <div>
+              <Label className="block mb-2">Geolocalización</Label>
+              <RadioGroup value={geoLocation} onValueChange={setGeoLocation} className="flex flex-col space-y-1">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="mundial" id="mundial" />
+                  <Label htmlFor="mundial">Mundial</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="calidad" id="calidad" />
+                  <Label htmlFor="calidad">Calidad</Label>
+                </div>
+              </RadioGroup>
+            </div>
+          </div>
+        </Header>
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
