@@ -38,14 +38,15 @@ export default function ReaccionHistoriaQuizInstagramPage() {
       dispatch(
         addToCart({
           id: 24,
-          title: "Reacción Historia Quiz Instagram",
+          name: "Reacción Historia Quiz Instagram",
+          srcUrl: "/images/instagram-3d-logo.png",
           price: selectedQuantity.price,
-          quantity: 1,
-          image: "/images/instagram-3d-logo.png",
-          selectedOptions: {
-            quantity: selectedQuantity.label,
-            geo: selectedGeo === "mundial" ? "Mundial" : "Calidad",
+          attributes: [selectedQuantity.value, selectedGeo],
+          discount: {
+            amount: 0,
+            percentage: 0,
           },
+          quantity: 1,
         }),
       )
       toast({
