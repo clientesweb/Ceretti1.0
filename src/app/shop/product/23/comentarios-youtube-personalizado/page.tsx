@@ -16,17 +16,17 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para comentarios personalizados YouTube
 const comentariosOptions = [
-  { value: "10", label: "10 Comentarios", price: 2000 },
-  { value: "25", label: "25 Comentarios", price: 5000 },
-  { value: "50", label: "50 Comentarios", price: 10000 },
-  { value: "100", label: "100 Comentarios", price: 18000 },
+  { value: "10", label: "10 Comentarios", price: 5000 },
+  { value: "25", label: "25 Comentarios", price: 9500 },
+  { value: "50", label: "50 Comentarios", price: 17500 },
+  { value: "100", label: "100 Comentarios", price: 25000 },
 ]
 
 export default function ComentariosYoutubePersonalizadosPage() {
   const [quantity, setQuantity] = useState<string>("10")
-  const [price, setPrice] = useState<number>(2000)
+  const [price, setPrice] = useState<number>(5000)
   const [videoLink, setVideoLink] = useState<string>("")
   const [customComments, setCustomComments] = useState<string>("")
   const dispatch = useAppDispatch()
@@ -351,4 +351,3 @@ export default function ComentariosYoutubePersonalizadosPage() {
     </main>
   )
 }
-
