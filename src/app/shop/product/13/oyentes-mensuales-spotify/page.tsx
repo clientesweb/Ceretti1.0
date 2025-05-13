@@ -16,16 +16,16 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para oyentes mensuales Spotify
 const oyentesOptions = [
-  { value: "1000", label: "1.000 Oyentes Mensuales", price: 5000 },
-  { value: "2500", label: "2.500 Oyentes Mensuales", price: 7500 },
-  { value: "5000", label: "5.000 Oyentes Mensuales", price: 12500 },
+  { value: "1000", label: "1.000 Oyentes Mensuales", price: 7500 },
+  { value: "2500", label: "2.500 Oyentes Mensuales", price: 10500 },
+  { value: "5000", label: "5.000 Oyentes Mensuales", price: 18000 },
 ]
 
 export default function OyentesMensualesSpotifyPage() {
   const [quantity, setQuantity] = useState<string>("1000")
-  const [price, setPrice] = useState<number>(5000)
+  const [price, setPrice] = useState<number>(7500)
   const [profileLink, setProfileLink] = useState<string>("")
   const dispatch = useAppDispatch()
 
@@ -318,4 +318,3 @@ export default function OyentesMensualesSpotifyPage() {
     </main>
   )
 }
-
