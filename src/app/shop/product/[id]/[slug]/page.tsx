@@ -79,6 +79,57 @@ export default function ProductPage() {
     } else if (id === 23) {
       router.push("/shop/product/23/comentarios-youtube-personalizados")
       return
+    } else if (id === 24) {
+      router.push("/shop/product/24/reaccion-quiz-instagram")
+      return
+    } else if (id === 25) {
+      router.push("/shop/product/25/barra-reaccion-instagram")
+      return
+    } else if (id === 26) {
+      router.push("/shop/product/26/visitas-historias-premium-instagram")
+      return
+    } else if (id === 27) {
+      router.push("/shop/product/27/impresiones-posteos-instagram")
+      return
+    } else if (id === 28) {
+      router.push("/shop/product/28/comentarios-random-instagram")
+      return
+    } else if (id === 29) {
+      router.push("/shop/product/29/comentarios-personalizados-instagram")
+      return
+    } else if (id === 30) {
+      router.push("/shop/product/30/compartidos-posteos-instagram")
+      return
+    } else if (id === 31) {
+      router.push("/shop/product/31/servicio-reporte-spam")
+      return
+    } else if (id === 32) {
+      router.push("/shop/product/32/seguidores-threads")
+      return
+    } else if (id === 33) {
+      router.push("/shop/product/33/likes-threads")
+      return
+    } else if (id === 34) {
+      router.push("/shop/product/34/seguidores-soundcloud")
+      return
+    } else if (id === 35) {
+      router.push("/shop/product/35/reproducciones-soundcloud")
+      return
+    } else if (id === 36) {
+      router.push("/shop/product/36/likes-soundcloud")
+      return
+    } else if (id === 37) {
+      router.push("/shop/product/37/comentarios-random-soundcloud")
+      return
+    } else if (id === 38) {
+      router.push("/shop/product/38/retencion-google-20s")
+      return
+    } else if (id === 39) {
+      router.push("/shop/product/39/retencion-google-140s")
+      return
+    } else if (id === 40) {
+      router.push("/shop/product/40/trafico-seo-web")
+      return
     }
 
     // Para otros productos, mostrar la página genérica
@@ -127,4 +178,3 @@ export default function ProductPage() {
     </main>
   )
 }
-
