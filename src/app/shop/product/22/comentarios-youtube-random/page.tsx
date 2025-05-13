@@ -16,17 +16,17 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Actualizar las opciones de precios para comentarios random YouTube
+// Definir las opciones de cantidad y precios
 const comentariosOptions = [
-  { value: "20", label: "20 Comentarios", price: 1500 },
+  { value: "10", label: "10 Comentarios", price: 1000 },
   { value: "25", label: "25 Comentarios", price: 2500 },
   { value: "50", label: "50 Comentarios", price: 5000 },
   { value: "100", label: "100 Comentarios", price: 9000 },
 ]
 
 export default function ComentariosYoutubeRandomPage() {
-  const [quantity, setQuantity] = useState<string>("20")
-  const [price, setPrice] = useState<number>(1500)
+  const [quantity, setQuantity] = useState<string>("10")
+  const [price, setPrice] = useState<number>(1000)
   const [videoLink, setVideoLink] = useState<string>("")
   const [language, setLanguage] = useState<string>("español")
   const dispatch = useAppDispatch()
@@ -262,7 +262,7 @@ export default function ComentariosYoutubeRandomPage() {
                   <li>🔥 Este canal es fuego puro</li>
                   <li>✨ Contenido de calidad como siempre</li>
                   <li>👌 Excelente trabajo</li>
-                  <li>😍 Simplemente perfecto</li>
+                  <li>�� Simplemente perfecto</li>
                   <li>💯 100% recomendado</li>
                 </ul>
                 <p className="text-black/70 mt-3 mb-3">Ejemplos de comentarios en inglés:</p>
