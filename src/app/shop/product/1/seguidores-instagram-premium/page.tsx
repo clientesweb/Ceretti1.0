@@ -14,32 +14,33 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para seguidores Instagram de calidad
 const calidadOptions = [
-  { value: "100", label: "100 Seguidores", price: 1800, bonus: "" },
-  { value: "250", label: "250 Seguidores", price: 3500, bonus: "" },
-  { value: "500", label: "500 Seguidores", price: 6500, bonus: "" },
-  { value: "1000", label: "1.000 Seguidores", price: 12000, bonus: "+ 250 Likes" },
+  { value: "100", label: "100 Seguidores", price: 2500, bonus: "" },
+  { value: "250", label: "250 Seguidores", price: 4500, bonus: "" },
+  { value: "500", label: "500 Seguidores", price: 7500, bonus: "" },
+  { value: "1000", label: "1.000 Seguidores", price: 13500, bonus: "+ 250 Likes" },
   { value: "2500", label: "2.500 Seguidores", price: 30000, bonus: "+ 500 Likes" },
   { value: "5000", label: "5.000 Seguidores", price: 60000, bonus: "+ 1K Likes + 1K Visitas" },
   { value: "10000", label: "10.000 Seguidores", price: 120000, bonus: "+ 2K Likes + 2K Visitas" },
 ]
 
+// Actualizar las opciones de precios para seguidores Instagram mundiales
 const mundialOptions = [
-  { value: "100", label: "100 Seguidores", price: 900, bonus: "" },
-  { value: "250", label: "250 Seguidores", price: 1500, bonus: "" },
-  { value: "500", label: "500 Seguidores", price: 2500, bonus: "" },
-  { value: "1000", label: "1.000 Seguidores", price: 4500, bonus: "" },
-  { value: "2500", label: "2.500 Seguidores", price: 9500, bonus: "+ 250 Likes" },
+  { value: "100", label: "100 Seguidores", price: 1000, bonus: "" },
+  { value: "250", label: "250 Seguidores", price: 1800, bonus: "" },
+  { value: "500", label: "500 Seguidores", price: 3000, bonus: "" },
+  { value: "1000", label: "1.000 Seguidores", price: 5000, bonus: "" },
+  { value: "2500", label: "2.500 Seguidores", price: 10500, bonus: "+ 250 Likes" },
   { value: "5000", label: "5.000 Seguidores", price: 18000, bonus: "+ 500 Likes" },
-  { value: "8000", label: "8.000 Seguidores", price: 23000, bonus: "+ 1K Likes + 1K Visitas" },
-  { value: "10000", label: "10.000 Seguidores", price: 25000, bonus: "+ 2K Likes + 2K Visitas" },
+  { value: "8000", label: "8.000 Seguidores", price: 25000, bonus: "+ 1K Likes + 1K Visitas" },
+  { value: "10000", label: "10.000 Seguidores", price: 28000, bonus: "+ 2K Likes + 2K Visitas" },
 ]
 
 export default function SeguidoresInstagramPage() {
   const [geoType, setGeoType] = useState<string>("mundial")
   const [quantity, setQuantity] = useState<string>("100")
-  const [price, setPrice] = useState<number>(900)
+  const [price, setPrice] = useState<number>(1000)
   const [bonus, setBonus] = useState<string>("")
   const [profileLink, setProfileLink] = useState<string>("")
   const [isPublic, setIsPublic] = useState<boolean>(true)
@@ -338,4 +339,3 @@ export default function SeguidoresInstagramPage() {
     </main>
   )
 }
-
