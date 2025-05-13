@@ -10,7 +10,7 @@ import { integralCF } from "@/styles/fonts"
 import { cn } from "@/lib/utils"
 import Rating from "@/components/ui/Rating"
 import { Button } from "@/components/ui/button"
-import { FaCheck, FaSliders } from "react-icons/fa"
+import { FaCheck, FaSlidersH } from "react-icons/fa"
 import { addToCart } from "@/lib/features/carts/cartsSlice"
 import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
@@ -86,7 +86,7 @@ export default function BarraReaccionInstagramPage() {
                 priority
               />
               <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-3 rounded-full">
-                <FaSliders className="text-pink-500 text-3xl animate-pulse" />
+                <FaSlidersH className="text-pink-500 text-3xl animate-pulse" />
               </div>
             </div>
           </div>
