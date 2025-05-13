@@ -5,7 +5,14 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks/redux"
 import type { RootState } from "@/lib/store"
 import type { Product } from "@/types/product.types"
 
-const AddToCartBtn = ({ data }: { data: Product & { quantity: number } }) => {
+interface AddToCartBtnProps {
+  data: Product
+  selectedQuantity?: string
+  selectedGeo?: string
+  price?: number
+}
+
+const AddToCartBtn = ({ data, selectedQuantity, selectedGeo }: AddToCartBtnProps) => {
   const dispatch = useAppDispatch()
   const { sizeSelection, colorSelection } = useAppSelector((state: RootState) => state.products)
 
@@ -20,9 +27,9 @@ const AddToCartBtn = ({ data }: { data: Product & { quantity: number } }) => {
             name: data.title,
             srcUrl: data.srcUrl,
             price: data.price,
-            attributes: [sizeSelection, colorSelection.name],
+            attributes: [sizeSelection, colorSelection?.name, selectedQuantity, selectedGeo].filter(Boolean),
             discount: data.discount,
-            quantity: data.quantity,
+            quantity: 1, // Default quantity to 1 if not provided
           }),
         )
       }
