@@ -37,14 +37,15 @@ export default function ImpresionesInstagramPage() {
       dispatch(
         addToCart({
           id: 27,
-          title: "Impresiones Instagram",
+          name: "Impresiones Instagram",
+          srcUrl: "/images/instagram-3d-logo.png",
           price: selectedQuantity.price,
-          quantity: 1,
-          image: "/images/instagram-3d-logo.png",
-          selectedOptions: {
-            quantity: selectedQuantity.label,
-            geo: selectedGeo === "mundial" ? "Mundial" : "Calidad",
+          attributes: [selectedQuantity.label, selectedGeo === "mundial" ? "Mundial" : "Calidad"],
+          discount: {
+            amount: 0,
+            percentage: 0,
           },
+          quantity: 1,
         }),
       )
       toast({
