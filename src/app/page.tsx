@@ -186,7 +186,7 @@ export const relatedProductData: Product[] = [
   },
 ]
 
-// Nuevos productos TikTok
+// Productos TikTok
 export const tiktokProductsData: Product[] = [
   {
     id: 15,
@@ -232,7 +232,7 @@ export const tiktokProductsData: Product[] = [
   },
 ]
 
-// Nuevos productos Facebook
+// Productos Facebook
 export const facebookProductsData: Product[] = [
   {
     id: 18,
@@ -278,7 +278,7 @@ export const facebookProductsData: Product[] = [
   },
 ]
 
-// Nuevos productos YouTube
+// Productos YouTube
 export const youtubeProductsData: Product[] = [
   {
     id: 21,
@@ -324,6 +324,250 @@ export const youtubeProductsData: Product[] = [
   },
 ]
 
+// Nuevos productos Instagram
+export const instagramNewProductsData: Product[] = [
+  {
+    id: 24,
+    title: "Reacción Historia Quiz Instagram",
+    description: "Aumenta las reacciones a tus encuestas en historias con cuentas mundiales.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 250,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "instagram",
+  },
+  {
+    id: 25,
+    title: "Barra de Reacción Instagram",
+    description: "Aumenta las reacciones a tus barras en historias con cuentas mundiales.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 400,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "instagram",
+  },
+  {
+    id: 26,
+    title: "Visitas Historias Activas Instagram",
+    description: "Aumenta las visualizaciones de todas tus historias activas con cuentas mundiales.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 550,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "instagram",
+  },
+  {
+    id: 27,
+    title: "Impresiones Instagram",
+    description: "Aumenta las impresiones de tus publicaciones y mejora tu alcance.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 400,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "instagram",
+  },
+  {
+    id: 28,
+    title: "Comentarios Random Instagram",
+    description: "Aumenta el engagement con comentarios aleatorios en tus publicaciones.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 2000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "instagram",
+  },
+  {
+    id: 29,
+    title: "Comentarios Personalizados Instagram",
+    description: "Aumenta el engagement con comentarios personalizados en tus publicaciones.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 4500,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "instagram",
+  },
+  {
+    id: 30,
+    title: "Compartidos Instagram",
+    description: "Aumenta los compartidos de tus publicaciones y mejora tu alcance.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 350,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "instagram",
+  },
+]
+
+// Servicio de reporte por spam
+export const reporteSpamData: Product[] = [
+  {
+    id: 31,
+    title: "Servicio de Reporte por Spam",
+    description: "Reporta cuentas o publicaciones específicas en diversas plataformas.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    gallery: ["/images/instagram-3d-logo.png"],
+    price: 0,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "multiplatform",
+  },
+]
+
+// Productos Threads
+export const threadsProductsData: Product[] = [
+  {
+    id: 32,
+    title: "Seguidores Threads",
+    description: "Incrementa tus seguidores en Threads y mejora tu credibilidad.",
+    srcUrl: "/images/threads-logo.png",
+    gallery: ["/images/threads-logo.png"],
+    price: 800,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "threads",
+  },
+  {
+    id: 33,
+    title: "Likes Threads",
+    description: "Aumenta los likes de tus publicaciones en Threads y mejora tu engagement.",
+    srcUrl: "/images/threads-logo.png",
+    gallery: ["/images/threads-logo.png"],
+    price: 900,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "threads",
+  },
+]
+
+// Productos SoundCloud
+export const soundcloudProductsData: Product[] = [
+  {
+    id: 34,
+    title: "Seguidores SoundCloud",
+    description: "Incrementa tus seguidores en SoundCloud y mejora tu credibilidad como artista.",
+    srcUrl: "/images/soundcloud-logo.png",
+    gallery: ["/images/soundcloud-logo.png"],
+    price: 1000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "soundcloud",
+  },
+  {
+    id: 35,
+    title: "Reproducciones SoundCloud",
+    description: "Aumenta las reproducciones de tus canciones en SoundCloud y mejora tu visibilidad.",
+    srcUrl: "/images/soundcloud-logo.png",
+    gallery: ["/images/soundcloud-logo.png"],
+    price: 600,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "soundcloud",
+  },
+  {
+    id: 36,
+    title: "Likes SoundCloud",
+    description: "Aumenta los likes de tus canciones en SoundCloud y mejora tu engagement.",
+    srcUrl: "/images/soundcloud-logo.png",
+    gallery: ["/images/soundcloud-logo.png"],
+    price: 900,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "soundcloud",
+  },
+  {
+    id: 37,
+    title: "Comentarios SoundCloud",
+    description: "Aumenta el engagement con comentarios aleatorios en inglés o español para tus canciones.",
+    srcUrl: "/images/soundcloud-logo.png",
+    gallery: ["/images/soundcloud-logo.png"],
+    price: 3000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "soundcloud",
+  },
+]
+
+// Servicios SEO
+export const seoProductsData: Product[] = [
+  {
+    id: 38,
+    title: "Retención Google",
+    description: "Mejora el posicionamiento de tu sitio con retención directa de Google.",
+    srcUrl: "/placeholder.svg?height=400&width=400&text=SEO",
+    gallery: ["/placeholder.svg?height=400&width=400&text=SEO"],
+    price: 4000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.9,
+    platform: "seo",
+  },
+  {
+    id: 39,
+    title: "SEO Directo a Web",
+    description: "Aumenta el tráfico real a tu sitio web con visitas de calidad.",
+    srcUrl: "/placeholder.svg?height=400&width=400&text=SEO",
+    gallery: ["/placeholder.svg?height=400&width=400&text=SEO"],
+    price: 1000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.8,
+    platform: "seo",
+  },
+]
+
 // Combinamos todos los productos para exportarlos juntos
 export const allProductsData: Product[] = [
   ...newArrivalsData,
@@ -332,6 +576,11 @@ export const allProductsData: Product[] = [
   ...tiktokProductsData,
   ...facebookProductsData,
   ...youtubeProductsData,
+  ...instagramNewProductsData,
+  ...reporteSpamData,
+  ...threadsProductsData,
+  ...soundcloudProductsData,
+  ...seoProductsData,
 ]
 
 export const reviewsData: Review[] = [
@@ -396,6 +645,15 @@ export default function Home() {
           <ProductListSec title="MÁS VENDIDOS" data={topSellingData} viewAllLink="/shop#mas-vendidos" />
         </div>
         <div className="mb-[50px] sm:mb-20">
+          <ProductListSec title="INSTAGRAM" data={instagramNewProductsData.slice(0, 4)} viewAllLink="/shop#instagram" />
+        </div>
+        <div className="mb-[50px] sm:mb-20">
+          <ProductListSec title="THREADS" data={threadsProductsData} viewAllLink="/shop#threads" />
+        </div>
+        <div className="mb-[50px] sm:mb-20">
+          <ProductListSec title="SOUNDCLOUD" data={soundcloudProductsData} viewAllLink="/shop#soundcloud" />
+        </div>
+        <div className="mb-[50px] sm:mb-20">
           <DressStyle />
         </div>
         <Faqs />
@@ -404,4 +662,3 @@ export default function Home() {
     </>
   )
 }
-
