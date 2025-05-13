@@ -16,17 +16,17 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para likes Facebook
 const likesOptions = [
-  { value: "100", label: "100 Likes", price: 900 },
-  { value: "500", label: "500 Likes", price: 3000 },
-  { value: "1000", label: "1.000 Likes", price: 4500 },
-  { value: "5000", label: "5.000 Likes", price: 15000 },
+  { value: "100", label: "100 Likes", price: 1000 },
+  { value: "500", label: "500 Likes", price: 3500 },
+  { value: "1000", label: "1.000 Likes", price: 6500 },
+  { value: "5000", label: "5.000 Likes", price: 20000 },
 ]
 
 export default function LikesFacebookPage() {
   const [quantity, setQuantity] = useState<string>("100")
-  const [price, setPrice] = useState<number>(900)
+  const [price, setPrice] = useState<number>(1000)
   const [postLink, setPostLink] = useState<string>("")
   const dispatch = useAppDispatch()
 
@@ -279,4 +279,3 @@ export default function LikesFacebookPage() {
     </main>
   )
 }
-
