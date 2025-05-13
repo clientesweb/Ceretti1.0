@@ -1,25 +1,62 @@
+"use client"
+
 import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct"
 import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import ProductListSec from "@/components/common/ProductListSec"
-import { relatedProductData, reportServiceData } from "@/app/page"
+import { relatedProductData } from "@/app/page"
+import { useState } from "react"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-export default function ServicioReporteSpamPage() {
-  const product = reportServiceData.find((p) => p.id === 31)
+const quantityOptions = [
+  {
+    value: "50",
+    label: "50 Reportes",
+    price: 5000,
+    bonus: "",
+  },
+  {
+    value: "100",
+    label: "100 Reportes",
+    price: 9000,
+    bonus: "Popular",
+  },
+  {
+    value: "250",
+    label: "250 Reportes",
+    price: 20000,
+    bonus: "Mejor valor",
+  },
+  {
+    value: "500",
+    label: "500 Reportes",
+    price: 35000,
+    bonus: "",
+  },
+]
 
-  if (!product) {
-    return (
-      <div className="max-w-frame mx-auto px-4 xl:px-0 py-20 text-center">
-        <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
-        <p className="mb-6">Lo sentimos, el producto que estás buscando no existe o ha sido eliminado.</p>
-        <a
-          href="/shop"
-          className="bg-ceretti-blue text-white px-6 py-3 rounded-full hover:bg-ceretti-blue/80 transition-all"
-        >
-          Volver a la tienda
-        </a>
-      </div>
-    )
+export default function ServicioReporteSpam() {
+  const [profileLink, setProfileLink] = useState("")
+  const [reportReason, setReportReason] = useState("")
+  const [platform, setPlatform] = useState("instagram")
+  const [additionalInfo, setAdditionalInfo] = useState("")
+
+  const product = {
+    id: 31,
+    title: "Servicio Reporte Spam",
+    description:
+      "Servicio especializado para reportar cuentas o contenido que violan las normas de la plataforma. Este servicio ayuda a mantener un entorno digital más seguro y libre de spam.",
+    srcUrl: "/images/pic15.png",
+    price: 5000,
+    discount: {
+      amount: 0,
+      percentage: 0,
+    },
+    rating: 4.7,
+    platform: "Todas las plataformas",
   }
 
   return (
@@ -28,8 +65,69 @@ export default function ServicioReporteSpamPage() {
         <BreadcrumbProduct title={product.title} />
         <Header
           data={product}
-          customMessage="Consultar por valor. Servicio disponible para TikTok, Instagram, Facebook, YouTube, X y Telegram."
-        />
+          quantityOptions={quantityOptions}
+          customMessage="Para este servicio necesitamos que nos proporciones el link del perfil o contenido que deseas reportar y el motivo específico."
+        >
+          <div className="space-y-4 mt-6">
+            <div>
+              <Label htmlFor="platform">Plataforma</Label>
+              <Select value={platform} onValueChange={setPlatform}>
+                <SelectTrigger className="mt-1">
+                  <SelectValue placeholder="Selecciona la plataforma" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="instagram">Instagram</SelectItem>
+                  <SelectItem value="facebook">Facebook</SelectItem>
+                  <SelectItem value="tiktok">TikTok</SelectItem>
+                  <SelectItem value="youtube">YouTube</SelectItem>
+                  <SelectItem value="twitter">Twitter</SelectItem>
+                  <SelectItem value="threads">Threads</SelectItem>
+                  <SelectItem value="otra">Otra</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <Label htmlFor="profileLink">Link del perfil o contenido</Label>
+              <Input
+                id="profileLink"
+                placeholder="https://..."
+                value={profileLink}
+                onChange={(e) => setProfileLink(e.target.value)}
+                className="mt-1"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="reportReason">Motivo del reporte</Label>
+              <Select value={reportReason} onValueChange={setReportReason}>
+                <SelectTrigger className="mt-1">
+                  <SelectValue placeholder="Selecciona el motivo" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="spam">Spam</SelectItem>
+                  <SelectItem value="contenido_inapropiado">Contenido inapropiado</SelectItem>
+                  <SelectItem value="acoso">Acoso</SelectItem>
+                  <SelectItem value="suplantacion">Suplantación de identidad</SelectItem>
+                  <SelectItem value="derechos_autor">Violación de derechos de autor</SelectItem>
+                  <SelectItem value="otro">Otro</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <Label htmlFor="additionalInfo">Información adicional</Label>
+              <Textarea
+                id="additionalInfo"
+                placeholder="Proporciona detalles adicionales sobre el reporte"
+                value={additionalInfo}
+                onChange={(e) => setAdditionalInfo(e.target.value)}
+                className="mt-1"
+                rows={4}
+              />
+            </div>
+          </div>
+        </Header>
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
