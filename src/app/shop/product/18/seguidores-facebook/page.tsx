@@ -16,7 +16,7 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para seguidores Facebook
 const seguidoresOptions = [
   { value: "1000", label: "1.000 Seguidores", price: 5000 },
   { value: "5000", label: "5.000 Seguidores", price: 20000 },
@@ -278,4 +278,3 @@ export default function SeguidoresFacebookPage() {
     </main>
   )
 }
-
