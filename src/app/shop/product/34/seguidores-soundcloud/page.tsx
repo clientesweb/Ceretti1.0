@@ -5,7 +5,7 @@ import ProductListSec from "@/components/common/ProductListSec"
 import { relatedProductData, soundcloudServicesData } from "@/app/page"
 import type { QuantityOption } from "@/types/product.types"
 
-export const quantityOptions: QuantityOption[] = [
+const quantityOptions: QuantityOption[] = [
   {
     value: "50",
     label: "50 Seguidores",
