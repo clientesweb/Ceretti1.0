@@ -8,9 +8,6 @@ import SizeSelection from "./SizeSelection"
 import AddToCardSection from "./AddToCardSection"
 
 const Header = ({ data }: { data: Product }) => {
-  // Determinar si es un producto de servicio digital basado en la plataforma
-  const isDigitalService = data.platform !== undefined
-
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -71,21 +68,14 @@ const Header = ({ data }: { data: Product }) => {
             )}
           </div>
           <p className="text-sm sm:text-base text-black/60 mb-5">
-            {data.description ||
-              "Este servicio te ayudará a mejorar tu presencia en redes sociales y aumentar tu engagement de forma efectiva."}
+            This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers
+            superior comfort and style.
           </p>
           <hr className="h-[1px] border-t-black/10 mb-5" />
-
-          {/* Solo mostrar selección de color y talla si NO es un servicio digital */}
-          {!isDigitalService && (
-            <>
-              <ColorSelection />
-              <hr className="h-[1px] border-t-black/10 my-5" />
-              <SizeSelection />
-              <hr className="hidden md:block h-[1px] border-t-black/10 my-5" />
-            </>
-          )}
-
+          <ColorSelection />
+          <hr className="h-[1px] border-t-black/10 my-5" />
+          <SizeSelection />
+          <hr className="hidden md:block h-[1px] border-t-black/10 my-5" />
           <AddToCardSection data={data} />
         </div>
       </div>
