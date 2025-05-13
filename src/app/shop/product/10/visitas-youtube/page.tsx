@@ -14,21 +14,22 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para visitas YouTube mundiales
 const mundialOptions = [
-  { value: "100", label: "100 Visitas", price: 600, bonus: "Retención 1 a 3 minutos" },
-  { value: "250", label: "250 Visitas", price: 1100, bonus: "Retención 1 a 3 minutos" },
-  { value: "500", label: "500 Visitas", price: 2500, bonus: "Retención 1 a 3 minutos" },
-  { value: "1000", label: "1.000 Visitas", price: 4500, bonus: "Retención 1 a 3 minutos" },
-  { value: "2500", label: "2.500 Visitas", price: 12000, bonus: "Retención 1 a 3 minutos" },
+  { value: "100", label: "100 Visitas", price: 900, bonus: "Retención 1 a 3 minutos" },
+  { value: "250", label: "250 Visitas", price: 1500, bonus: "Retención 1 a 3 minutos" },
+  { value: "500", label: "500 Visitas", price: 4500, bonus: "Retención 1 a 3 minutos" },
+  { value: "1000", label: "1.000 Visitas", price: 9000, bonus: "Retención 1 a 3 minutos" },
+  { value: "2500", label: "2.500 Visitas", price: 15000, bonus: "Retención 1 a 3 minutos" },
 ]
 
+// Actualizar las opciones de precios para visitas YouTube de calidad
 const calidadOptions = [
-  { value: "100", label: "100 Visitas", price: 2000, bonus: "Retención 2 a 5 minutos" },
+  { value: "100", label: "100 Visitas", price: 2500, bonus: "Retención 2 a 5 minutos" },
   { value: "250", label: "250 Visitas", price: 4500, bonus: "Retención 2 a 5 minutos" },
   { value: "500", label: "500 Visitas", price: 7500, bonus: "Retención 2 a 5 minutos" },
-  { value: "1000", label: "1.000 Visitas", price: 12000, bonus: "Retención 2 a 5 minutos" },
-  { value: "2500", label: "2.500 Visitas", price: 20000, bonus: "Retención 2 a 5 minutos + 100 Likes 🎁" },
+  { value: "1000", label: "1.000 Visitas", price: 13000, bonus: "Retención 2 a 5 minutos" },
+  { value: "2500", label: "2.500 Visitas", price: 25000, bonus: "Retención 2 a 5 minutos + 100 Likes 🎁" },
 ]
 
 export default function VisitasYoutubePage() {
@@ -363,4 +364,3 @@ export default function VisitasYoutubePage() {
     </main>
   )
 }
-
