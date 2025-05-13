@@ -8,8 +8,6 @@ import { relatedProductData } from "@/app/page"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const quantityOptions = [
   {
@@ -86,11 +84,6 @@ export default function ComentariosPersonalizadosInstagram() {
               />
             </div>
 
-            <div className="flex items-center space-x-2">
-              <Checkbox id="isPublic" checked={isPublic} onCheckedChange={(checked) => setIsPublic(checked === true)} />
-              <Label htmlFor="isPublic">Mi perfil está en público</Label>
-            </div>
-
             <div>
               <Label htmlFor="commentText">Texto de los comentarios</Label>
               <Input
@@ -105,16 +98,26 @@ export default function ComentariosPersonalizadosInstagram() {
 
             <div>
               <Label className="block mb-2">Geolocalización</Label>
-              <RadioGroup value={geoLocation} onValueChange={setGeoLocation} className="flex flex-col space-y-1">
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="mundial" id="mundial" />
-                  <Label htmlFor="mundial">Mundial</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="calidad" id="calidad" />
-                  <Label htmlFor="calidad">Calidad</Label>
-                </div>
-              </RadioGroup>
+              <select
+                value={geoLocation}
+                onChange={(e) => setGeoLocation(e.target.value)}
+                className="w-full p-2 border rounded-md"
+              >
+                <option value="mundial">Mundial</option>
+                <option value="calidad">Calidad</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  checked={isPublic}
+                  onChange={(e) => setIsPublic(e.target.checked)}
+                  className="rounded"
+                />
+                <span>Mi perfil está en público</span>
+              </label>
             </div>
           </div>
         </Header>
