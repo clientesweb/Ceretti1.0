@@ -14,19 +14,20 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para suscriptores YouTube de calidad
 const calidadOptions = [
-  { value: "50", label: "50 Suscriptores", price: 2800, bonus: "" },
-  { value: "100", label: "100 Suscriptores", price: 5500, bonus: "" },
-  { value: "250", label: "250 Suscriptores", price: 9500, bonus: "" },
-  { value: "500", label: "500 Suscriptores", price: 17000, bonus: "" },
+  { value: "50", label: "50 Suscriptores", price: 3500, bonus: "" },
+  { value: "100", label: "100 Suscriptores", price: 6000, bonus: "" },
+  { value: "250", label: "250 Suscriptores", price: 10500, bonus: "" },
+  { value: "500", label: "500 Suscriptores", price: 17500, bonus: "" },
   { value: "1000", label: "1.000 Suscriptores", price: 32000, bonus: "" },
 ]
 
+// Actualizar las opciones de precios para suscriptores YouTube mundiales
 const mundialOptions = [
-  { value: "50", label: "50 Suscriptores", price: 1000, bonus: "" },
-  { value: "100", label: "100 Suscriptores", price: 1800, bonus: "" },
-  { value: "250", label: "250 Suscriptores", price: 4000, bonus: "" },
+  { value: "50", label: "50 Suscriptores", price: 1800, bonus: "" },
+  { value: "100", label: "100 Suscriptores", price: 2500, bonus: "" },
+  { value: "250", label: "250 Suscriptores", price: 4500, bonus: "" },
   { value: "500", label: "500 Suscriptores", price: 8000, bonus: "" },
   { value: "1000", label: "1.000 Suscriptores", price: 15000, bonus: "" },
 ]
@@ -34,7 +35,7 @@ const mundialOptions = [
 export default function SuscriptoresYoutubePage() {
   const [geoType, setGeoType] = useState<string>("mundial")
   const [quantity, setQuantity] = useState<string>("50")
-  const [price, setPrice] = useState<number>(1000)
+  const [price, setPrice] = useState<number>(1800)
   const [bonus, setBonus] = useState<string>("")
   const [channelLink, setChannelLink] = useState<string>("")
   const dispatch = useAppDispatch()
@@ -360,5 +361,3 @@ export default function SuscriptoresYoutubePage() {
     </main>
   )
 }
-
-  
