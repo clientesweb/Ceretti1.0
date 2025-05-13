@@ -38,14 +38,15 @@ export default function CompartidosInstagramPage() {
       dispatch(
         addToCart({
           id: 30,
-          title: "Compartidos Instagram",
+          name: "Compartidos Instagram",
+          srcUrl: "/images/instagram-3d-logo.png",
           price: selectedQuantity.price,
-          quantity: 1,
-          image: "/images/instagram-3d-logo.png",
-          selectedOptions: {
-            quantity: selectedQuantity.label,
-            geo: selectedGeo === "mundial" ? "Mundial" : "Calidad",
+          attributes: [selectedQuantity.label, selectedGeo === "mundial" ? "Mundial" : "Calidad"],
+          discount: {
+            amount: 0,
+            percentage: 0,
           },
+          quantity: 1,
         }),
       )
       toast({
