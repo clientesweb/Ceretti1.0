@@ -16,19 +16,19 @@ import { useAppDispatch } from "@/lib/hooks/redux"
 import Image from "next/image"
 import InputGroup from "@/components/ui/input-group"
 
-// Definir las opciones de cantidad y precios
+// Actualizar las opciones de precios para seguidores TikTok
 const seguidoresOptions = [
-  { value: "100", label: "100 Seguidores", price: 850 },
-  { value: "250", label: "250 Seguidores", price: 1250 },
-  { value: "500", label: "500 Seguidores", price: 2500 },
-  { value: "1000", label: "1.000 Seguidores", price: 4000 },
-  { value: "2500", label: "2.500 Seguidores", price: 9500 },
-  { value: "5000", label: "5.000 Seguidores", price: 17500 },
+  { value: "100", label: "100 Seguidores", price: 1000 },
+  { value: "250", label: "250 Seguidores", price: 1800 },
+  { value: "500", label: "500 Seguidores", price: 3000 },
+  { value: "1000", label: "1.000 Seguidores", price: 5000 },
+  { value: "2500", label: "2.500 Seguidores", price: 10500 },
+  { value: "5000", label: "5.000 Seguidores", price: 18500 },
 ]
 
 export default function SeguidoresTikTokPage() {
   const [quantity, setQuantity] = useState<string>("100")
-  const [price, setPrice] = useState<number>(850)
+  const [price, setPrice] = useState<number>(1000)
   const [profileLink, setProfileLink] = useState<string>("")
   const dispatch = useAppDispatch()
 
@@ -281,4 +281,3 @@ export default function SeguidoresTikTokPage() {
     </main>
   )
 }
-
