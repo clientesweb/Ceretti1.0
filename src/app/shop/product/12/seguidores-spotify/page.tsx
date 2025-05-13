@@ -18,15 +18,15 @@ import InputGroup from "@/components/ui/input-group"
 
 // Definir las opciones de cantidad y precios
 const seguidoresOptions = [
-  { value: "500", label: "500 Seguidores", price: 1500 },
-  { value: "1000", label: "1.000 Seguidores", price: 2500 },
-  { value: "2500", label: "2.500 Seguidores", price: 6000 },
-  { value: "5000", label: "5.000 Seguidores", price: 10000 },
+  { value: "500", label: "500 Seguidores", price: 2500 },
+  { value: "1000", label: "1.000 Seguidores", price: 4500 },
+  { value: "2500", label: "2.500 Seguidores", price: 6500 },
+  { value: "5000", label: "5.000 Seguidores", price: 11000 },
 ]
 
 export default function SeguidoresSpotifyPage() {
   const [quantity, setQuantity] = useState<string>("500")
-  const [price, setPrice] = useState<number>(1500)
+  const [price, setPrice] = useState<number>(2500)
   const [profileLink, setProfileLink] = useState<string>("")
   const dispatch = useAppDispatch()
 
@@ -329,4 +329,3 @@ export default function SeguidoresSpotifyPage() {
     </main>
   )
 }
-
