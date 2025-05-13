@@ -5,7 +5,7 @@ import ProductListSec from "@/components/common/ProductListSec"
 import { relatedProductData, seoServicesData } from "@/app/page"
 import type { QuantityOption } from "@/types/product.types"
 
-export const quantityOptions: QuantityOption[] = [
+const quantityOptions: QuantityOption[] = [
   {
     value: "1000",
     label: "1.000 Visitas",
