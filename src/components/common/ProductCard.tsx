@@ -52,19 +52,19 @@ const ProductCard = ({ data }: ProductCardProps) => {
       case 23:
         return `/shop/product/23/comentarios-youtube-personalizados`
       case 24:
-        return `/shop/product/24/reaccion-historia-quiz-instagram`
+        return `/shop/product/24/reaccion-quiz-instagram`
       case 25:
         return `/shop/product/25/barra-reaccion-instagram`
       case 26:
-        return `/shop/product/26/visitas-historias-activas-instagram`
+        return `/shop/product/26/visitas-historias-premium-instagram`
       case 27:
-        return `/shop/product/27/impresiones-instagram`
+        return `/shop/product/27/impresiones-posteos-instagram`
       case 28:
         return `/shop/product/28/comentarios-random-instagram`
       case 29:
         return `/shop/product/29/comentarios-personalizados-instagram`
       case 30:
-        return `/shop/product/30/compartidos-instagram`
+        return `/shop/product/30/compartidos-posteos-instagram`
       case 31:
         return `/shop/product/31/servicio-reporte-spam`
       case 32:
@@ -78,11 +78,13 @@ const ProductCard = ({ data }: ProductCardProps) => {
       case 36:
         return `/shop/product/36/likes-soundcloud`
       case 37:
-        return `/shop/product/37/comentarios-soundcloud`
+        return `/shop/product/37/comentarios-random-soundcloud`
       case 38:
-        return `/shop/product/38/retencion-google`
+        return `/shop/product/38/retencion-google-20s`
       case 39:
-        return `/shop/product/39/seo-web`
+        return `/shop/product/39/retencion-google-140s`
+      case 40:
+        return `/shop/product/40/trafico-seo-web`
       default:
         return `/shop/product/${data.id}/${data.title.split(" ").join("-").toLowerCase()}`
     }
