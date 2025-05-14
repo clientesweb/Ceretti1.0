@@ -16,39 +16,33 @@ import InputGroup from "@/components/ui/input-group"
 
 const quantityOptions = [
   {
+    value: "50",
+    label: "50 Seguidores",
+    price: 1000,
+    bonus: "",
+  },
+  {
     value: "100",
     label: "100 Seguidores",
-    price: 1500,
+    price: 1800,
     bonus: "",
   },
   {
     value: "250",
     label: "250 Seguidores",
-    price: 2500,
-    bonus: "",
-  },
-  {
-    value: "500",
-    label: "500 Seguidores",
     price: 4000,
     bonus: "Popular",
   },
   {
-    value: "1000",
-    label: "1000 Seguidores",
-    price: 6000,
+    value: "500",
+    label: "500 Seguidores",
+    price: 8000,
     bonus: "Mejor valor",
   },
   {
-    value: "2500",
-    label: "2500 Seguidores",
-    price: 12000,
-    bonus: "",
-  },
-  {
-    value: "5000",
-    label: "5000 Seguidores",
-    price: 20000,
+    value: "1000",
+    label: "1000 Seguidores",
+    price: 15000,
     bonus: "",
   },
 ]
