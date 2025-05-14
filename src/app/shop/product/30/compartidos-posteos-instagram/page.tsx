@@ -13,37 +13,31 @@ const quantityOptions = [
   {
     value: "50",
     label: "50 Compartidos",
-    price: 1500,
+    price: 2000,
     bonus: "",
   },
   {
     value: "100",
     label: "100 Compartidos",
-    price: 2500,
+    price: 3500,
     bonus: "Popular",
   },
   {
     value: "250",
     label: "250 Compartidos",
-    price: 5000,
+    price: 7500,
     bonus: "Mejor valor",
   },
   {
     value: "500",
     label: "500 Compartidos",
-    price: 9000,
-    bonus: "",
-  },
-  {
-    value: "1000",
-    label: "1000 Compartidos",
-    price: 16000,
+    price: 13000,
     bonus: "",
   },
 ]
 
 export default function CompartidosPosteosInstagram() {
-  const [profileLink, setProfileLink] = useState("")
+  const [postLink, setPostLink] = useState("")
   const [isPublic, setIsPublic] = useState(false)
   const [geoLocation, setGeoLocation] = useState("mundial")
 
@@ -51,9 +45,9 @@ export default function CompartidosPosteosInstagram() {
     id: 30,
     title: "Compartidos Posteos Instagram",
     description:
-      "Aumenta el alcance de tus publicaciones con compartidos reales. Este servicio incrementa la difusión de tu contenido, mejorando su visibilidad y atrayendo nuevos seguidores a tu perfil.",
-    srcUrl: "/images/pic3.png",
-    price: 1500,
+      "Aumenta el alcance de tus publicaciones de Instagram con compartidos reales. Este servicio mejora la visibilidad de tu contenido, aumenta tu credibilidad y potencia tu presencia en la plataforma.",
+    srcUrl: "/images/instagram-3d-logo.png",
+    price: 2000,
     discount: {
       amount: 0,
       percentage: 0,
@@ -72,17 +66,27 @@ export default function CompartidosPosteosInstagram() {
           customMessage="Para este servicio necesitamos que tu cuenta esté en público y nos proporciones el link de la publicación que deseas compartir."
         />
 
-        {/* Formulario adicional */}
-        <div className="mt-8 space-y-4">
+        <div className="space-y-4 mt-6 border p-4 rounded-md">
           <div>
-            <Label htmlFor="profileLink">Link de la publicación</Label>
+            <Label htmlFor="postLink">Link de la publicación</Label>
             <Input
-              id="profileLink"
+              id="postLink"
               placeholder="https://www.instagram.com/p/..."
-              value={profileLink}
-              onChange={(e) => setProfileLink(e.target.value)}
+              value={postLink}
+              onChange={(e) => setPostLink(e.target.value)}
               className="mt-1"
             />
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              checked={isPublic}
+              onChange={(e) => setIsPublic(e.target.checked)}
+              className="rounded"
+              id="isPublic"
+            />
+            <Label htmlFor="isPublic">Mi perfil está en público</Label>
           </div>
 
           <div>
@@ -95,18 +99,6 @@ export default function CompartidosPosteosInstagram() {
               <option value="mundial">Mundial</option>
               <option value="calidad">Calidad</option>
             </select>
-          </div>
-
-          <div>
-            <label className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                checked={isPublic}
-                onChange={(e) => setIsPublic(e.target.checked)}
-                className="rounded"
-              />
-              <span>Mi perfil está en público</span>
-            </label>
           </div>
         </div>
 
