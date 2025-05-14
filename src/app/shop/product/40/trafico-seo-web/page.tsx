@@ -17,53 +17,45 @@ import { Textarea } from "@/components/ui/textarea"
 
 const quantityOptions = [
   {
-    value: "1000",
-    label: "1000 Visitas",
+    value: "100",
+    label: "100 Visitas",
+    price: 1000,
+    bonus: "",
+  },
+  {
+    value: "250",
+    label: "250 Visitas",
     price: 2000,
     bonus: "",
   },
   {
-    value: "2500",
-    label: "2500 Visitas",
-    price: 4000,
-    bonus: "",
-  },
-  {
-    value: "5000",
-    label: "5000 Visitas",
-    price: 7000,
+    value: "500",
+    label: "500 Visitas",
+    price: 3500,
     bonus: "Popular",
   },
   {
-    value: "10000",
-    label: "10000 Visitas",
-    price: 12000,
+    value: "1000",
+    label: "1000 Visitas",
+    price: 6000,
     bonus: "Mejor valor",
   },
   {
-    value: "25000",
-    label: "25000 Visitas",
-    price: 25000,
-    bonus: "",
-  },
-  {
-    value: "50000",
-    label: "50000 Visitas",
-    price: 45000,
+    value: "2500",
+    label: "2500 Visitas",
+    price: 12000,
     bonus: "",
   },
 ]
 
 export default function TraficoSeoWebPage() {
-  const [quantity, setQuantity] = useState<string>("1000")
-  const [price, setPrice] = useState<number>(2000)
+  const [quantity, setQuantity] = useState<string>("100")
+  const [price, setPrice] = useState<number>(1000)
   const [bonus, setBonus] = useState<string>("")
   const [websiteUrl, setWebsiteUrl] = useState<string>("")
-  const [targetPages, setTargetPages] = useState<string>("")
-  const [targetCountries, setTargetCountries] = useState<string>("")
+  const [specificPages, setSpecificPages] = useState<string>("")
+  const [targetCountries, setTargetCountries] = useState<string>("all")
   const [deliverySpeed, setDeliverySpeed] = useState<string>("normal")
-  const [includeAnalytics, setIncludeAnalytics] = useState<boolean>(false)
-  const [mobileOnly, setMobileOnly] = useState<boolean>(false)
   const dispatch = useAppDispatch()
 
   // Actualizar precio cuando cambia la cantidad
@@ -74,14 +66,6 @@ export default function TraficoSeoWebPage() {
       setBonus(selectedOption.bonus)
     }
   }, [quantity])
-
-  // Calcular precio final con opciones adicionales
-  useEffect(() => {
-    let finalPrice = price
-    if (includeAnalytics) finalPrice += price * 0.1 // +10%
-    if (mobileOnly) finalPrice += price * 0.05 // +5%
-    if (deliverySpeed === "fast") finalPrice += price * 0.15 // +15%
-  }, [price, includeAnalytics, mobileOnly, deliverySpeed])
 
   const handleAddToCart = () => {
     if (!websiteUrl) {
@@ -98,11 +82,9 @@ export default function TraficoSeoWebPage() {
         attributes: [
           quantity,
           websiteUrl,
-          targetPages ? `Páginas específicas: Sí` : `Páginas específicas: No`,
-          targetCountries ? `Países: ${targetCountries}` : `Países: Mundial`,
+          specificPages ? `Páginas específicas: ${specificPages}` : "Todas las páginas",
+          `Países: ${targetCountries === "all" ? "Todos" : targetCountries}`,
           `Entrega: ${deliverySpeed === "normal" ? "Normal" : deliverySpeed === "fast" ? "Rápida" : "Gradual"}`,
-          includeAnalytics ? "Incluye informe de analítica" : "",
-          mobileOnly ? "Tráfico exclusivo desde móviles" : "",
         ],
         discount: {
           amount: 0,
@@ -118,7 +100,7 @@ export default function TraficoSeoWebPage() {
   return (
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
-        <BreadcrumbProduct title="Tráfico SEO Web" />
+        <BreadcrumbProduct title="Tráfico SEO directo a Web" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Imagen del producto */}
@@ -127,7 +109,7 @@ export default function TraficoSeoWebPage() {
               src="/images/seo-analytics.png"
               width={400}
               height={400}
-              alt="Tráfico SEO Web"
+              alt="Tráfico SEO directo a Web"
               className="object-contain max-w-full max-h-[400px] rounded-xl"
               priority
             />
@@ -135,12 +117,12 @@ export default function TraficoSeoWebPage() {
 
           {/* Detalles del producto */}
           <div>
-            <h1 className={cn([integralCF.className, "text-3xl md:text-4xl mb-3"])}>Tráfico SEO Web</h1>
+            <h1 className={cn([integralCF.className, "text-3xl md:text-4xl mb-3"])}>Tráfico SEO directo a Web</h1>
 
             <div className="flex items-center mb-4">
               <Rating initialValue={5} SVGclassName="inline-block" emptyClassName="fill-gray-50" size={24} readonly />
               <span className="text-black text-sm ml-2">
-                4.8 <span className="text-black/60">(36 reseñas)</span>
+                4.8 <span className="text-black/60">(32 reseñas)</span>
               </span>
             </div>
 
@@ -167,7 +149,7 @@ export default function TraficoSeoWebPage() {
                 >
                   {quantityOptions.map((option) => (
                     <option key={option.value} value={option.value}>
-                      🔍 {option.label} = {option.price}💲 {option.bonus && `(${option.bonus})`}
+                      👁️ {option.label} = {option.price}💲 {option.bonus && `(${option.bonus})`}
                     </option>
                   ))}
                 </select>
@@ -176,7 +158,7 @@ export default function TraficoSeoWebPage() {
               {/* URL del sitio web */}
               <div>
                 <label className="block text-base font-medium mb-2">
-                  URL de tu sitio web <span className="text-red-500">*</span>
+                  URL del sitio web <span className="text-red-500">*</span>
                 </label>
                 <InputGroup className="bg-[#F0F0F0]">
                   <InputGroup.Input
@@ -192,32 +174,30 @@ export default function TraficoSeoWebPage() {
 
               {/* Páginas específicas */}
               <div>
-                <label className="block text-base font-medium mb-2">Páginas específicas a promocionar</label>
+                <label className="block text-base font-medium mb-2">Páginas específicas (opcional)</label>
                 <Textarea
-                  placeholder="Introduce las URLs de las páginas específicas que deseas promocionar (una por línea)"
-                  value={targetPages}
-                  onChange={(e) => setTargetPages(e.target.value)}
-                  className="w-full min-h-[100px] rounded-xl bg-[#F0F0F0] border-black/10"
+                  placeholder="Ingresa las URLs de páginas específicas (una por línea)"
+                  value={specificPages}
+                  onChange={(e) => setSpecificPages(e.target.value)}
+                  className="bg-[#F0F0F0] min-h-[100px]"
                 />
-                <p className="text-xs text-black/60 mt-1">
-                  Deja en blanco si deseas distribuir el tráfico en todo el sitio
-                </p>
+                <p className="text-xs text-black/60 mt-1">Deja en blanco para dirigir el tráfico a todo el sitio</p>
               </div>
 
               {/* Países objetivo */}
               <div>
-                <label className="block text-base font-medium mb-2">Países objetivo (opcional)</label>
-                <InputGroup className="bg-[#F0F0F0]">
-                  <InputGroup.Input
-                    type="text"
-                    name="target-countries"
-                    placeholder="Ej: España, México, Colombia"
-                    value={targetCountries}
-                    onChange={(e) => setTargetCountries(e.target.value)}
-                    className="bg-transparent placeholder:text-black/40"
-                  />
-                </InputGroup>
-                <p className="text-xs text-black/60 mt-1">Deja en blanco para tráfico global</p>
+                <label className="block text-base font-medium mb-2">Países objetivo</label>
+                <select
+                  className="w-full border border-black/10 rounded-full py-3 px-4 bg-[#F0F0F0]"
+                  value={targetCountries}
+                  onChange={(e) => setTargetCountries(e.target.value)}
+                >
+                  <option value="all">Todos los países</option>
+                  <option value="latam">Latinoamérica</option>
+                  <option value="usa">Estados Unidos</option>
+                  <option value="europe">Europa</option>
+                  <option value="asia">Asia</option>
+                </select>
               </div>
 
               {/* Velocidad de entrega */}
@@ -228,38 +208,22 @@ export default function TraficoSeoWebPage() {
                   value={deliverySpeed}
                   onChange={(e) => setDeliverySpeed(e.target.value)}
                 >
-                  <option value="slow">Gradual (14-21 días)</option>
-                  <option value="normal">Normal (7-14 días)</option>
-                  <option value="fast">Rápida (3-6 días) +15%</option>
+                  <option value="slow">Gradual (10-14 días)</option>
+                  <option value="normal">Normal (5-9 días)</option>
+                  <option value="fast">Rápida (3-4 días) +15%</option>
                 </select>
               </div>
+            </div>
 
-              {/* Opciones adicionales */}
-              <div className="space-y-2">
-                <label className="block text-base font-medium mb-2">Opciones adicionales</label>
-                <div className="flex items-center space-x-2">
-                  <div
-                    className={`w-5 h-5 border ${includeAnalytics ? "bg-ceretti-blue border-ceretti-blue" : "border-black/20 bg-white"} rounded flex items-center justify-center cursor-pointer`}
-                    onClick={() => setIncludeAnalytics(!includeAnalytics)}
-                  >
-                    {includeAnalytics && <FaCheck className="text-white text-xs" />}
-                  </div>
-                  <label className="cursor-pointer" onClick={() => setIncludeAnalytics(!includeAnalytics)}>
-                    Incluir informe de analítica (+10%)
-                  </label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div
-                    className={`w-5 h-5 border ${mobileOnly ? "bg-ceretti-blue border-ceretti-blue" : "border-black/20 bg-white"} rounded flex items-center justify-center cursor-pointer`}
-                    onClick={() => setMobileOnly(!mobileOnly)}
-                  >
-                    {mobileOnly && <FaCheck className="text-white text-xs" />}
-                  </div>
-                  <label className="cursor-pointer" onClick={() => setMobileOnly(!mobileOnly)}>
-                    Tráfico exclusivo desde dispositivos móviles (+5%)
-                  </label>
-                </div>
-              </div>
+            <div className="mb-8">
+              <h3 className="font-bold mb-2">Características del tráfico:</h3>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>🌐 Tráfico real mundial: Visitas directas</li>
+                <li>🏁 Fuentes de tráfico: Plataformas de intercambio privadas y redes publicitarias</li>
+                <li>💻 Tráfico de escritorio: 45-55%</li>
+                <li>📱 Tráfico móvil: 45-55%</li>
+                <li>⏱️ Sesiones de duración media-alta de 20 a 50 segundos por visita</li>
+              </ul>
             </div>
 
             {/* Botón agregar al carrito */}
@@ -329,21 +293,22 @@ export default function TraficoSeoWebPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Tráfico SEO Web</h3>
+              <h3 className="text-xl font-bold mb-4">Tráfico SEO directo a Web</h3>
               <p className="text-black/70 mb-4">
-                Aumenta el tráfico de tu sitio web con visitas reales que mejoran tu SEO. Este servicio optimiza tus
-                métricas de tráfico, mejora tu posicionamiento en buscadores y aumenta la credibilidad de tu sitio.
+                Tráfico real mundial con visitas directas desde plataformas de intercambio privadas y redes
+                publicitarias. Este servicio mejora tus métricas de tráfico, aumenta tu posicionamiento en buscadores y
+                mejora la credibilidad de tu sitio web.
               </p>
 
               <ul className="space-y-2 text-black/70">
                 <li className="flex items-start">
-                  <FaCheck className="text-green-500 mt-1 mr-2" /> Entrega gradual y natural
+                  <FaCheck className="text-green-500 mt-1 mr-2" /> Tráfico 100% real y orgánico
                 </li>
                 <li className="flex items-start">
-                  <FaCheck className="text-green-500 mt-1 mr-2" /> Tráfico de alta calidad
+                  <FaCheck className="text-green-500 mt-1 mr-2" /> Compatible con Google Analytics
                 </li>
                 <li className="flex items-start">
-                  <FaCheck className="text-green-500 mt-1 mr-2" /> No requiere acceso al sitio
+                  <FaCheck className="text-green-500 mt-1 mr-2" /> Distribución geográfica personalizable
                 </li>
                 <li className="flex items-start">
                   <FaCheck className="text-green-500 mt-1 mr-2" /> Soporte 24/7
@@ -357,29 +322,26 @@ export default function TraficoSeoWebPage() {
               <div className="border border-black/10 rounded-xl p-4 mb-4">
                 <ul className="space-y-2 text-black/70">
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Mejora en las métricas de tráfico web
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Mejora en el posicionamiento SEO
                   </li>
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Aumento en el posicionamiento SEO
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Aumento de métricas de tráfico
                   </li>
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Mayor visibilidad en motores de búsqueda
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Mayor credibilidad para tu sitio web
                   </li>
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Reducción de la tasa de rebote
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Mejora en la tasa de rebote
                   </li>
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Incremento en la credibilidad del sitio
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Potencial aumento de conversiones
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Potencial aumento de conversiones orgánicas
                   </li>
                 </ul>
               </div>
 
               <p className="text-sm text-black/70">
-                <strong>Nota:</strong> Para obtener los mejores resultados, asegúrate de que tu sitio web esté activo,
-                sea accesible y cargue correctamente en dispositivos móviles y de escritorio.
+                <strong>Nota:</strong> Para obtener los mejores resultados, asegúrate de que tu sitio web esté
+                optimizado para SEO y tenga un tiempo de carga rápido.
               </p>
             </div>
           </div>
