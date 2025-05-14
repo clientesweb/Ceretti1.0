@@ -16,34 +16,28 @@ import InputGroup from "@/components/ui/input-group"
 
 const quantityOptions = [
   {
-    value: "10",
-    label: "10 Comentarios",
-    price: 2000,
+    value: "20",
+    label: "20 Comentarios",
+    price: 3000,
     bonus: "",
-  },
-  {
-    value: "25",
-    label: "25 Comentarios",
-    price: 4000,
-    bonus: "Popular",
   },
   {
     value: "50",
     label: "50 Comentarios",
-    price: 7000,
-    bonus: "Mejor valor",
+    price: 12000,
+    bonus: "Popular",
   },
   {
     value: "100",
     label: "100 Comentarios",
-    price: 12000,
-    bonus: "",
+    price: 22000,
+    bonus: "Mejor valor",
   },
 ]
 
 export default function ComentariosRandomSoundcloudPage() {
-  const [quantity, setQuantity] = useState<string>("10")
-  const [price, setPrice] = useState<number>(2000)
+  const [quantity, setQuantity] = useState<string>("20")
+  const [price, setPrice] = useState<number>(3000)
   const [bonus, setBonus] = useState<string>("")
   const [trackLink, setTrackLink] = useState<string>("")
   const [isPublic, setIsPublic] = useState<boolean>(true)
@@ -179,6 +173,7 @@ export default function ComentariosRandomSoundcloudPage() {
                   <option value="inglés">Inglés</option>
                   <option value="mixto">Mixto</option>
                 </select>
+                <p className="text-sm text-gray-500 mt-1">Comentarios en inglés o español</p>
               </div>
 
               {/* Geolocalización */}
