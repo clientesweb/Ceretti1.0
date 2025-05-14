@@ -5,9 +5,9 @@ import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import ProductListSec from "@/components/common/ProductListSec"
 import { relatedProductData } from "@/app/page"
-import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 
 const quantityOptions = [
@@ -50,12 +50,6 @@ const quantityOptions = [
 ]
 
 export default function TraficoSeoWeb() {
-  const [websiteUrl, setWebsiteUrl] = useState("")
-  const [specificPages, setSpecificPages] = useState("")
-  const [geoLocation, setGeoLocation] = useState("mundial")
-  const [trafficSource, setTrafficSource] = useState("organico")
-  const [deviceType, setDeviceType] = useState("todos")
-
   const product = {
     id: 40,
     title: "Tráfico SEO Web",
@@ -75,80 +69,88 @@ export default function TraficoSeoWeb() {
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
         <BreadcrumbProduct title={product.title} />
-        <Header
-          data={product}
-          quantityOptions={quantityOptions}
-          customMessage="Para este servicio necesitamos que nos proporciones la URL de tu sitio web y las páginas específicas que deseas promocionar."
-        />
+        <Header data={product} quantityOptions={quantityOptions} />
 
-        <div className="space-y-4 mt-6 border p-4 rounded-md">
-          <div>
-            <Label htmlFor="websiteUrl">URL de tu sitio web</Label>
-            <Input
-              id="websiteUrl"
-              placeholder="https://www.tusitio.com"
-              value={websiteUrl}
-              onChange={(e) => setWebsiteUrl(e.target.value)}
-              className="mt-1"
-            />
-          </div>
+        <div className="mt-8 border border-black/10 rounded-[20px] p-6 md:p-8">
+          <h3 className="font-bold text-xl mb-6">Información del servicio</h3>
 
-          <div>
-            <Label htmlFor="specificPages">Páginas específicas (opcionales)</Label>
-            <Textarea
-              id="specificPages"
-              placeholder="Ingresa las URLs de páginas específicas que deseas promocionar, una por línea"
-              value={specificPages}
-              onChange={(e) => setSpecificPages(e.target.value)}
-              className="mt-1"
-              rows={3}
-            />
-            <p className="text-xs text-gray-500 mt-1">
-              Si dejas este campo vacío, el tráfico se distribuirá por todo el sitio
-            </p>
-          </div>
+          <div className="space-y-6">
+            <div>
+              <Label htmlFor="websiteUrl" className="block mb-2 font-medium">
+                URL de tu sitio web*
+              </Label>
+              <Input id="websiteUrl" placeholder="https://www.tusitio.com" className="w-full" />
+              <p className="text-xs text-black/60 mt-1">Asegúrate de que el sitio esté activo y accesible</p>
+            </div>
 
-          <div>
-            <Label htmlFor="trafficSource">Fuente de tráfico</Label>
-            <select
-              id="trafficSource"
-              value={trafficSource}
-              onChange={(e) => setTrafficSource(e.target.value)}
-              className="w-full p-2 border rounded-md mt-1"
-            >
-              <option value="organico">Orgánico (Google, Bing)</option>
-              <option value="social">Redes Sociales</option>
-              <option value="directo">Tráfico Directo</option>
-              <option value="referral">Referral</option>
-              <option value="mixto">Mixto</option>
-            </select>
-          </div>
+            <div>
+              <Label htmlFor="targetPages" className="block mb-2 font-medium">
+                Páginas específicas a promocionar
+              </Label>
+              <Textarea
+                id="targetPages"
+                placeholder="Introduce las URLs de las páginas específicas que deseas promocionar (una por línea)"
+                className="w-full min-h-[100px]"
+              />
+              <p className="text-xs text-black/60 mt-1">
+                Deja en blanco si deseas distribuir el tráfico en todo el sitio
+              </p>
+            </div>
 
-          <div>
-            <Label htmlFor="deviceType">Tipo de dispositivo</Label>
-            <select
-              id="deviceType"
-              value={deviceType}
-              onChange={(e) => setDeviceType(e.target.value)}
-              className="w-full p-2 border rounded-md mt-1"
-            >
-              <option value="todos">Todos</option>
-              <option value="desktop">Desktop</option>
-              <option value="mobile">Mobile</option>
-              <option value="tablet">Tablet</option>
-            </select>
-          </div>
+            <div>
+              <Label htmlFor="targetCountries" className="block mb-2 font-medium">
+                Países objetivo (opcional)
+              </Label>
+              <Input id="targetCountries" placeholder="Ej: España, México, Colombia" className="w-full" />
+              <p className="text-xs text-black/60 mt-1">Deja en blanco para tráfico global</p>
+            </div>
 
-          <div>
-            <Label className="block mb-2">Geolocalización</Label>
-            <select
-              value={geoLocation}
-              onChange={(e) => setGeoLocation(e.target.value)}
-              className="w-full p-2 border rounded-md"
-            >
-              <option value="mundial">Mundial</option>
-              <option value="calidad">Calidad</option>
-            </select>
+            <div className="pt-4 space-y-6">
+              <div>
+                <h4 className="font-bold text-lg mb-2">Requisitos del servicio:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-black/80">
+                  <li>El sitio web debe estar activo y accesible</li>
+                  <li>El contenido debe cumplir con las políticas de Google</li>
+                  <li>No debe contener material ilegal o restringido</li>
+                  <li>El sitio debe cargar correctamente en dispositivos móviles y de escritorio</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-lg mb-2">Beneficios:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-black/80">
+                  <li>Mejora en las métricas de tráfico web</li>
+                  <li>Aumento en el posicionamiento SEO</li>
+                  <li>Mayor visibilidad en motores de búsqueda</li>
+                  <li>Reducción de la tasa de rebote</li>
+                  <li>Incremento en la credibilidad del sitio</li>
+                  <li>Potencial aumento de conversiones</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-lg mb-2">Métodos de pago aceptados:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-black/80">
+                  <li>Tarjetas de crédito/débito</li>
+                  <li>PayPal</li>
+                  <li>Transferencia bancaria</li>
+                  <li>Criptomonedas (Bitcoin, Ethereum)</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-lg mb-2">Información importante:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-black/80">
+                  <li>El servicio comenzará dentro de las 24-48 horas después de la compra</li>
+                  <li>La entrega completa puede tomar entre 7-14 días dependiendo de la cantidad</li>
+                  <li>El tráfico se distribuye gradualmente para mayor naturalidad</li>
+                  <li>Proporcionamos informes de analítica bajo solicitud</li>
+                  <li>Soporte técnico disponible 24/7</li>
+                </ul>
+              </div>
+            </div>
+
+            <Button className="w-full py-6 text-base">Añadir al carrito</Button>
           </div>
         </div>
 
