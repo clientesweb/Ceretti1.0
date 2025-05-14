@@ -9,8 +9,6 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const quantityOptions = [
   {
@@ -81,80 +79,79 @@ export default function TraficoSeoWeb() {
           data={product}
           quantityOptions={quantityOptions}
           customMessage="Para este servicio necesitamos que nos proporciones la URL de tu sitio web y las páginas específicas que deseas promocionar."
-        >
-          <div className="space-y-4 mt-6">
-            <div>
-              <Label htmlFor="websiteUrl">URL de tu sitio web</Label>
-              <Input
-                id="websiteUrl"
-                placeholder="https://www.tusitio.com"
-                value={websiteUrl}
-                onChange={(e) => setWebsiteUrl(e.target.value)}
-                className="mt-1"
-              />
-            </div>
+        />
 
-            <div>
-              <Label htmlFor="specificPages">Páginas específicas (opcionales)</Label>
-              <Textarea
-                id="specificPages"
-                placeholder="Ingresa las URLs de páginas específicas que deseas promocionar, una por línea"
-                value={specificPages}
-                onChange={(e) => setSpecificPages(e.target.value)}
-                className="mt-1"
-                rows={3}
-              />
-              <p className="text-xs text-gray-500 mt-1">
-                Si dejas este campo vacío, el tráfico se distribuirá por todo el sitio
-              </p>
-            </div>
-
-            <div>
-              <Label htmlFor="trafficSource">Fuente de tráfico</Label>
-              <Select value={trafficSource} onValueChange={setTrafficSource}>
-                <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Selecciona la fuente de tráfico" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="organico">Orgánico (Google, Bing)</SelectItem>
-                  <SelectItem value="social">Redes Sociales</SelectItem>
-                  <SelectItem value="directo">Tráfico Directo</SelectItem>
-                  <SelectItem value="referral">Referral</SelectItem>
-                  <SelectItem value="mixto">Mixto</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div>
-              <Label htmlFor="deviceType">Tipo de dispositivo</Label>
-              <Select value={deviceType} onValueChange={setDeviceType}>
-                <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Selecciona el tipo de dispositivo" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="todos">Todos</SelectItem>
-                  <SelectItem value="desktop">Desktop</SelectItem>
-                  <SelectItem value="mobile">Mobile</SelectItem>
-                  <SelectItem value="tablet">Tablet</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div>
-              <Label className="block mb-2">Geolocalización</Label>
-              <RadioGroup value={geoLocation} onValueChange={setGeoLocation} className="flex flex-col space-y-1">
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="mundial" id="mundial" />
-                  <Label htmlFor="mundial">Mundial</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="calidad" id="calidad" />
-                  <Label htmlFor="calidad">Calidad</Label>
-                </div>
-              </RadioGroup>
-            </div>
+        <div className="space-y-4 mt-6 border p-4 rounded-md">
+          <div>
+            <Label htmlFor="websiteUrl">URL de tu sitio web</Label>
+            <Input
+              id="websiteUrl"
+              placeholder="https://www.tusitio.com"
+              value={websiteUrl}
+              onChange={(e) => setWebsiteUrl(e.target.value)}
+              className="mt-1"
+            />
           </div>
-        </Header>
+
+          <div>
+            <Label htmlFor="specificPages">Páginas específicas (opcionales)</Label>
+            <Textarea
+              id="specificPages"
+              placeholder="Ingresa las URLs de páginas específicas que deseas promocionar, una por línea"
+              value={specificPages}
+              onChange={(e) => setSpecificPages(e.target.value)}
+              className="mt-1"
+              rows={3}
+            />
+            <p className="text-xs text-gray-500 mt-1">
+              Si dejas este campo vacío, el tráfico se distribuirá por todo el sitio
+            </p>
+          </div>
+
+          <div>
+            <Label htmlFor="trafficSource">Fuente de tráfico</Label>
+            <select
+              id="trafficSource"
+              value={trafficSource}
+              onChange={(e) => setTrafficSource(e.target.value)}
+              className="w-full p-2 border rounded-md mt-1"
+            >
+              <option value="organico">Orgánico (Google, Bing)</option>
+              <option value="social">Redes Sociales</option>
+              <option value="directo">Tráfico Directo</option>
+              <option value="referral">Referral</option>
+              <option value="mixto">Mixto</option>
+            </select>
+          </div>
+
+          <div>
+            <Label htmlFor="deviceType">Tipo de dispositivo</Label>
+            <select
+              id="deviceType"
+              value={deviceType}
+              onChange={(e) => setDeviceType(e.target.value)}
+              className="w-full p-2 border rounded-md mt-1"
+            >
+              <option value="todos">Todos</option>
+              <option value="desktop">Desktop</option>
+              <option value="mobile">Mobile</option>
+              <option value="tablet">Tablet</option>
+            </select>
+          </div>
+
+          <div>
+            <Label className="block mb-2">Geolocalización</Label>
+            <select
+              value={geoLocation}
+              onChange={(e) => setGeoLocation(e.target.value)}
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="mundial">Mundial</option>
+              <option value="calidad">Calidad</option>
+            </select>
+          </div>
+        </div>
+
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
