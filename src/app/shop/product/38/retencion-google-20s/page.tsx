@@ -5,9 +5,9 @@ import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import ProductListSec from "@/components/common/ProductListSec"
 import { relatedProductData } from "@/app/page"
-import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
 
 const quantityOptions = [
   {
@@ -43,17 +43,12 @@ const quantityOptions = [
 ]
 
 export default function RetencionGoogle20s() {
-  const [videoLink, setVideoLink] = useState("")
-  const [isPublic, setIsPublic] = useState(false)
-  const [geoLocation, setGeoLocation] = useState("mundial")
-  const [targetAudience, setTargetAudience] = useState("general")
-
   const product = {
     id: 38,
     title: "Retención Google 20s",
     description:
       "Mejora el rendimiento de tus videos con visualizaciones de alta retención (20 segundos). Este servicio optimiza tus métricas en YouTube, mejorando el posicionamiento de tu contenido en el algoritmo de búsqueda.",
-    srcUrl: "/images/1204.jpg",
+    srcUrl: "/images/youtube-3d-logo.png",
     price: 3000,
     discount: {
       amount: 0,
@@ -67,63 +62,75 @@ export default function RetencionGoogle20s() {
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
         <BreadcrumbProduct title={product.title} />
-        <Header
-          data={product}
-          quantityOptions={quantityOptions}
-          customMessage="Para este servicio necesitamos que tu video esté público y nos proporciones el link directo del video que deseas promocionar."
-        />
+        <Header data={product} quantityOptions={quantityOptions} />
 
-        <div className="space-y-4 mt-6 border p-4 rounded-md">
-          <div>
-            <Label htmlFor="videoLink">Link del video</Label>
-            <Input
-              id="videoLink"
-              placeholder="https://www.youtube.com/watch?v=..."
-              value={videoLink}
-              onChange={(e) => setVideoLink(e.target.value)}
-              className="mt-1"
-            />
-          </div>
+        <div className="mt-8 border border-black/10 rounded-[20px] p-6 md:p-8">
+          <h3 className="font-bold text-xl mb-6">Información del servicio</h3>
 
-          <div className="flex items-center space-x-2">
-            <input
-              type="checkbox"
-              checked={isPublic}
-              onChange={(e) => setIsPublic(e.target.checked)}
-              className="rounded"
-              id="isPublic"
-            />
-            <Label htmlFor="isPublic">Mi video está en público</Label>
-          </div>
+          <div className="space-y-6">
+            <div>
+              <Label htmlFor="videoUrl" className="block mb-2 font-medium">
+                URL del video de YouTube*
+              </Label>
+              <Input id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." className="w-full" />
+              <p className="text-xs text-black/60 mt-1">Asegúrate de que el video esté público y sea accesible</p>
+            </div>
 
-          <div>
-            <Label htmlFor="targetAudience">Audiencia objetivo</Label>
-            <select
-              id="targetAudience"
-              value={targetAudience}
-              onChange={(e) => setTargetAudience(e.target.value)}
-              className="w-full p-2 border rounded-md mt-1"
-            >
-              <option value="general">General</option>
-              <option value="musica">Música</option>
-              <option value="gaming">Gaming</option>
-              <option value="tecnologia">Tecnología</option>
-              <option value="belleza">Belleza y Moda</option>
-              <option value="deportes">Deportes</option>
-              <option value="educacion">Educación</option>
-            </select>
-          </div>
+            <div>
+              <Label htmlFor="additionalInfo" className="block mb-2 font-medium">
+                Información adicional (opcional)
+              </Label>
+              <Input
+                id="additionalInfo"
+                placeholder="Cualquier detalle relevante sobre tu solicitud"
+                className="w-full"
+              />
+            </div>
 
-          <div>
-            <Label className="block mb-2">Geolocalización</Label>
-            <select
-              value={geoLocation}
-              onChange={(e) => setGeoLocation(e.target.value)}
-              className="w-full p-2 border rounded-md"
-            >
-              <option value="mundial">Mundial</option>
-              <option value="calidad">Calidad</option>
-            </select>
+            <div className="pt-4 space-y-6">
+              <div>
+                <h4 className="font-bold text-lg mb-2">Requisitos del servicio:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-black/80">
+                  <li>El video debe estar público en YouTube</li>
+                  <li>El contenido debe cumplir con las políticas de YouTube</li>
+                  <li>No debe tener restricciones de edad o geográficas</li>
+                  <li>El video debe tener una duración mínima de 30 segundos</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-lg mb-2">Beneficios:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-black/80">
+                  <li>Mejora en el algoritmo de YouTube</li>
+                  <li>Aumento de la tasa de retención (20 segundos)</li>
+                  <li>Mayor visibilidad en resultados de búsqueda</li>
+                  <li>Incremento en la credibilidad del canal</li>
+                  <li>Potencial aumento de suscriptores orgánicos</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-lg mb-2">Métodos de pago aceptados:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-black/80">
+                  <li>Tarjetas de crédito/débito</li>
+                  <li>PayPal</li>
+                  <li>Transferencia bancaria</li>
+                  <li>Criptomonedas (Bitcoin, Ethereum)</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-lg mb-2">Información importante:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-black/80">
+                  <li>El servicio comenzará dentro de las 24-48 horas después de la compra</li>
+                  <li>La entrega completa puede tomar entre 3-7 días dependiendo de la cantidad</li>
+                  <li>Ofrecemos garantía de reposición de 30 días</li>
+                  <li>Soporte técnico disponible 24/7</li>
+                </ul>
+              </div>
+            </div>
+
+            <Button className="w-full py-6 text-base">Añadir al carrito</Button>
           </div>
         </div>
 
