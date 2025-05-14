@@ -8,6 +8,8 @@ import { relatedProductData } from "@/app/page"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const quantityOptions = [
   {
@@ -48,7 +50,8 @@ export default function RetencionGoogle20s() {
     title: "Retención Google 20s",
     description:
       "Mejora el rendimiento de tus videos con visualizaciones de alta retención (20 segundos). Este servicio optimiza tus métricas en YouTube, mejorando el posicionamiento de tu contenido en el algoritmo de búsqueda.",
-    srcUrl: "/images/youtube-3d-logo.png",
+    srcUrl: "/images/google-logo.png",
+    gallery: ["/images/google-logo.png", "/images/youtube-3d-logo.png"],
     price: 3000,
     discount: {
       amount: 0,
@@ -77,13 +80,44 @@ export default function RetencionGoogle20s() {
             </div>
 
             <div>
+              <Label htmlFor="videoTitle" className="block mb-2 font-medium">
+                Título del video
+              </Label>
+              <Input id="videoTitle" placeholder="Título de tu video" className="w-full" />
+            </div>
+
+            <div>
+              <Label htmlFor="channelName" className="block mb-2 font-medium">
+                Nombre del canal
+              </Label>
+              <Input id="channelName" placeholder="Nombre de tu canal de YouTube" className="w-full" />
+            </div>
+
+            <div>
+              <Label htmlFor="deliverySpeed" className="block mb-2 font-medium">
+                Velocidad de entrega
+              </Label>
+              <Select defaultValue="normal">
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Selecciona la velocidad de entrega" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="slow">Gradual (7-10 días)</SelectItem>
+                  <SelectItem value="normal">Normal (3-6 días)</SelectItem>
+                  <SelectItem value="fast">Rápida (1-2 días) +15%</SelectItem>
+                </SelectContent>
+              </Select>
+              <p className="text-xs text-black/60 mt-1">La entrega rápida tiene un costo adicional del 15%</p>
+            </div>
+
+            <div>
               <Label htmlFor="additionalInfo" className="block mb-2 font-medium">
                 Información adicional (opcional)
               </Label>
-              <Input
+              <Textarea
                 id="additionalInfo"
                 placeholder="Cualquier detalle relevante sobre tu solicitud"
-                className="w-full"
+                className="w-full min-h-[100px]"
               />
             </div>
 
