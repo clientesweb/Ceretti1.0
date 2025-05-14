@@ -90,6 +90,17 @@ export default function LikesThreads() {
             />
           </div>
 
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              checked={isPublic}
+              onChange={(e) => setIsPublic(e.target.checked)}
+              className="rounded"
+              id="isPublic"
+            />
+            <Label htmlFor="isPublic">Mi perfil está en público</Label>
+          </div>
+
           <div>
             <Label className="block mb-2">Geolocalización</Label>
             <select
@@ -100,18 +111,6 @@ export default function LikesThreads() {
               <option value="mundial">Mundial</option>
               <option value="calidad">Calidad</option>
             </select>
-          </div>
-
-          <div>
-            <label className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                checked={isPublic}
-                onChange={(e) => setIsPublic(e.target.checked)}
-                className="rounded"
-              />
-              <span>Mi perfil está en público</span>
-            </label>
           </div>
         </div>
 
