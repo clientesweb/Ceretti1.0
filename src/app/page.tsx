@@ -488,8 +488,8 @@ export const soundcloudServicesData: Product[] = [
     id: 34,
     title: "Seguidores SoundCloud",
     description: "Incrementa tus seguidores en SoundCloud y mejora tu presencia como artista.",
-    srcUrl: "/images/soundcloud-logo-new.png",
-    gallery: ["/images/soundcloud-logo-new.png"],
+    srcUrl: "/images/soundcloud-logo.png",
+    gallery: ["/images/soundcloud-logo.png"],
     price: 1000,
     discount: {
       amount: 0,
@@ -502,8 +502,8 @@ export const soundcloudServicesData: Product[] = [
     id: 35,
     title: "Reproducciones SoundCloud",
     description: "Aumenta las reproducciones de tus pistas en SoundCloud y mejora tu visibilidad.",
-    srcUrl: "/images/soundcloud-logo-new.png",
-    gallery: ["/images/soundcloud-logo-new.png"],
+    srcUrl: "/images/soundcloud-logo.png",
+    gallery: ["/images/soundcloud-logo.png"],
     price: 600,
     discount: {
       amount: 0,
@@ -516,8 +516,8 @@ export const soundcloudServicesData: Product[] = [
     id: 36,
     title: "Likes SoundCloud",
     description: "Aumenta los likes de tus pistas en SoundCloud y mejora tu engagement.",
-    srcUrl: "/images/soundcloud-logo-new.png",
-    gallery: ["/images/soundcloud-logo-new.png"],
+    srcUrl: "/images/soundcloud-logo.png",
+    gallery: ["/images/soundcloud-logo.png"],
     price: 900,
     discount: {
       amount: 0,
@@ -530,8 +530,8 @@ export const soundcloudServicesData: Product[] = [
     id: 37,
     title: "Comentarios Random SoundCloud",
     description: "Comentarios aleatorios en inglés o español para tus pistas en SoundCloud.",
-    srcUrl: "/images/soundcloud-logo-new.png",
-    gallery: ["/images/soundcloud-logo-new.png"],
+    srcUrl: "/images/soundcloud-logo.png",
+    gallery: ["/images/soundcloud-logo.png"],
     price: 3000,
     discount: {
       amount: 0,
