@@ -5,6 +5,10 @@ import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import ProductListSec from "@/components/common/ProductListSec"
 import { relatedProductData } from "@/app/page"
+import { useState } from "react"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 
 const quantityOptions = [
   {
@@ -20,9 +24,9 @@ const quantityOptions = [
     bonus: "Popular",
   },
   {
-    value: "25",
-    label: "25 Comentarios",
-    price: 10000,
+    value: "20",
+    label: "20 Comentarios",
+    price: 8000,
     bonus: "Mejor valor",
   },
   {
@@ -31,21 +35,20 @@ const quantityOptions = [
     price: 18000,
     bonus: "",
   },
-  {
-    value: "100",
-    label: "100 Comentarios",
-    price: 30000,
-    bonus: "",
-  },
 ]
 
 export default function ComentariosPersonalizadosInstagram() {
+  const [postLink, setPostLink] = useState("")
+  const [isPublic, setIsPublic] = useState(false)
+  const [comments, setComments] = useState("")
+  const [geoLocation, setGeoLocation] = useState("mundial")
+
   const product = {
     id: 29,
     title: "Comentarios Personalizados Instagram",
     description:
-      "Recibe comentarios personalizados en tus publicaciones de Instagram. Este servicio premium te permite especificar el contenido exacto de los comentarios para maximizar la relevancia y el impacto en tu audiencia.",
-    srcUrl: "/images/pic6.png",
+      "Aumenta la interacción en tus publicaciones de Instagram con comentarios personalizados. Este servicio te permite elegir exactamente qué comentarios quieres recibir, mejorando la relevancia y calidad de las interacciones.",
+    srcUrl: "/images/instagram-3d-logo.png",
     price: 2500,
     discount: {
       amount: 0,
@@ -65,38 +68,57 @@ export default function ComentariosPersonalizadosInstagram() {
           customMessage="Para este servicio necesitamos que tu cuenta esté en público, nos proporciones el link de la publicación y los comentarios específicos que deseas recibir."
         />
 
-        {/* Información adicional del formulario */}
-        <div className="mt-6 space-y-4 border p-4 rounded-md">
-          <h3 className="font-medium text-lg">Información adicional requerida:</h3>
-
+        <div className="space-y-4 mt-6 border p-4 rounded-md">
           <div>
-            <label className="block mb-1">Link de la publicación</label>
-            <input type="text" placeholder="https://www.instagram.com/p/..." className="w-full p-2 border rounded-md" />
-          </div>
-
-          <div>
-            <label className="block mb-1">Texto de los comentarios</label>
-            <input
-              type="text"
-              placeholder="Escribe los comentarios que deseas recibir"
-              className="w-full p-2 border rounded-md"
+            <Label htmlFor="postLink">Link de la publicación</Label>
+            <Input
+              id="postLink"
+              placeholder="https://www.instagram.com/p/..."
+              value={postLink}
+              onChange={(e) => setPostLink(e.target.value)}
+              className="mt-1"
             />
-            <p className="text-xs text-gray-500 mt-1">Separa cada comentario con un punto y coma (;)</p>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              checked={isPublic}
+              onChange={(e) => setIsPublic(e.target.checked)}
+              className="rounded"
+              id="isPublic"
+            />
+            <Label htmlFor="isPublic">Mi perfil está en público</Label>
           </div>
 
           <div>
-            <label className="block mb-1">Geolocalización</label>
-            <select className="w-full p-2 border rounded-md" defaultValue="mundial">
+            <Label htmlFor="comments">Comentarios personalizados</Label>
+            <Textarea
+              id="comments"
+              placeholder="Escribe cada comentario en una línea separada. Ejemplo:
+¡Me encanta tu contenido! 🔥
+Increíble foto 😍
+Siempre con el mejor estilo 👌"
+              value={comments}
+              onChange={(e) => setComments(e.target.value)}
+              className="mt-1"
+              rows={5}
+            />
+            <p className="text-xs text-gray-500 mt-1">
+              Asegúrate de incluir al menos tantos comentarios como la cantidad que estás comprando
+            </p>
+          </div>
+
+          <div>
+            <Label className="block mb-2">Geolocalización</Label>
+            <select
+              value={geoLocation}
+              onChange={(e) => setGeoLocation(e.target.value)}
+              className="w-full p-2 border rounded-md"
+            >
               <option value="mundial">Mundial</option>
               <option value="calidad">Calidad</option>
             </select>
-          </div>
-
-          <div>
-            <label className="flex items-center space-x-2">
-              <input type="checkbox" className="rounded" />
-              <span>Mi perfil está en público</span>
-            </label>
           </div>
         </div>
 
