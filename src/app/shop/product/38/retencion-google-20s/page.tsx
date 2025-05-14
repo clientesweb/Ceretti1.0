@@ -18,26 +18,38 @@ const quantityOptions = [
   {
     value: "1000",
     label: "1000 Visualizaciones",
-    price: 4000,
+    price: 3000,
     bonus: "",
   },
   {
-    value: "2000",
-    label: "2000 Visualizaciones",
-    price: 7000,
-    bonus: "Popular",
+    value: "2500",
+    label: "2500 Visualizaciones",
+    price: 6000,
+    bonus: "",
   },
   {
     value: "5000",
     label: "5000 Visualizaciones",
-    price: 15000,
+    price: 10000,
+    bonus: "Popular",
+  },
+  {
+    value: "10000",
+    label: "10000 Visualizaciones",
+    price: 18000,
     bonus: "Mejor valor",
+  },
+  {
+    value: "25000",
+    label: "25000 Visualizaciones",
+    price: 40000,
+    bonus: "",
   },
 ]
 
 export default function RetencionGoogle20sPage() {
   const [quantity, setQuantity] = useState<string>("1000")
-  const [price, setPrice] = useState<number>(4000)
+  const [price, setPrice] = useState<number>(3000)
   const [bonus, setBonus] = useState<string>("")
   const [videoLink, setVideoLink] = useState<string>("")
   const [isPublic, setIsPublic] = useState<boolean>(true)
