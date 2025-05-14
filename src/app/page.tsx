@@ -456,8 +456,8 @@ export const threadsServicesData: Product[] = [
     id: 32,
     title: "Seguidores Threads",
     description: "Incrementa tus seguidores en Threads con cuentas de calidad mundial.",
-    srcUrl: "/images/instagram-3d-logo.png",
-    gallery: ["/images/instagram-3d-logo.png"],
+    srcUrl: "/images/threads-logo.png",
+    gallery: ["/images/threads-logo.png"],
     price: 800,
     discount: {
       amount: 0,
@@ -470,8 +470,8 @@ export const threadsServicesData: Product[] = [
     id: 33,
     title: "Likes Threads",
     description: "Aumenta los likes de tus publicaciones en Threads y mejora tu engagement.",
-    srcUrl: "/images/instagram-3d-logo.png",
-    gallery: ["/images/instagram-3d-logo.png"],
+    srcUrl: "/images/threads-logo.png",
+    gallery: ["/images/threads-logo.png"],
     price: 900,
     discount: {
       amount: 0,
@@ -488,8 +488,8 @@ export const soundcloudServicesData: Product[] = [
     id: 34,
     title: "Seguidores SoundCloud",
     description: "Incrementa tus seguidores en SoundCloud y mejora tu presencia como artista.",
-    srcUrl: "/images/spotify-3d-logo.png",
-    gallery: ["/images/spotify-3d-logo.png"],
+    srcUrl: "/images/soundcloud-logo-new.png",
+    gallery: ["/images/soundcloud-logo-new.png"],
     price: 1000,
     discount: {
       amount: 0,
@@ -502,8 +502,8 @@ export const soundcloudServicesData: Product[] = [
     id: 35,
     title: "Reproducciones SoundCloud",
     description: "Aumenta las reproducciones de tus pistas en SoundCloud y mejora tu visibilidad.",
-    srcUrl: "/images/spotify-3d-logo.png",
-    gallery: ["/images/spotify-3d-logo.png"],
+    srcUrl: "/images/soundcloud-logo-new.png",
+    gallery: ["/images/soundcloud-logo-new.png"],
     price: 600,
     discount: {
       amount: 0,
@@ -516,8 +516,8 @@ export const soundcloudServicesData: Product[] = [
     id: 36,
     title: "Likes SoundCloud",
     description: "Aumenta los likes de tus pistas en SoundCloud y mejora tu engagement.",
-    srcUrl: "/images/spotify-3d-logo.png",
-    gallery: ["/images/spotify-3d-logo.png"],
+    srcUrl: "/images/soundcloud-logo-new.png",
+    gallery: ["/images/soundcloud-logo-new.png"],
     price: 900,
     discount: {
       amount: 0,
@@ -530,8 +530,8 @@ export const soundcloudServicesData: Product[] = [
     id: 37,
     title: "Comentarios Random SoundCloud",
     description: "Comentarios aleatorios en inglés o español para tus pistas en SoundCloud.",
-    srcUrl: "/images/spotify-3d-logo.png",
-    gallery: ["/images/spotify-3d-logo.png"],
+    srcUrl: "/images/soundcloud-logo-new.png",
+    gallery: ["/images/soundcloud-logo-new.png"],
     price: 3000,
     discount: {
       amount: 0,
@@ -548,8 +548,8 @@ export const seoServicesData: Product[] = [
     id: 38,
     title: "Retención Directa de Google 20s",
     description: "Servicio SEO con 20 segundos de retención directa desde Google para mejorar tu posicionamiento.",
-    srcUrl: "/images/diseno-web.png",
-    gallery: ["/images/diseno-web.png"],
+    srcUrl: "/images/google-logo.png",
+    gallery: ["/images/google-logo.png", "/images/youtube-3d-logo.png"],
     price: 4000,
     discount: {
       amount: 0,
@@ -562,8 +562,8 @@ export const seoServicesData: Product[] = [
     id: 39,
     title: "Retención Directa de Google 140s",
     description: "Servicio SEO con 140 segundos de retención directa desde Google para un posicionamiento óptimo.",
-    srcUrl: "/images/diseno-web.png",
-    gallery: ["/images/diseno-web.png"],
+    srcUrl: "/images/google-logo.png",
+    gallery: ["/images/google-logo.png", "/images/youtube-3d-logo.png"],
     price: 7000,
     discount: {
       amount: 0,
@@ -577,8 +577,8 @@ export const seoServicesData: Product[] = [
     title: "Tráfico SEO directo a Web",
     description:
       "Tráfico real mundial con visitas directas desde plataformas de intercambio privadas y redes publicitarias.",
-    srcUrl: "/images/diseno-web.png",
-    gallery: ["/images/diseno-web.png"],
+    srcUrl: "/images/seo-analytics.png",
+    gallery: ["/images/seo-analytics.png"],
     price: 1000,
     discount: {
       amount: 0,
