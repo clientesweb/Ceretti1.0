@@ -22,28 +22,28 @@ const quantityOptions = [
     bonus: "",
   },
   {
-    value: "25",
-    label: "25 Comentarios",
-    price: 4500,
-    bonus: "Mejor valor",
-  },
-  {
     value: "50",
     label: "50 Comentarios",
-    price: 7500,
+    price: 4500,
     bonus: "Popular",
   },
   {
     value: "100",
     label: "100 Comentarios",
-    price: 15000,
-    bonus: "Más vendido",
+    price: 7500,
+    bonus: "Mejor valor",
   },
   {
-    value: "250",
-    label: "250 Comentarios",
+    value: "500",
+    label: "500 Comentarios",
+    price: 15000,
+    bonus: "",
+  },
+  {
+    value: "1000",
+    label: "1000 Comentarios",
     price: 25000,
-    bonus: "Máximo impacto",
+    bonus: "",
   },
 ]
 
@@ -140,7 +140,7 @@ export default function ComentariosRandomInstagramPage() {
                 >
                   {quantityOptions.map((option) => (
                     <option key={option.value} value={option.value}>
-                      👤 {option.label} = {option.price}💲 {option.bonus && `(${option.bonus})`}
+                      💬 {option.label} = {option.price}💲 {option.bonus && `(${option.bonus})`}
                     </option>
                   ))}
                 </select>
@@ -161,6 +161,7 @@ export default function ComentariosRandomInstagramPage() {
                     className="bg-transparent placeholder:text-black/40"
                   />
                 </InputGroup>
+                <p className="text-sm text-gray-500 mt-1">Pueden ser emojis o cualquier otro tipo de comentario/Cuentas random mundiales</p>
               </div>
 
               {/* Checkbox perfil público */}
@@ -175,6 +176,13 @@ export default function ComentariosRandomInstagramPage() {
                   El perfil está público
                 </label>
               </div>
+            </div>
+
+            {/* Información adicional */}
+            <div className="mb-6 p-3 bg-blue-50 rounded-lg">
+              <p className="text-sm text-blue-800">
+                <strong>Nota:</strong> Pueden ser emojis o cualquier otro tipo de comentario/cuentas random mundiales
+              </p>
             </div>
 
             {/* Botón agregar al carrito */}
@@ -246,8 +254,8 @@ export default function ComentariosRandomInstagramPage() {
             <div>
               <h3 className="text-xl font-bold mb-4">Comentarios Random Instagram</h3>
               <p className="text-black/70 mb-4">
-                Aumenta la interacción en tus publicaciones con comentarios aleatorios positivos. Este servicio mejora
-                la visibilidad de tus posts y genera mayor engagement en tu perfil.
+                Aumenta la interacción en tus publicaciones con comentarios aleatorios de calidad. Este servicio
+                incrementa el engagement de tus posts y mejora tu posicionamiento en el algoritmo de Instagram.
               </p>
 
               <ul className="space-y-2 text-black/70">
