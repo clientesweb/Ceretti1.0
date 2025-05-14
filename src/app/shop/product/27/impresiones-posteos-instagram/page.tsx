@@ -140,7 +140,7 @@ export default function ImpresionesPoteosInstagramPage() {
                 >
                   {quantityOptions.map((option) => (
                     <option key={option.value} value={option.value}>
-                      👤 {option.label} = {option.price}💲 {option.bonus && `(${option.bonus})`}
+                      👁 {option.label} = {option.price}💲 {option.bonus && `(${option.bonus})`}
                     </option>
                   ))}
                 </select>
