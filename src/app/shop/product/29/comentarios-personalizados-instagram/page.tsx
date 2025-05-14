@@ -5,9 +5,6 @@ import Header from "@/components/product-page/Header"
 import Tabs from "@/components/product-page/Tabs"
 import ProductListSec from "@/components/common/ProductListSec"
 import { relatedProductData } from "@/app/page"
-import { useState } from "react"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 
 const quantityOptions = [
   {
@@ -43,11 +40,6 @@ const quantityOptions = [
 ]
 
 export default function ComentariosPersonalizadosInstagram() {
-  const [profileLink, setProfileLink] = useState("")
-  const [isPublic, setIsPublic] = useState(false)
-  const [geoLocation, setGeoLocation] = useState("mundial")
-  const [commentText, setCommentText] = useState("")
-
   const product = {
     id: 29,
     title: "Comentarios Personalizados Instagram",
@@ -71,56 +63,43 @@ export default function ComentariosPersonalizadosInstagram() {
           data={product}
           quantityOptions={quantityOptions}
           customMessage="Para este servicio necesitamos que tu cuenta esté en público, nos proporciones el link de la publicación y los comentarios específicos que deseas recibir."
-        >
-          <div className="space-y-4 mt-6">
-            <div>
-              <Label htmlFor="profileLink">Link de la publicación</Label>
-              <Input
-                id="profileLink"
-                placeholder="https://www.instagram.com/p/..."
-                value={profileLink}
-                onChange={(e) => setProfileLink(e.target.value)}
-                className="mt-1"
-              />
-            </div>
+        />
 
-            <div>
-              <Label htmlFor="commentText">Texto de los comentarios</Label>
-              <Input
-                id="commentText"
-                placeholder="Escribe los comentarios que deseas recibir"
-                value={commentText}
-                onChange={(e) => setCommentText(e.target.value)}
-                className="mt-1"
-              />
-              <p className="text-xs text-gray-500 mt-1">Separa cada comentario con un punto y coma (;)</p>
-            </div>
+        {/* Información adicional del formulario */}
+        <div className="mt-6 space-y-4 border p-4 rounded-md">
+          <h3 className="font-medium text-lg">Información adicional requerida:</h3>
 
-            <div>
-              <Label className="block mb-2">Geolocalización</Label>
-              <select
-                value={geoLocation}
-                onChange={(e) => setGeoLocation(e.target.value)}
-                className="w-full p-2 border rounded-md"
-              >
-                <option value="mundial">Mundial</option>
-                <option value="calidad">Calidad</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  checked={isPublic}
-                  onChange={(e) => setIsPublic(e.target.checked)}
-                  className="rounded"
-                />
-                <span>Mi perfil está en público</span>
-              </label>
-            </div>
+          <div>
+            <label className="block mb-1">Link de la publicación</label>
+            <input type="text" placeholder="https://www.instagram.com/p/..." className="w-full p-2 border rounded-md" />
           </div>
-        </Header>
+
+          <div>
+            <label className="block mb-1">Texto de los comentarios</label>
+            <input
+              type="text"
+              placeholder="Escribe los comentarios que deseas recibir"
+              className="w-full p-2 border rounded-md"
+            />
+            <p className="text-xs text-gray-500 mt-1">Separa cada comentario con un punto y coma (;)</p>
+          </div>
+
+          <div>
+            <label className="block mb-1">Geolocalización</label>
+            <select className="w-full p-2 border rounded-md" defaultValue="mundial">
+              <option value="mundial">Mundial</option>
+              <option value="calidad">Calidad</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="flex items-center space-x-2">
+              <input type="checkbox" className="rounded" />
+              <span>Mi perfil está en público</span>
+            </label>
+          </div>
+        </div>
+
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
