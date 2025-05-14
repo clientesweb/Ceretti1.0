@@ -16,46 +16,46 @@ import InputGroup from "@/components/ui/input-group"
 
 const quantityOptions = [
   {
+    value: "50",
+    label: "50 Likes",
+    price: 900,
+    bonus: "",
+  },
+  {
     value: "100",
     label: "100 Likes",
-    price: 1000,
+    price: 1500,
     bonus: "",
   },
   {
     value: "250",
     label: "250 Likes",
-    price: 2000,
-    bonus: "",
+    price: 3000,
+    bonus: "Popular",
   },
   {
     value: "500",
     label: "500 Likes",
-    price: 3500,
-    bonus: "Popular",
-  },
-  {
-    value: "1000",
-    label: "1000 Likes",
     price: 5000,
     bonus: "Mejor valor",
   },
   {
-    value: "2500",
-    label: "2500 Likes",
-    price: 10000,
+    value: "1000",
+    label: "1000 Likes",
+    price: 9000,
     bonus: "",
   },
   {
-    value: "5000",
-    label: "5000 Likes",
-    price: 18000,
+    value: "2500",
+    label: "2500 Likes",
+    price: 16000,
     bonus: "",
   },
 ]
 
 export default function LikesSoundcloudPage() {
   const [quantity, setQuantity] = useState<string>("100")
-  const [price, setPrice] = useState<number>(1000)
+  const [price, setPrice] = useState<number>(1500)
   const [bonus, setBonus] = useState<string>("")
   const [trackLink, setTrackLink] = useState<string>("")
   const [isPublic, setIsPublic] = useState<boolean>(true)
