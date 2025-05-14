@@ -9,7 +9,6 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const quantityOptions = [
   {
@@ -67,67 +66,69 @@ export default function ServicioReporteSpam() {
           data={product}
           quantityOptions={quantityOptions}
           customMessage="Para este servicio necesitamos que nos proporciones el link del perfil o contenido que deseas reportar y el motivo específico."
-        >
-          <div className="space-y-4 mt-6">
-            <div>
-              <Label htmlFor="platform">Plataforma</Label>
-              <Select value={platform} onValueChange={setPlatform}>
-                <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Selecciona la plataforma" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="instagram">Instagram</SelectItem>
-                  <SelectItem value="facebook">Facebook</SelectItem>
-                  <SelectItem value="tiktok">TikTok</SelectItem>
-                  <SelectItem value="youtube">YouTube</SelectItem>
-                  <SelectItem value="twitter">Twitter</SelectItem>
-                  <SelectItem value="threads">Threads</SelectItem>
-                  <SelectItem value="otra">Otra</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+        />
 
-            <div>
-              <Label htmlFor="profileLink">Link del perfil o contenido</Label>
-              <Input
-                id="profileLink"
-                placeholder="https://..."
-                value={profileLink}
-                onChange={(e) => setProfileLink(e.target.value)}
-                className="mt-1"
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="reportReason">Motivo del reporte</Label>
-              <Select value={reportReason} onValueChange={setReportReason}>
-                <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Selecciona el motivo" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="spam">Spam</SelectItem>
-                  <SelectItem value="contenido_inapropiado">Contenido inapropiado</SelectItem>
-                  <SelectItem value="acoso">Acoso</SelectItem>
-                  <SelectItem value="suplantacion">Suplantación de identidad</SelectItem>
-                  <SelectItem value="derechos_autor">Violación de derechos de autor</SelectItem>
-                  <SelectItem value="otro">Otro</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div>
-              <Label htmlFor="additionalInfo">Información adicional</Label>
-              <Textarea
-                id="additionalInfo"
-                placeholder="Proporciona detalles adicionales sobre el reporte"
-                value={additionalInfo}
-                onChange={(e) => setAdditionalInfo(e.target.value)}
-                className="mt-1"
-                rows={4}
-              />
-            </div>
+        <div className="space-y-4 mt-6 border p-4 rounded-md">
+          <div>
+            <Label htmlFor="platform">Plataforma</Label>
+            <select
+              id="platform"
+              value={platform}
+              onChange={(e) => setPlatform(e.target.value)}
+              className="w-full p-2 border rounded-md mt-1"
+            >
+              <option value="instagram">Instagram</option>
+              <option value="facebook">Facebook</option>
+              <option value="tiktok">TikTok</option>
+              <option value="youtube">YouTube</option>
+              <option value="twitter">Twitter</option>
+              <option value="threads">Threads</option>
+              <option value="otra">Otra</option>
+            </select>
           </div>
-        </Header>
+
+          <div>
+            <Label htmlFor="profileLink">Link del perfil o contenido</Label>
+            <Input
+              id="profileLink"
+              placeholder="https://..."
+              value={profileLink}
+              onChange={(e) => setProfileLink(e.target.value)}
+              className="mt-1"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="reportReason">Motivo del reporte</Label>
+            <select
+              id="reportReason"
+              value={reportReason}
+              onChange={(e) => setReportReason(e.target.value)}
+              className="w-full p-2 border rounded-md mt-1"
+            >
+              <option value="">Selecciona el motivo</option>
+              <option value="spam">Spam</option>
+              <option value="contenido_inapropiado">Contenido inapropiado</option>
+              <option value="acoso">Acoso</option>
+              <option value="suplantacion">Suplantación de identidad</option>
+              <option value="derechos_autor">Violación de derechos de autor</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div>
+            <Label htmlFor="additionalInfo">Información adicional</Label>
+            <Textarea
+              id="additionalInfo"
+              placeholder="Proporciona detalles adicionales sobre el reporte"
+              value={additionalInfo}
+              onChange={(e) => setAdditionalInfo(e.target.value)}
+              className="mt-1"
+              rows={4}
+            />
+          </div>
+        </div>
+
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
