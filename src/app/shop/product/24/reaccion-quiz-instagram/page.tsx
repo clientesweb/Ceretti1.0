@@ -146,7 +146,7 @@ export default function ReaccionQuizInstagramPage() {
                 >
                   {quantityOptions.map((option) => (
                     <option key={option.value} value={option.value}>
-                      👤 {option.label} = {option.price}💲 {option.bonus && `(${option.bonus})`}
+                      👁 {option.label} = {option.price}💲 {option.bonus && `(${option.bonus})`}
                     </option>
                   ))}
                 </select>
@@ -181,6 +181,13 @@ export default function ReaccionQuizInstagramPage() {
                   El perfil está público
                 </label>
               </div>
+            </div>
+
+            {/* Información adicional */}
+            <div className="mb-6 p-3 bg-blue-50 rounded-lg">
+              <p className="text-sm text-blue-800">
+                <strong>Nota:</strong> Solo es opción A/Cuentas Mundiales
+              </p>
             </div>
 
             {/* Botón agregar al carrito */}
