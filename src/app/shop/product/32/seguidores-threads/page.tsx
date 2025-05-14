@@ -76,44 +76,45 @@ export default function SeguidoresThreads() {
           data={product}
           quantityOptions={quantityOptions}
           customMessage="Para este servicio necesitamos que tu cuenta esté en público y nos proporciones el link de tu perfil de Threads."
-        >
-          <div className="space-y-4 mt-6">
-            <div>
-              <Label htmlFor="profileLink">Link de tu perfil</Label>
-              <Input
-                id="profileLink"
-                placeholder="https://www.threads.net/@username"
-                value={profileLink}
-                onChange={(e) => setProfileLink(e.target.value)}
-                className="mt-1"
-              />
-            </div>
+        />
 
-            <div>
-              <Label className="block mb-2">Geolocalización</Label>
-              <select
-                value={geoLocation}
-                onChange={(e) => setGeoLocation(e.target.value)}
-                className="w-full p-2 border rounded-md"
-              >
-                <option value="mundial">Mundial</option>
-                <option value="calidad">Calidad</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  checked={isPublic}
-                  onChange={(e) => setIsPublic(e.target.checked)}
-                  className="rounded"
-                />
-                <span>Mi perfil está en público</span>
-              </label>
-            </div>
+        <div className="space-y-4 mt-6 border p-4 rounded-md">
+          <div>
+            <Label htmlFor="profileLink">Link de tu perfil</Label>
+            <Input
+              id="profileLink"
+              placeholder="https://www.threads.net/@username"
+              value={profileLink}
+              onChange={(e) => setProfileLink(e.target.value)}
+              className="mt-1"
+            />
           </div>
-        </Header>
+
+          <div>
+            <Label className="block mb-2">Geolocalización</Label>
+            <select
+              value={geoLocation}
+              onChange={(e) => setGeoLocation(e.target.value)}
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="mundial">Mundial</option>
+              <option value="calidad">Calidad</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                checked={isPublic}
+                onChange={(e) => setIsPublic(e.target.checked)}
+                className="rounded"
+              />
+              <span>Mi perfil está en público</span>
+            </label>
+          </div>
+        </div>
+
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
