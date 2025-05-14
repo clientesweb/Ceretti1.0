@@ -8,7 +8,6 @@ import { relatedProductData } from "@/app/page"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const quantityOptions = [
   {
@@ -66,57 +65,57 @@ export default function ComentariosRandomSoundcloud() {
           data={product}
           quantityOptions={quantityOptions}
           customMessage="Para este servicio necesitamos que tu track esté público y nos proporciones el link directo de la canción donde deseas los comentarios."
-        >
-          <div className="space-y-4 mt-6">
-            <div>
-              <Label htmlFor="trackLink">Link de la canción</Label>
-              <Input
-                id="trackLink"
-                placeholder="https://soundcloud.com/username/track-name"
-                value={trackLink}
-                onChange={(e) => setTrackLink(e.target.value)}
-                className="mt-1"
-              />
-            </div>
+        />
 
-            <div className="flex items-center space-x-2">
-              <Checkbox id="isPublic" checked={isPublic} onCheckedChange={(checked) => setIsPublic(checked === true)} />
-              <Label htmlFor="isPublic">Mi track está en público</Label>
-            </div>
-
-            <div>
-              <Label className="block mb-2">Idioma de los comentarios</Label>
-              <RadioGroup value={language} onValueChange={setLanguage} className="flex flex-col space-y-1">
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="español" id="español" />
-                  <Label htmlFor="español">Español</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="inglés" id="inglés" />
-                  <Label htmlFor="inglés">Inglés</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="mixto" id="mixto" />
-                  <Label htmlFor="mixto">Mixto</Label>
-                </div>
-              </RadioGroup>
-            </div>
-
-            <div>
-              <Label className="block mb-2">Geolocalización</Label>
-              <RadioGroup value={geoLocation} onValueChange={setGeoLocation} className="flex flex-col space-y-1">
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="mundial" id="mundial" />
-                  <Label htmlFor="mundial">Mundial</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="calidad" id="calidad" />
-                  <Label htmlFor="calidad">Calidad</Label>
-                </div>
-              </RadioGroup>
-            </div>
+        <div className="space-y-4 mt-6 border p-4 rounded-md">
+          <div>
+            <Label htmlFor="trackLink">Link de la canción</Label>
+            <Input
+              id="trackLink"
+              placeholder="https://soundcloud.com/username/track-name"
+              value={trackLink}
+              onChange={(e) => setTrackLink(e.target.value)}
+              className="mt-1"
+            />
           </div>
-        </Header>
+
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              checked={isPublic}
+              onChange={(e) => setIsPublic(e.target.checked)}
+              className="rounded"
+              id="isPublic"
+            />
+            <Label htmlFor="isPublic">Mi track está en público</Label>
+          </div>
+
+          <div>
+            <Label className="block mb-2">Idioma de los comentarios</Label>
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="español">Español</option>
+              <option value="inglés">Inglés</option>
+              <option value="mixto">Mixto</option>
+            </select>
+          </div>
+
+          <div>
+            <Label className="block mb-2">Geolocalización</Label>
+            <select
+              value={geoLocation}
+              onChange={(e) => setGeoLocation(e.target.value)}
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="mundial">Mundial</option>
+              <option value="calidad">Calidad</option>
+            </select>
+          </div>
+        </div>
+
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
