@@ -25,25 +25,25 @@ const quantityOptions = [
     value: "500",
     label: "500 Impresiones",
     price: 800,
-    bonus: "Mejor valor",
+    bonus: "",
   },
   {
     value: "1000",
-    label: "1.000 Impresiones",
+    label: "1000 Impresiones",
     price: 1500,
     bonus: "Popular",
   },
   {
     value: "2500",
-    label: "2.500 Impresiones",
+    label: "2500 Impresiones",
     price: 3500,
-    bonus: "Más vendido",
+    bonus: "Mejor valor",
   },
   {
     value: "5000",
-    label: "5.000 Impresiones",
+    label: "5000 Impresiones",
     price: 6000,
-    bonus: "Máximo impacto",
+    bonus: "",
   },
 ]
 
