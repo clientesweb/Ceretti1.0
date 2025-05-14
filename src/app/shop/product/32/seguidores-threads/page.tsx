@@ -16,50 +16,49 @@ import InputGroup from "@/components/ui/input-group"
 
 const quantityOptions = [
   {
+    value: "50",
+    label: "50 Likes",
+    price: 900,
+    bonus: "",
+  },
+  {
     value: "100",
-    label: "100 Seguidores",
+    label: "100 Likes",
     price: 1500,
     bonus: "",
   },
   {
     value: "250",
-    label: "250 Seguidores",
-    price: 2500,
-    bonus: "",
-  },
-  {
-    value: "500",
-    label: "500 Seguidores",
-    price: 4000,
+    label: "250 Likes",
+    price: 3000,
     bonus: "Popular",
   },
   {
-    value: "1000",
-    label: "1000 Seguidores",
-    price: 6000,
+    value: "500",
+    label: "500 Likes",
+    price: 5000,
     bonus: "Mejor valor",
   },
   {
-    value: "2500",
-    label: "2500 Seguidores",
-    price: 12000,
+    value: "1000",
+    label: "1000 Likes",
+    price: 9000,
     bonus: "",
   },
   {
-    value: "5000",
-    label: "5000 Seguidores",
-    price: 20000,
+    value: "2500",
+    label: "2500 Likes",
+    price: 16000,
     bonus: "",
   },
 ]
 
-export default function SeguidoresThreads() {
+export default function LikesThreadsPage() {
   const [quantity, setQuantity] = useState<string>("100")
   const [price, setPrice] = useState<number>(1500)
   const [bonus, setBonus] = useState<string>("")
-  const [profileLink, setProfileLink] = useState<string>("")
+  const [postLink, setPostLink] = useState<string>("")
   const [isPublic, setIsPublic] = useState<boolean>(true)
-  const [geoLocation, setGeoLocation] = useState<string>("mundial")
   const dispatch = useAppDispatch()
 
   // Actualizar precio cuando cambia la cantidad
@@ -72,18 +71,18 @@ export default function SeguidoresThreads() {
   }, [quantity])
 
   const handleAddToCart = () => {
-    if (!profileLink) {
-      alert("Por favor ingresa el link de tu perfil de Threads")
+    if (!postLink) {
+      alert("Por favor ingresa el link de la publicación de Threads")
       return
     }
 
     dispatch(
       addToCart({
-        id: 32,
-        name: `Seguidores Threads - ${quantity}`,
+        id: 33,
+        name: `Likes Threads - ${quantity}`,
         srcUrl: "/images/threads-logo.png",
         price: price,
-        attributes: [quantity, profileLink, isPublic ? "Público" : "Privado", geoLocation],
+        attributes: [quantity, postLink, isPublic ? "Público" : "Privado"],
         discount: {
           amount: 0,
           percentage: 0,
@@ -98,7 +97,7 @@ export default function SeguidoresThreads() {
   return (
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
-        <BreadcrumbProduct title="Seguidores Threads" />
+        <BreadcrumbProduct title="Likes Threads" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Imagen del producto */}
@@ -107,7 +106,7 @@ export default function SeguidoresThreads() {
               src="/images/threads-logo.png"
               width={400}
               height={400}
-              alt="Seguidores Threads"
+              alt="Likes Threads"
               className="object-contain max-w-full max-h-[400px] rounded-xl"
               priority
             />
@@ -115,12 +114,12 @@ export default function SeguidoresThreads() {
 
           {/* Detalles del producto */}
           <div>
-            <h1 className={cn([integralCF.className, "text-3xl md:text-4xl mb-3"])}>Seguidores Threads</h1>
+            <h1 className={cn([integralCF.className, "text-3xl md:text-4xl mb-3"])}>Likes Threads</h1>
 
             <div className="flex items-center mb-4">
-              <Rating initialValue={4.8} SVGclassName="inline-block" emptyClassName="fill-gray-50" size={24} readonly />
+              <Rating initialValue={5} SVGclassName="inline-block" emptyClassName="fill-gray-50" size={24} readonly />
               <span className="text-black text-sm ml-2">
-                4.8 <span className="text-black/60">(64 reseñas)</span>
+                5.0 <span className="text-black/60">(68 reseñas)</span>
               </span>
             </div>
 
@@ -134,6 +133,7 @@ export default function SeguidoresThreads() {
                   {bonus}
                 </div>
               )}
+              <p className="text-sm text-gray-500 mt-1">Calidad solo Mundial</p>
             </div>
 
             <div className="space-y-6 mb-8">
@@ -153,34 +153,21 @@ export default function SeguidoresThreads() {
                 </select>
               </div>
 
-              {/* Link del perfil */}
+              {/* Link de la publicación */}
               <div>
                 <label className="block text-base font-medium mb-2">
-                  Link de tu perfil <span className="text-red-500">*</span>
+                  Link de la publicación <span className="text-red-500">*</span>
                 </label>
                 <InputGroup className="bg-[#F0F0F0]">
                   <InputGroup.Input
                     type="text"
-                    name="profile-link"
-                    placeholder="https://www.threads.net/@username"
-                    value={profileLink}
-                    onChange={(e) => setProfileLink(e.target.value)}
+                    name="post-link"
+                    placeholder="https://www.threads.net/@usuario/post/..."
+                    value={postLink}
+                    onChange={(e) => setPostLink(e.target.value)}
                     className="bg-transparent placeholder:text-black/40"
                   />
                 </InputGroup>
-              </div>
-
-              {/* Geolocalización */}
-              <div>
-                <label className="block text-base font-medium mb-2">Geolocalización</label>
-                <select
-                  className="w-full border border-black/10 rounded-full py-3 px-4 bg-[#F0F0F0]"
-                  value={geoLocation}
-                  onChange={(e) => setGeoLocation(e.target.value)}
-                >
-                  <option value="mundial">Mundial</option>
-                  <option value="calidad">Calidad</option>
-                </select>
               </div>
 
               {/* Checkbox perfil público */}
@@ -192,7 +179,7 @@ export default function SeguidoresThreads() {
                   {isPublic && <FaCheck className="text-white text-xs" />}
                 </div>
                 <label className="cursor-pointer" onClick={() => setIsPublic(!isPublic)}>
-                  Mi perfil está en público
+                  El perfil está público
                 </label>
               </div>
             </div>
@@ -264,10 +251,10 @@ export default function SeguidoresThreads() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Seguidores Threads</h3>
+              <h3 className="text-xl font-bold mb-4">Likes Threads</h3>
               <p className="text-black/70 mb-4">
-                Aumenta tu presencia en Threads con seguidores reales y activos. Nuestro servicio garantiza seguidores
-                de calidad que mejoran tu credibilidad y visibilidad en esta nueva plataforma.
+                Aumenta la interacción en tus publicaciones de Threads con likes reales. Este servicio mejora la
+                visibilidad de tu contenido y aumenta tu credibilidad en la plataforma.
               </p>
 
               <ul className="space-y-2 text-black/70">
@@ -292,26 +279,26 @@ export default function SeguidoresThreads() {
               <div className="border border-black/10 rounded-xl p-4 mb-4">
                 <ul className="space-y-2 text-black/70">
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Mayor credibilidad en una plataforma emergente
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Mayor visibilidad de tus publicaciones
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="text-green-500 mt-1 mr-2" /> Mejora en el posicionamiento del algoritmo
                   </li>
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Aumento de la visibilidad de tu contenido
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Aumento de la credibilidad de tu contenido
                   </li>
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Mayor atracción de seguidores orgánicos
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Atracción de nuevos seguidores orgánicos
                   </li>
                   <li className="flex items-start">
-                    <FaCheck className="text-green-500 mt-1 mr-2" /> Ventaja competitiva en una red social nueva
+                    <FaCheck className="text-green-500 mt-1 mr-2" /> Impulso a tu presencia en Threads
                   </li>
                 </ul>
               </div>
 
               <p className="text-sm text-black/70">
                 <strong>Nota:</strong> Para obtener los mejores resultados, asegúrate de que tu perfil esté público y
-                que tengas al menos 3 publicaciones recientes.
+                que la publicación sea reciente.
               </p>
             </div>
           </div>
