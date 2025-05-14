@@ -16,46 +16,40 @@ import InputGroup from "@/components/ui/input-group"
 
 const quantityOptions = [
   {
+    value: "100",
+    label: "100 Reproducciones",
+    price: 600,
+    bonus: "",
+  },
+  {
+    value: "250",
+    label: "250 Reproducciones",
+    price: 1100,
+    bonus: "",
+  },
+  {
+    value: "500",
+    label: "500 Reproducciones",
+    price: 2500,
+    bonus: "Popular",
+  },
+  {
     value: "1000",
     label: "1000 Reproducciones",
-    price: 1200,
-    bonus: "",
+    price: 4500,
+    bonus: "Mejor valor",
   },
   {
     value: "2500",
     label: "2500 Reproducciones",
-    price: 2500,
-    bonus: "",
-  },
-  {
-    value: "5000",
-    label: "5000 Reproducciones",
-    price: 4000,
-    bonus: "Popular",
-  },
-  {
-    value: "10000",
-    label: "10000 Reproducciones",
-    price: 7000,
-    bonus: "Mejor valor",
-  },
-  {
-    value: "25000",
-    label: "25000 Reproducciones",
-    price: 15000,
-    bonus: "",
-  },
-  {
-    value: "50000",
-    label: "50000 Reproducciones",
-    price: 25000,
+    price: 12000,
     bonus: "",
   },
 ]
 
 export default function ReproduccionesSoundcloudPage() {
-  const [quantity, setQuantity] = useState<string>("1000")
-  const [price, setPrice] = useState<number>(1200)
+  const [quantity, setQuantity] = useState<string>("100")
+  const [price, setPrice] = useState<number>(600)
   const [bonus, setBonus] = useState<string>("")
   const [trackLink, setTrackLink] = useState<string>("")
   const [isPublic, setIsPublic] = useState<boolean>(true)
