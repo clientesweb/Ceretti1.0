@@ -8,8 +8,6 @@ import { relatedProductData } from "@/app/page"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const quantityOptions = [
   {
@@ -73,57 +71,62 @@ export default function RetencionGoogle20s() {
           data={product}
           quantityOptions={quantityOptions}
           customMessage="Para este servicio necesitamos que tu video esté público y nos proporciones el link directo del video que deseas promocionar."
-        >
-          <div className="space-y-4 mt-6">
-            <div>
-              <Label htmlFor="videoLink">Link del video</Label>
-              <Input
-                id="videoLink"
-                placeholder="https://www.youtube.com/watch?v=..."
-                value={videoLink}
-                onChange={(e) => setVideoLink(e.target.value)}
-                className="mt-1"
-              />
-            </div>
+        />
 
-            <div className="flex items-center space-x-2">
-              <Checkbox id="isPublic" checked={isPublic} onCheckedChange={(checked) => setIsPublic(checked === true)} />
-              <Label htmlFor="isPublic">Mi video está en público</Label>
-            </div>
-
-            <div>
-              <Label htmlFor="targetAudience">Audiencia objetivo</Label>
-              <Select value={targetAudience} onValueChange={setTargetAudience}>
-                <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Selecciona la audiencia objetivo" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="general">General</SelectItem>
-                  <SelectItem value="musica">Música</SelectItem>
-                  <SelectItem value="gaming">Gaming</SelectItem>
-                  <SelectItem value="tecnologia">Tecnología</SelectItem>
-                  <SelectItem value="belleza">Belleza y Moda</SelectItem>
-                  <SelectItem value="deportes">Deportes</SelectItem>
-                  <SelectItem value="educacion">Educación</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div>
-              <Label className="block mb-2">Geolocalización</Label>
-              <RadioGroup value={geoLocation} onValueChange={setGeoLocation} className="flex flex-col space-y-1">
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="mundial" id="mundial" />
-                  <Label htmlFor="mundial">Mundial</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="calidad" id="calidad" />
-                  <Label htmlFor="calidad">Calidad</Label>
-                </div>
-              </RadioGroup>
-            </div>
+        <div className="space-y-4 mt-6 border p-4 rounded-md">
+          <div>
+            <Label htmlFor="videoLink">Link del video</Label>
+            <Input
+              id="videoLink"
+              placeholder="https://www.youtube.com/watch?v=..."
+              value={videoLink}
+              onChange={(e) => setVideoLink(e.target.value)}
+              className="mt-1"
+            />
           </div>
-        </Header>
+
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              checked={isPublic}
+              onChange={(e) => setIsPublic(e.target.checked)}
+              className="rounded"
+              id="isPublic"
+            />
+            <Label htmlFor="isPublic">Mi video está en público</Label>
+          </div>
+
+          <div>
+            <Label htmlFor="targetAudience">Audiencia objetivo</Label>
+            <select
+              id="targetAudience"
+              value={targetAudience}
+              onChange={(e) => setTargetAudience(e.target.value)}
+              className="w-full p-2 border rounded-md mt-1"
+            >
+              <option value="general">General</option>
+              <option value="musica">Música</option>
+              <option value="gaming">Gaming</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="belleza">Belleza y Moda</option>
+              <option value="deportes">Deportes</option>
+              <option value="educacion">Educación</option>
+            </select>
+          </div>
+
+          <div>
+            <Label className="block mb-2">Geolocalización</Label>
+            <select
+              value={geoLocation}
+              onChange={(e) => setGeoLocation(e.target.value)}
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="mundial">Mundial</option>
+              <option value="calidad">Calidad</option>
+            </select>
+          </div>
+        </div>
+
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         <Tabs />
         <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
