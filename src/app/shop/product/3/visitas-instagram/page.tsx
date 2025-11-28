@@ -18,10 +18,10 @@ import InputGroup from "@/components/ui/input-group"
 
 // Actualizar las opciones de precios para visitas Instagram
 const visitasOptions = [
-  { value: "500", label: "500 Visitas", price: 350 },
-  { value: "1000", label: "1.000 Visitas", price: 600 },
-  { value: "2500", label: "2.500 Visitas", price: 1800 },
-  { value: "5000", label: "5.000 Visitas", price: 2800 },
+  { value: "500", label: "500 Visitas", price: 525 },
+  { value: "1000", label: "1.000 Visitas", price: 900 },
+  { value: "2500", label: "2.500 Visitas", price: 2700 },
+  { value: "5000", label: "5.000 Visitas", price: 4200 },
   { value: "10000", label: "10.000 Visitas", price: 6500 },
 ]
 
