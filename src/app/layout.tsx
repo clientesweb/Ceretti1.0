@@ -2,11 +2,18 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import "@/styles/globals.css"
 import { satoshi } from "@/styles/fonts"
+import TopBanner from "@/components/layout/Banner/TopBanner"
+import TopNavbar from "@/components/layout/Navbar/TopNavbar"
+import Footer from "@/components/layout/Footer"
+import Providers from "./providers"
+import { Toaster } from "@/components/ui/toaster"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cerettimanagement.com"),
-  title: "Pronto Volvemos | CERETTI MANAGEMENT",
-  description: "Estamos trabajando en algo increíble. Regresa pronto para descubrir las novedades.",
+  title: "CERETTI MANAGEMENT | Aumenta Seguidores, Likes y Visitas en Instagram y YouTube",
+  description:
+    "Potencia tu presencia digital con CERETTI MANAGEMENT. Servicios premium para aumentar seguidores reales, likes, reproducciones y engagement en Instagram, YouTube, TikTok, Spotify y Facebook. Resultados garantizados y entregas rápidas.",
   keywords: [
     "comprar seguidores Instagram",
     "aumentar likes Instagram",
@@ -36,8 +43,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
     url: "https://www.cerettimanagement.com",
-    title: "Pronto Volvemos | CERETTI MANAGEMENT",
-    description: "Estamos trabajando en algo increíble. Regresa pronto para descubrir las novedades.",
+    title: "CERETTI MANAGEMENT | Aumenta Seguidores, Likes y Visitas en Instagram y YouTube",
+    description:
+      "Potencia tu presencia digital con servicios premium para aumentar seguidores reales, likes, reproducciones y engagement en Instagram, YouTube, TikTok, Spotify y Facebook. Resultados garantizados.",
     siteName: "CERETTI MANAGEMENT",
     images: [
       {
@@ -50,8 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pronto Volvemos | CERETTI MANAGEMENT",
-    description: "Estamos trabajando en algo increíble. Regresa pronto para descubrir las novedades.",
+    title: "CERETTI MANAGEMENT | Aumenta Seguidores, Likes y Visitas en Instagram y YouTube",
+    description:
+      "Potencia tu presencia digital con servicios premium para aumentar seguidores reales, likes, reproducciones y engagement en Instagram, YouTube, TikTok, Spotify y Facebook.",
     images: ["/og-image-ceretti.jpg"],
   },
   alternates: {
@@ -80,7 +89,28 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={satoshi.className}>{children}</body>
+      <body className={satoshi.className}>
+        <TopBanner />
+        <Providers>
+          <TopNavbar />
+          {children}
+        </Providers>
+        <Footer />
+        <Toaster />
+        <Script id="tawk-to" strategy="afterInteractive">
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/67dfe67f98d9ad1905a9ca32/1in19op7a';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
+        </Script>
+      </body>
     </html>
   )
 }
