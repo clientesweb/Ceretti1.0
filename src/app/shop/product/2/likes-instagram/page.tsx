@@ -16,14 +16,14 @@ import InputGroup from "@/components/ui/input-group"
 
 // Actualizar las opciones de precios para likes Instagram de calidad
 const calidadOptions = [
-  { value: "50", label: "50 Likes", price: 500, bonus: "" },
-  { value: "100", label: "100 Likes", price: 900, bonus: "" },
-  { value: "250", label: "250 Likes", price: 2000, bonus: "" },
-  { value: "500", label: "500 Likes", price: 3500, bonus: "" },
-  { value: "1000", label: "1.000 Likes", price: 5500, bonus: "" },
-  { value: "2500", label: "2.500 Likes", price: 9500, bonus: "" },
-  { value: "5000", label: "5.000 Likes", price: 14000, bonus: "" },
-  { value: "10000", label: "10.000 Likes", price: 22000, bonus: "" },
+  { value: "50", label: "50 Likes", price: 550, bonus: "" },
+  { value: "100", label: "100 Likes", price: 1000, bonus: "" },
+  { value: "250", label: "250 Likes", price: 2250, bonus: "" },
+  { value: "500", label: "500 Likes", price: 3850, bonus: "" },
+  { value: "1000", label: "1.000 Likes", price: 6050, bonus: "" },
+  { value: "2500", label: "2.500 Likes", price: 10750, bonus: "" },
+  { value: "5000", label: "5.000 Likes", price: 15250, bonus: "" },
+  { value: "10000", label: "10.000 Likes", price: 24000, bonus: "" },
 ]
 
 // Actualizar las opciones de precios para likes Instagram mundiales
