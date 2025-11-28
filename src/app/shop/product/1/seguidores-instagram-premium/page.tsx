@@ -27,14 +27,14 @@ const calidadOptions = [
 
 // Actualizar las opciones de precios para seguidores Instagram mundiales
 const mundialOptions = [
-  { value: "100", label: "100 Seguidores", price: 1000, bonus: "" },
-  { value: "250", label: "250 Seguidores", price: 1800, bonus: "" },
-  { value: "500", label: "500 Seguidores", price: 3000, bonus: "" },
-  { value: "1000", label: "1.000 Seguidores", price: 5000, bonus: "" },
-  { value: "2500", label: "2.500 Seguidores", price: 10500, bonus: "+ 250 Likes" },
-  { value: "5000", label: "5.000 Seguidores", price: 18000, bonus: "+ 500 Likes" },
-  { value: "8000", label: "8.000 Seguidores", price: 25000, bonus: "+ 1K Likes + 1K Visitas" },
-  { value: "10000", label: "10.000 Seguidores", price: 28000, bonus: "+ 2K Likes + 2K Visitas" },
+  { value: "100", label: "100 Seguidores", price: 1500, bonus: "" },
+  { value: "250", label: "250 Seguidores", price: 2700, bonus: "" },
+  { value: "500", label: "500 Seguidores", price: 4500, bonus: "" },
+  { value: "1000", label: "1.000 Seguidores", price: 7500, bonus: "" },
+  { value: "2500", label: "2.500 Seguidores", price: 15750, bonus: "+ 250 Likes" },
+  { value: "5000", label: "5.000 Seguidores", price: 27000, bonus: "+ 500 Likes" },
+  { value: "8000", label: "8.000 Seguidores", price: 37500, bonus: "+ 1K Likes + 1K Visitas" },
+  { value: "10000", label: "10.000 Seguidores", price: 42000, bonus: "+ 2K Likes + 2K Visitas" },
 ]
 
 export default function SeguidoresInstagramPage() {
