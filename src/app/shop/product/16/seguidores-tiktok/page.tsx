@@ -18,12 +18,12 @@ import InputGroup from "@/components/ui/input-group"
 
 // Actualizar las opciones de precios para seguidores TikTok
 const seguidoresOptions = [
-  { value: "100", label: "100 Seguidores", price: 1000 },
-  { value: "250", label: "250 Seguidores", price: 1800 },
-  { value: "500", label: "500 Seguidores", price: 3000 },
-  { value: "1000", label: "1.000 Seguidores", price: 5000 },
-  { value: "2500", label: "2.500 Seguidores", price: 10500 },
-  { value: "5000", label: "5.000 Seguidores", price: 18500 },
+  { value: "100", label: "100 Seguidores", price: 1200 },
+  { value: "250", label: "250 Seguidores", price: 2160 },
+  { value: "500", label: "500 Seguidores", price: 3600 },
+  { value: "1000", label: "1.000 Seguidores", price: 6000 },
+  { value: "2500", label: "2.500 Seguidores", price: 12600 },
+  { value: "5000", label: "5.000 Seguidores", price: 22200 },
 ]
 
 export default function SeguidoresTikTokPage() {
