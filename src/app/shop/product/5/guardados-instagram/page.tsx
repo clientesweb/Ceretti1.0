@@ -19,12 +19,12 @@ import { reviewsData } from "@/app/page"
 
 // Actualizar las opciones de precios para guardados Instagram
 const guardadosOptions = [
-  { value: "250", label: "250 Guardados", price: 400 },
-  { value: "500", label: "500 Guardados", price: 800 },
-  { value: "1000", label: "1.000 Guardados", price: 1500 },
-  { value: "2500", label: "2.500 Guardados", price: 3500 },
-  { value: "5000", label: "5.000 Guardados", price: 6000 },
-  { value: "10000", label: "10.000 Guardados", price: 10000 },
+  { value: "250", label: "250 Guardados", price: 600 },
+  { value: "500", label: "500 Guardados", price: 1200 },
+  { value: "1000", label: "1.000 Guardados", price: 2250 },
+  { value: "2500", label: "2.500 Guardados", price: 5000 },
+  { value: "5000", label: "5.000 Guardados", price: 9000 },
+  { value: "10000", label: "10.000 Guardados", price: 17000 },
 ]
 
 export default function GuardadosInstagramPage() {
