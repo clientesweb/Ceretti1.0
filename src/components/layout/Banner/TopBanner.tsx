@@ -7,9 +7,8 @@ const TopBanner = () => {
     <div className="bg-ceretti-blue text-white text-center py-2 px-2 sm:px-4 xl:px-0">
       <div className="relative max-w-frame mx-auto">
         <p className="text-xs sm:text-sm">
-          ¡No esperes más para destacar en redes sociales!{" "}
-          <Link href="#" className="underline font-medium">
-            Regístrate ahora
+          <Link href="https://www.cerettimanagement.com/paquetes" className="underline font-medium">
+            Conoce nuestros planes
           </Link>
         </p>
         <Button
@@ -27,4 +26,3 @@ const TopBanner = () => {
 }
 
 export default TopBanner
-
