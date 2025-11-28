@@ -18,11 +18,11 @@ import InputGroup from "@/components/ui/input-group"
 
 // Actualizar las opciones de precios para comentarios Instagram
 const comentariosOptions = [
-  { value: "10", label: "10 Comentarios", price: 2500 },
-  { value: "50", label: "50 Comentarios", price: 6500 },
-  { value: "100", label: "100 Comentarios", price: 9500 },
-  { value: "500", label: "500 Comentarios", price: 15000 },
-  { value: "1000", label: "1.000 Comentarios", price: 25000 },
+  { value: "10", label: "10 Comentarios", price: 3750 },
+  { value: "50", label: "50 Comentarios", price: 9750 },
+  { value: "100", label: "100 Comentarios", price: 14250 },
+  { value: "500", label: "500 Comentarios", price: 22500 },
+  { value: "1000", label: "1.000 Comentarios", price: 37500 },
 ]
 
 export default function ComentariosInstagramPage() {
