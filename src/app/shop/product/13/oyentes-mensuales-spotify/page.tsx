@@ -18,9 +18,9 @@ import InputGroup from "@/components/ui/input-group"
 
 // Actualizar las opciones de precios para oyentes mensuales Spotify
 const oyentesOptions = [
-  { value: "1000", label: "1.000 Oyentes Mensuales", price: 7500 },
-  { value: "2500", label: "2.500 Oyentes Mensuales", price: 10500 },
-  { value: "5000", label: "5.000 Oyentes Mensuales", price: 18000 },
+  { value: "1000", label: "1.000 Oyentes Mensuales", price: 11000 },
+  { value: "2500", label: "2.500 Oyentes Mensuales", price: 16000 },
+  { value: "5000", label: "5.000 Oyentes Mensuales", price: 27000 },
 ]
 
 export default function OyentesMensualesSpotifyPage() {
