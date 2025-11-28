@@ -25,7 +25,7 @@ const calidadOptions = [
 
 // Actualizar las opciones de precios para suscriptores YouTube mundiales
 const mundialOptions = [
-  { value: "50", label: "50 Suscriptores", price: 1800, bonus: "" },
+  { value: "50", label: "50 Suscriptores", price: 1850, bonus: "" },
   { value: "100", label: "100 Suscriptores", price: 2500, bonus: "" },
   { value: "250", label: "250 Suscriptores", price: 4500, bonus: "" },
   { value: "500", label: "500 Suscriptores", price: 8000, bonus: "" },
