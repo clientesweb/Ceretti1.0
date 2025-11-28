@@ -7,7 +7,7 @@ import TopNavbar from "@/components/layout/Navbar/TopNavbar"
 import Footer from "@/components/layout/Footer"
 import Providers from "./providers"
 import { Toaster } from "@/components/ui/toaster"
-import Script from "next/script"
+import WhatsAppButton from "@/components/layout/WhatsAppButton"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cerettimanagement.com"),
@@ -97,19 +97,8 @@ export default function RootLayout({
         </Providers>
         <Footer />
         <Toaster />
-        <Script id="tawk-to" strategy="afterInteractive">
-          {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/67dfe67f98d9ad1905a9ca32/1in19op7a';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-          `}
-        </Script>
+        {/* <CHANGE> Removed Tawk.to live chat script and replaced with WhatsApp floating button */}
+        <WhatsAppButton />
       </body>
     </html>
   )
