@@ -28,13 +28,13 @@ const calidadOptions = [
 
 // Actualizar las opciones de precios para likes Instagram mundiales
 const mundialOptions = [
-  { value: "100", label: "100 Likes", price: 750, bonus: "" },
-  { value: "250", label: "250 Likes", price: 1200, bonus: "" },
-  { value: "500", label: "500 Likes", price: 1800, bonus: "" },
-  { value: "1000", label: "1.000 Likes", price: 2500, bonus: "" },
-  { value: "2500", label: "2.500 Likes", price: 4500, bonus: "" },
-  { value: "5000", label: "5.000 Likes", price: 7500, bonus: "" },
-  { value: "10000", label: "10.000 Likes", price: 12500, bonus: "" },
+  { value: "100", label: "100 Likes", price: 1125, bonus: "" },
+  { value: "250", label: "250 Likes", price: 1800, bonus: "" },
+  { value: "500", label: "500 Likes", price: 2700, bonus: "" },
+  { value: "1000", label: "1.000 Likes", price: 3750, bonus: "" },
+  { value: "2500", label: "2.500 Likes", price: 6750, bonus: "" },
+  { value: "5000", label: "5.000 Likes", price: 11250, bonus: "" },
+  { value: "10000", label: "10.000 Likes", price: 18750, bonus: "" },
 ]
 
 export default function LikesInstagramPage() {
