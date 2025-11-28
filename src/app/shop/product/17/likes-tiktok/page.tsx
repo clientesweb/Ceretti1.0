@@ -18,12 +18,12 @@ import InputGroup from "@/components/ui/input-group"
 
 // Actualizar las opciones de precios para likes TikTok
 const likesOptions = [
-  { value: "100", label: "100 Likes", price: 700 },
-  { value: "500", label: "500 Likes", price: 2500 },
-  { value: "1000", label: "1.000 Likes", price: 4500 },
-  { value: "2500", label: "2.500 Likes", price: 7500 },
-  { value: "5000", label: "5.000 Likes", price: 12000 },
-  { value: "10000", label: "10.000 Likes", price: 18000 },
+  { value: "100", label: "100 Likes", price: 840 },
+  { value: "500", label: "500 Likes", price: 3000 },
+  { value: "1000", label: "1.000 Likes", price: 5400 },
+  { value: "2500", label: "2.500 Likes", price: 9000 },
+  { value: "5000", label: "5.000 Likes", price: 14400 },
+  { value: "10000", label: "10.000 Likes", price: 21600 },
 ]
 
 export default function LikesTikTokPage() {
