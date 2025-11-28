@@ -18,13 +18,13 @@ import InputGroup from "@/components/ui/input-group"
 
 // Actualizar las opciones de precios para visitas a historias Instagram
 const visitasHistoriasOptions = [
-  { value: "100", label: "100 Visitas", price: 150 },
-  { value: "250", label: "250 Visitas", price: 400 },
-  { value: "500", label: "500 Visitas", price: 800 },
-  { value: "1000", label: "1.000 Visitas", price: 1500 },
-  { value: "2500", label: "2.500 Visitas", price: 3500 },
-  { value: "5000", label: "5.000 Visitas", price: 6000 },
-  { value: "10000", label: "10.000 Visitas", price: 10000 },
+  { value: "100", label: "100 Visitas", price: 225 },
+  { value: "250", label: "250 Visitas", price: 600 },
+  { value: "500", label: "500 Visitas", price: 1200 },
+  { value: "1000", label: "1.000 Visitas", price: 2250 },
+  { value: "2500", label: "2.500 Visitas", price: 5250 },
+  { value: "5000", label: "5.000 Visitas", price: 9000 },
+  { value: "10000", label: "10.000 Visitas", price: 17000 },
 ]
 
 export default function VisitasHistoriasInstagramPage() {
