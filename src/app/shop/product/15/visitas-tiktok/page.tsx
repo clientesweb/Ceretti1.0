@@ -18,10 +18,10 @@ import InputGroup from "@/components/ui/input-group"
 
 // Actualizar las opciones de precios para visitas TikTok
 const visitasOptions = [
-  { value: "2500", label: "2.500 Visitas", price: 1000 },
-  { value: "5000", label: "5.000 Visitas", price: 2500 },
-  { value: "10000", label: "10.000 Visitas", price: 4500 },
-  { value: "25000", label: "25.000 Visitas", price: 13500 },
+  { value: "2500", label: "2.500 Visitas", price: 1200 },
+  { value: "5000", label: "5.000 Visitas", price: 3000 },
+  { value: "10000", label: "10.000 Visitas", price: 5400 },
+  { value: "25000", label: "25.000 Visitas", price: 16200 },
 ]
 
 export default function VisitasTikTokPage() {
